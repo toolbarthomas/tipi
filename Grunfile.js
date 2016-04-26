@@ -1,0 +1,420 @@
+module.exports = function(grunt) {
+
+	require('jit-grunt')(grunt, {
+		replace: 'grunt-text-replace'
+	});
+
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+
+		clean: {
+			dist: {
+				src : [
+					'dist/*'
+				]
+			},
+			build: {
+				src : [
+					'build/'
+				]
+			}
+		},
+
+		copy: {
+			dist: {
+				expand: true,
+				cwd: 'dev/',
+				src: [
+					'assets/webfonts/**',
+					'assets/css/*',
+					'assets/css/lib/**',
+					'assets/js/lib/**',
+					'assets/js/*'
+				],
+				dest: 'dist/'
+			},
+			build: {
+				expand: true,
+				cwd: 'dist/',
+				src: [
+					'**.html',
+					'assets/js/**',
+					'assets/img/**',
+					'assets/css/**',
+					'assets/webfonts/**'
+				],
+				dest: 'build/'
+			},
+			img: {
+				expand: true,
+				cwd: 'dev/',
+				src: [
+					'assets/img/**/*.{png,jpg,gif}',
+				],
+				dest: 'dist/'
+			},
+			svg: {
+				expand: true,
+				cwd: 'dev/',
+				src: [
+					'assets/img/**/*.svg',
+				],
+				dest: 'dist/'
+			}
+		},
+
+		bake: {
+			dist: {
+				options: {
+
+				},
+				files: {
+					//Core
+					'dist/index.html' : 'dev/index.html'
+				}
+			}
+		},
+
+		//Compile the sass files with Compass
+		compass: {
+			dist: {
+				options: {
+					basePath: 'dev/',
+					cssDir: 'assets/css',
+					sassDir: 'assets/sass',
+					imagesDir: 'assets/img',
+					javascriptsDir: 'assets/js',
+					fontsDir: 'assets/webfonts',
+					environment: 'development',
+					outputStyle: 'expanded',
+					relativeAssets: true,
+					noLineComments: false,
+					quiet: true,
+					sourcemap: true,
+					require : [
+						'sass-globbing',
+						'compass',
+					]
+				}
+			}
+		},
+
+		svgstore: {
+			dist: {
+				files: {
+					'dev/assets/img/layout/svg-sprite.svg': ['dev/assets/img/layout/svg/*.svg']
+				},
+				options: {
+					cleanup: true,
+					cleanupdefs: true,
+					prefix : 'glyph-',
+					inheritviewbox: true
+				}
+			}
+		},
+
+		concat: {
+			dist: {
+				options: {
+					separator: ';'
+				},
+				files: {
+					'dist/assets/js/main.js' : [
+						'dev/assets/js/main.js'
+					],
+					'dist/assets/js/tipi/tipi.ui.js' : [
+						'dev/assets/js/tipi/tipi.ui/tipi.ui.top-bar.js',
+						'dev/assets/js/tipi/tipi.ui/tipi.ui.unified/tipi.ui.unified-radio-tile.js',
+					],
+					'dist/assets/js/tipi/tipi.ux.js' : [
+						//'dev/assets/js/tipi/tipi.ux/tipi.ux.classy.js',
+					]
+				}
+			}
+		},
+
+		concurrent: {
+			compile: [
+				'bake:dist',
+				'compass:dist',
+				'svgstore:dist',
+				'concat:dist'
+			],
+			minify: [
+				'cssmin:build',
+				'svgmin:build',
+				'imageoptim:build',
+				'uglify:build'
+			]
+		},
+
+		cssmin: {
+			build: {
+				files: {
+					'build/assets/css/tipi.min.css': ['dist/assets/css/tipi.css']
+				}
+			}
+		},
+
+		svgmin: {
+			build: {
+				options: {
+					plugins: [
+						{ removeViewBox: false },
+						{ removeEmptyAttrs: false }
+					]
+				},
+				files: [{
+					expand: true,
+					cwd: 'dev/assets/img/layout/svg/',
+					src: ['*.svg'],
+					dest: 'svgs/'
+				}]
+			}
+		},
+
+		imageoptim: {
+			build: {
+				src: ['build/assets/img/layout'],
+				options : {
+					quitAfter : true
+				}
+			}
+		},
+
+		//Minify Javascript for production
+		uglify: {
+			dist: {
+				options: {
+					compress : {
+						drop_console : true
+					},
+					sourceMap : false
+				},
+				files: {
+					'dist/assets/js/lib/**.js': 'dist/assets/js/lib/**.min.js'
+				}
+			},
+			build: {
+				options : {
+					compress : {
+						drop_console : true,
+					},
+					sourceMap : false,
+				},
+				files: {
+					'build/assets/js/main.min.js': 'dist/assets/js/main.js',
+					'build/assets/js/tipi/tipi.ui.min.js': 'dist/assets/js/tipi/tipi.ui.js',
+					'build/assets/js/tipi/tipi.ux.min.js': 'dist/assets/js/tipi/tipi.ux.js'
+				}
+			}
+		},
+
+		replace: {
+			build: {
+				src: ['build/**.html'],
+				dest: 'build/',
+				replacements: [
+					{
+						from: 'tipi.css',
+						to: 'tipi.min.css'
+					},
+					{
+						from: 'main.js',
+						to: 'main.min.js'
+					},
+					{
+						from: 'tipi.ui.js',
+						to: 'tipi.ui.min.js'
+					},
+					{
+						from: 'tipi.ux.js',
+						to: 'tipi.ux.min.js'
+					},
+				]
+		  	}
+		},
+
+		'cache-busting': {
+			tipi_css: {
+				replace: ['build/**/*.html'],
+				replacement: 'tipi.min.css',
+				file: 'build/assets/css/tipi.css',
+				get_param: true,
+			},
+			main_js: {
+				replace: ['build/**/*.html'],
+				replacement: 'main.min.js',
+				file: 'build/assets/js/main.min.js',
+				get_param: true,
+			},
+			tipi_ui_js: {
+				replace: ['build/**/*.html'],
+				replacement: 'tipi.ui.min.js',
+				file: 'build/assets/js/tipi/tipi.ui.min.js',
+				get_param: true,
+			},
+			tipi_ux_js: {
+				replace: ['build/**/*.html'],
+				replacement: 'tipi.ux.min.js',
+				file: 'build/assets/js/tipi/tipi.ux.min.js',
+				get_param: true,
+			},
+		},
+
+
+		connect: {
+			server: {
+				options: {
+					port: 8000,
+					base: 'dist/',
+					livereload: true,
+					open: {
+						target: 'http://localhost:8000'
+					}
+				}
+			}
+		},
+
+		watch: {
+			html: {
+				files: [
+					'dev/*.html',
+					'dev/inc/**/*.html',
+					'dev/docs/**/*.html',
+
+					'!**/dist/**',
+					'!**/build/**',
+					'!**/node_modules/**',
+				],
+				tasks: ['bake:dist'],
+
+			},
+			scss: {
+				files: [
+					'dev/assets/sass/**/*.scss',
+
+					'!**/dist/**',
+					'!**/build/**',
+					'!**/node_modules/**',
+				],
+				tasks: [
+					'compass:dist',
+					'copy:dist'
+				],
+				options: {
+					spawn : true,
+				}
+			},
+			js: {
+				files: [
+					'dev/assets/js/**/*.js',
+
+					'!**/dist/**',
+					'!**/build/**',
+					'!**/node_modules/**',
+				],
+				tasks: [
+					'concat:dist'
+				],
+				options: {
+					spawn : false,
+					interrupt: true
+				}
+			},
+			img: {
+				files: [
+					'dev/assets/img/**/*.{png,jpg,gif}',
+
+					'!**/dist/**',
+					'!**/build/**',
+					'!**/node_modules/**',
+				],
+				tasks: [
+					'newer:copy:img'
+				],
+				options : {
+					event: ['added', 'deleted']
+				},
+			},
+			svg: {
+				files: [
+					'dev/assets/img/**/*.svg',
+				],
+				tasks: [
+					'svgstore:dist',
+					'newer:copy:svg',
+					'bake:dist'
+				],
+				options : {
+					event: ['added', 'deleted']
+				}
+
+			},
+			reload : {
+				files: [
+					'dist/assets/css/**/*.css',
+					'dist/**/*.html',
+				],
+				options : {
+					livereload : true,
+					livereloadOnError: false
+				},
+			},
+			config : {
+				files : [
+					'Gruntfile.js'
+				],
+				options : {
+					reload : true
+				}
+
+			}
+		}
+	});
+
+	grunt.registerTask(
+		'default', [
+			'clean:dist',
+			'concurrent:compile',
+			'copy:img',
+			'copy:svg',
+			'copy:dist',
+		]
+	);
+
+	grunt.registerTask(
+		'build', [
+			'clean:dist',
+			'clean:build',
+			'concurrent:compile',
+			'copy:dist',
+			'copy:img',
+			'copy:svg',
+			'copy:build',
+			'concurrent:minify',
+			'replace',
+			'cache-busting'
+		]
+	);
+
+	grunt.registerTask(
+		'serve', [
+			'clean:dist',
+			'concurrent:compile',
+			'copy:dist',
+			'copy:img',
+			'copy:svg',
+			'connect:server',
+			'watch',
+		]
+	);
+
+	grunt.registerTask(
+		'cleanup', [
+			'clean:dist',
+			'clean:build',
+		]
+	);
+};
