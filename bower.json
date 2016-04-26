@@ -6,18 +6,20 @@
     "Thomas van der Velde <contact@toolbarthomas.net>"
   ],
   "description": "Modular front-end workflow core package",
-  "main": "",
   "keywords": [
     "toolbarthomas",
     "modular",
     "tipi",
   ],
   "license": "MIT",
+  "main": "",
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
-  ]
+    "sass-cache",
+    "build/",
+  ],
+  "dependencies" : {
+
+  }
 }
