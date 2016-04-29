@@ -10,6 +10,10 @@
     "tipi"
   ],
   "license": "MIT",
+  "repository" : {
+      "type" : "git",
+      "url" : "https://github.com/toolbarthomas/tipi.git"
+  },
   "main": "",
   "devDependencies": {
     "grunt": "~0.4.5",

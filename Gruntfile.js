@@ -27,10 +27,8 @@ module.exports = function(grunt) {
 				cwd: 'dev/',
 				src: [
 					'assets/webfonts/**',
-					'assets/css/*',
-					'assets/css/lib/**',
-					'assets/js/lib/**',
-					'assets/js/*'
+					'assets/css/**',
+					'assets/js/**',
 				],
 				dest: 'dist/'
 			},
@@ -70,7 +68,6 @@ module.exports = function(grunt) {
 
 				},
 				files: {
-					//Core
 					'dist/index.html' : 'dev/index.html'
 				}
 			}
@@ -94,7 +91,6 @@ module.exports = function(grunt) {
 					sourcemap: true,
 					require : [
 						'sass-globbing',
-						'compass',
 					]
 				}
 			}
