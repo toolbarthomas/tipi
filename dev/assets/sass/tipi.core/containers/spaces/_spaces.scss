@@ -1,0 +1,9 @@
+@import "__config";
+@import "__core";
+@import "__construct";
+
+@include core_spaces;
+
+@include construct_spaces(2, $phablet-min-width);
+@include construct_spaces(3, $tablet-min-width);
+@include construct_spaces(4, $tablet-landscape-min-width);
