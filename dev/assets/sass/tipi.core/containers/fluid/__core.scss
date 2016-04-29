@@ -1,0 +1,9 @@
+@mixin core_fluid {
+	.fluid {
+		padding: $fluid-gutter 0;
+		min-width: $smartphone-min-width;
+		@if $fluid-background-color != transparent {
+			background-color: $fluid-background-color;
+		}
+	}
+}

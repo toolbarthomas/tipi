@@ -1,0 +1,12 @@
+@import "__config";
+@import "__core";
+@import "__construct";
+
+@include core_fluid;
+
+@include construct_fluid($phablet-min-width);
+@include construct_fluid($tablet-min-width);
+@include construct_fluid($tablet-landscape-min-width, $fluid-gutter*2);
+@include construct_fluid($desktop-min-width);
+@include construct_fluid($widescreen-min-width);
+@include construct_fluid($highroller-min-width);
