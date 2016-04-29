@@ -3,3 +3,4 @@ npm-debug.log
 bower_components/
 .sass-cache/
 build/
+dist/
