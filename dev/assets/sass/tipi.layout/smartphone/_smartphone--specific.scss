@@ -1,0 +1,5 @@
+@include breakpoint($smartphone-min-width, $smartphone-max-width) {
+	.color {
+		color: smartphone-specific;
+	}
+}
