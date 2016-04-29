@@ -1,0 +1,64 @@
+@mixin core_combined {
+	.combined {
+		width: 100%;
+		display: table;
+		line-height: normal;
+	}
+
+	.combined-body,
+	.combined-aside {
+		display: table-cell;
+		line-height: inherit;
+	}
+
+	.combined-body {
+		margin: 0;
+		padding-right: $combined-gutter;
+	}
+
+	.combined-aside {
+		width: 1%;
+		white-space: nowrap;
+		vertical-align: top;
+	}
+
+	.combined-aside + .combined-body {
+		padding-right: 0;
+		padding-left: $combined-gutter;
+
+		+ .combined-aside {
+			padding-left: $combined-gutter;
+		}
+	}
+
+	.combined--middle,
+	.combined--bottom {
+		> .combined-body,
+		> .combined-aside {
+			height: 100%;
+		}
+	}
+
+	.combined--middle {
+		> .combined-body,
+		> .combined-aside {
+			vertical-align: middle;
+		}
+	}
+
+	.combined--bottom {
+		> .combined-body,
+		> .combined-aside {
+			vertical-align: bottom;
+		}
+	}
+
+	.combined--header {
+		> .combined-body,
+		> .combined-aside {
+			> * {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
