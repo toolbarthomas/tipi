@@ -1,0 +1,215 @@
+@mixin core_defaults {
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figcaption, figure, footer, header, hgroup, main, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	hgroup,
+	main,
+	nav,
+	section,
+	summary {
+		display: block;
+	}
+
+	time,
+	mark {
+		display: inline;
+	}
+
+	audio,
+	canvas,
+	video {
+		display: inline-block;
+	}
+
+	audio:not([controls]) {
+		display: none;
+		height: 0;
+	}
+
+	[hidden] {
+		display: none !important;
+	}
+
+	html {
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		height: 100%;
+		font-size: 62.5%;
+	}
+
+	html,
+	body {
+		position: relative;
+		height: 100%;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:active,
+		&:hover {
+			outline: 0;
+			text-decoration: underline;
+		}
+
+		img {
+			outline: 0;
+		}
+	}
+
+	img {
+		display: block;
+		border: 0;
+		margin: 0;
+		-ms-interpolation-mode: bicubic;
+	}
+
+	svg:not(:root) {
+		overflow: hidden;
+	}
+
+	blockquote,
+	q {
+		quotes: none;
+
+		&:before,
+		&:after {
+			content: '';
+			content: none;
+		}
+	}
+
+	strong,
+	b {
+		font-weight: 700;
+	}
+
+	em,
+	i {
+		font-style: italic;
+	}
+
+	fieldset {
+		min-width: 0;
+	}
+
+	textarea {
+		font-size: 100%;
+	}
+
+	button,
+	input,
+	select {
+		font-size: 100%;
+		font-family: inherit;
+		margin: 0;
+		vertical-align: baseline;
+		line-height: normal;
+	}
+
+	input[type="image"],
+	button,
+	select,
+	input[type="checkbox"],
+	input[type="radio"],
+	input[type="submit"],
+	input[type="button"] {
+		cursor: pointer;
+	}
+
+	button,
+	input[type="submit"],
+	input[type="button"] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background-color: transparent;
+	}
+
+	button,
+	input,
+	textarea {
+		text-transform: none;
+		margin: 0;
+		padding: 0;
+		outline: none;
+		border-radius: 0;
+		border: none;
+	}
+
+	textarea {
+		overflow: auto;
+		vertical-align: top;
+		resize: vertical;
+	}
+
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	* {
+		outline: none !important;
+	}
+
+	*,
+	*:before,
+	*:after {
+		@include box-sizing(border-box);
+	}
+
+	::-moz-selection,
+	input::-moz-selection,
+	::selection,
+	input::selection {
+		color: #fff;
+		background: #0d0d0d;
+		text-shadow: none;
+	}
+
+	//Internet Explorer 10+ Snap mode compatibility
+	@media screen and (max-width:400px) {
+		@-ms-viewport{
+			width: device-width;
+		}
+	}
+
+	//Make sure that script tags are hidden when they are generated.
+	script {
+		display: none !important;
+	}
+}
