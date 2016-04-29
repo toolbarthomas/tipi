@@ -1,0 +1,14 @@
+@mixin core_wrapper {
+	.wrapper {
+		margin: 0 auto;
+		padding: 0 $wrapper-gutter;
+
+		@include clear(false, true);
+
+		@if $wrapper-fluid == true {
+			max-width: $wrapper-max-width;
+		} @else {
+			width: 100%;
+		}
+	}
+}
