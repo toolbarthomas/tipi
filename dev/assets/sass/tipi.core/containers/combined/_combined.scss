@@ -2,14 +2,11 @@
 @import "__core";
 @import "__construct";
 
-@mixin container_combined--smartphone {
-	@include core_combined;
-
-	@include construct_combined-reset(smartphone, 0, $smartphone-max-width);
-	@include construct_combined-reset(phablet, $phablet-min-width, $phablet-max-width);
-	@include construct_combined-reset(tablet, $tablet-min-width, $tablet-max-width);
-	@include construct_combined-reset(tablet-landscape, $tablet-landscape-min-width, $tablet-landscape-max-width);
-	@include construct_combined-reset(desktop, $desktop-min-width, $desktop-max-width);
-	@include construct_combined-reset(widescreen, $widescreen-min-width, $widescreen-max-width);
-	@include construct_combined-reset(highroller, $highroller-min-width, $highroller-max-width);
-}
+@include core_combined;
+@include construct_combined-reset(smartphone, 0, $smartphone-max-width);
+@include construct_combined-reset(phablet, $phablet-min-width, $phablet-max-width);
+@include construct_combined-reset(tablet, $tablet-min-width, $tablet-max-width);
+@include construct_combined-reset(tablet-landscape, $tablet-landscape-min-width, $tablet-landscape-max-width);
+@include construct_combined-reset(desktop, $desktop-min-width, $desktop-max-width);
+@include construct_combined-reset(widescreen, $widescreen-min-width, $widescreen-max-width);
+@include construct_combined-reset(highroller, $highroller-min-width, $highroller-max-width);
