@@ -1557,6 +1557,19 @@ body {
     min-width: 1368px;
   }
 }
+/* line 2, ../sass/tipi.containers/wrapper/__core.scss */
+.wrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 970px;
+}
+/* line 13, ../sass/tipi.core/mixins/_clear.scss */
+.wrapper:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
 /* line 2, ../sass/tipi.containers/combined/__core.scss */
 .combined {
   width: 100%;
