@@ -488,50 +488,50 @@ address:empty {
 a {
   text-decoration: underline;
 }
-/* line 140, ../sass/tipi.core/typography/__core.scss */
-a, a:hover, a:active, a:focus, a:visited {
-  color: #43c85c;
+/* line 145, ../sass/tipi.core/typography/__core.scss */
+p a, p a:hover, p a:active, p a:focus, p a:visited {
+  color: inherit;
 }
-/* line 148, ../sass/tipi.core/typography/__core.scss */
+/* line 150, ../sass/tipi.core/typography/__core.scss */
 a:focus {
   outline: thin dotted !important;
   outline: 4px auto -webkit-focus-ring-color !important;
   text-decoration: underline;
 }
 
-/* line 155, ../sass/tipi.core/typography/__core.scss */
+/* line 157, ../sass/tipi.core/typography/__core.scss */
 small,
 sub,
 sup {
   font-size: 80%;
 }
 
-/* line 161, ../sass/tipi.core/typography/__core.scss */
+/* line 163, ../sass/tipi.core/typography/__core.scss */
 blockquote,
 q {
   display: block;
   font-size: 1.7rem;
 }
 @media only screen and (min-width: 640px) {
-  /* line 161, ../sass/tipi.core/typography/__core.scss */
+  /* line 163, ../sass/tipi.core/typography/__core.scss */
   blockquote,
   q {
     font-size: 1.8rem;
   }
 }
-/* line 167, ../sass/tipi.core/typography/__core.scss */
+/* line 169, ../sass/tipi.core/typography/__core.scss */
 blockquote img,
 q img {
   vertical-align: baseline;
 }
-/* line 171, ../sass/tipi.core/typography/__core.scss */
+/* line 173, ../sass/tipi.core/typography/__core.scss */
 blockquote p,
 q p {
   font-size: 100%;
   display: inline;
 }
 
-/* line 177, ../sass/tipi.core/typography/__core.scss */
+/* line 179, ../sass/tipi.core/typography/__core.scss */
 ul,
 ol {
   margin: 0;
@@ -539,22 +539,22 @@ ol {
   margin-top: 1.31em;
 }
 
-/* line 185, ../sass/tipi.core/typography/__core.scss */
+/* line 187, ../sass/tipi.core/typography/__core.scss */
 li + li {
   margin-top: 0.655em;
 }
 
-/* line 192, ../sass/tipi.core/typography/__core.scss */
+/* line 194, ../sass/tipi.core/typography/__core.scss */
 address a {
   color: inherit;
   text-decoration: none;
 }
-/* line 196, ../sass/tipi.core/typography/__core.scss */
+/* line 198, ../sass/tipi.core/typography/__core.scss */
 address a[href^="mailto"] {
   word-break: break-all;
 }
 
-/* line 202, ../sass/tipi.core/typography/__core.scss */
+/* line 204, ../sass/tipi.core/typography/__core.scss */
 hr {
   clear: both;
   display: block;
@@ -565,14 +565,14 @@ hr {
   margin: 2.62em 0;
 }
 
-/* line 212, ../sass/tipi.core/typography/__core.scss */
+/* line 214, ../sass/tipi.core/typography/__core.scss */
 em,
 i,
 .italic {
   font-style: italic;
 }
 
-/* line 218, ../sass/tipi.core/typography/__core.scss */
+/* line 220, ../sass/tipi.core/typography/__core.scss */
 strong,
 b,
 .bold {
@@ -1820,9 +1820,10 @@ body {
   vertical-align: bottom;
 }
 
-/* line 2, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 2, ../../../git_submodules/tipi.component.button/__core.scss */
 .button {
   display: inline-block;
+  padding: 0;
   margin: 0;
   vertical-align: middle;
   text-align: center;
@@ -1844,25 +1845,25 @@ body {
   -webkit-transition-delay: 0s, 0s, 0s;
   transition: background-color 300ms ease-out 0s, color 300ms ease-out 0s, border-color 300ms ease-out 0s;
 }
-/* line 40, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 41, ../../../git_submodules/tipi.component.button/__core.scss */
 .button.button--disabled, .button[disabled] {
   cursor: not-allowed;
 }
-/* line 45, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 46, ../../../git_submodules/tipi.component.button/__core.scss */
 .button.button--wide {
   display: block;
   width: 100%;
 }
-/* line 50, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 51, ../../../git_submodules/tipi.component.button/__core.scss */
 .button, .button:focus, .button:active, .button:hover {
   text-decoration: none;
 }
-/* line 58, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 59, ../../../git_submodules/tipi.component.button/__core.scss */
 .button.button--glyph {
   position: relative;
 }
 
-/* line 65, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 66, ../../../git_submodules/tipi.component.button/__core.scss */
 .button-glyph-placeholder {
   position: absolute;
   display: block;
@@ -1872,13 +1873,13 @@ body {
   line-height: inherit;
   right: 0;
 }
-/* line 83, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 84, ../../../git_submodules/tipi.component.button/__core.scss */
 .button--glyph-reverse .button-glyph-placeholder {
   right: auto;
   left: 0;
 }
 
-/* line 90, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 91, ../../../git_submodules/tipi.component.button/__core.scss */
 .button-glyph {
   vertical-align: middle;
   line-height: normal;
@@ -1887,10 +1888,66 @@ body {
   padding: 0;
   top: auto;
 }
-/* line 98, ../../../bower_components/tipi.component.button/__core.scss */
+/* line 99, ../../../git_submodules/tipi.component.button/__core.scss */
 .button-glyph:before, .button-glyph:after {
   margin: 0;
   padding: 0;
+}
+
+/* line 3, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button {
+  height: 44px;
+  padding: 0 24px;
+  line-height: 40px;
+}
+/* line 17, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button.button--glyph {
+  text-align: left;
+  position: relative;
+  padding-right: 44px;
+  padding-left: 24px;
+}
+/* line 28, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button.button--glyph.button--glyph-reverse {
+  padding-right: 24px;
+  padding-left: 44px;
+}
+/* line 39, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button .button-glyph-placeholder {
+  width: 44px;
+}
+/* line 45, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button.button--square {
+  width: 44px;
+  padding: 0;
+}
+
+/* line 55, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button {
+  background-color: #4694ff;
+  border-color: transparent;
+  color: #fff;
+}
+/* line 70, ../../../git_submodules/tipi.component.button/__construct.scss */
+.button .button-glyph {
+  fill: #fff;
+}
+/* line 76, ../../../git_submodules/tipi.component.button/__construct.scss */
+.no-touchevents .button:hover {
+  background-color: #3876cc;
+  color: #fff;
+}
+/* line 95, ../../../git_submodules/tipi.component.button/__construct.scss */
+.no-touchevents .button:hover .button-glyph {
+  fill: #fff;
+}
+/* line 103, ../../../git_submodules/tipi.component.button/__construct.scss */
+.no-touchevents .button:active, .no-touchevents .button.button--active {
+  color: #fff;
+}
+/* line 123, ../../../git_submodules/tipi.component.button/__construct.scss */
+.no-touchevents .button:active .button-glyph, .no-touchevents .button.button--active .button-glyph {
+  fill: #fff;
 }
 
 /*# sourceMappingURL=tipi.css.map */

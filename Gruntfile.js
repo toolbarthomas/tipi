@@ -289,6 +289,7 @@ module.exports = function(grunt) {
 			},
 			scss: {
 				files: [
+					'git_submodules/**/*.scss',
 					'dev/assets/sass/**/*.scss',
 
 					'!**/dist/**',
