@@ -142,7 +142,9 @@
 		&:active,
 		&:focus,
 		&:visited {
-			color: $link-color;
+			p & {
+				color: inherit;
+			}
 		}
 
 		&:focus {
