@@ -1,7 +1,7 @@
 @mixin construct_specific-helpers($viewport, $min-width:false, $max-width:false) {
 	@if $min-width != false and $max-width != false {
 		@if $helpers-max-width >= $min-width {
-			@media only screen and (min-width: $min-width) and (max-width: $max-width)  {
+			@include breakpoint($min-width, $max-width) {
 				.hide--#{$viewport} {
 					display: none !important;
 				}

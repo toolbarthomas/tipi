@@ -2,6 +2,4 @@
 @import "__construct";
 @import "__core";
 
-@mixin helpers--smartphone {
-	@include core_helpers;
-}
+@include core_helpers;
