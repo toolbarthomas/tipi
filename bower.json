@@ -20,6 +20,7 @@
     "build/"
   ],
   "dependencies" : {
-    "tipi.component.button" : "~0.1.4"
+    "tipi.component.button" : "~0.1.4",
+    "tipi.component.big-banner" : "~0.1.0"
   }
 }
