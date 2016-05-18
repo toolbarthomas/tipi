@@ -2,11 +2,4 @@
 @import "__core";
 @import "__construct";
 
-@mixin sprite--smartphone {
-	@include core_sprite;
-
-	// .sprite--sample {
-	// 	@include construct_sprite-position($sprite-sprites, sample);
-	// 	@include construct_sprite-dimension(sample)
-	// }
-}
+@include core_sprite;
