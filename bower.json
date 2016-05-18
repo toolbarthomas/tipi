@@ -9,7 +9,7 @@
   "keywords": [
     "toolbarthomas",
     "modular",
-    "tipi",
+    "tipi"
   ],
   "license": "MIT",
   "main": "",
@@ -17,9 +17,9 @@
     "node_modules",
     "bower_components",
     "sass-cache",
-    "build/",
+    "build/"
   ],
   "dependencies" : {
-
+    "tipi.component.button" : "~0.1.4"
   }
 }

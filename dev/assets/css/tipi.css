@@ -1820,4 +1820,77 @@ body {
   vertical-align: bottom;
 }
 
+/* line 2, ../../../bower_components/tipi.component.button/__core.scss */
+.button {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+  color: inherit;
+  border: solid 2px;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-transition: background-color 300ms ease-out 0s, color 300ms ease-out 0s, border-color 300ms ease-out 0s;
+  -o-transition: background-color 300ms ease-out 0s, color 300ms ease-out 0s, border-color 300ms ease-out 0s;
+  -webkit-transition: background-color 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out;
+  -webkit-transition-delay: 0s, 0s, 0s;
+  transition: background-color 300ms ease-out 0s, color 300ms ease-out 0s, border-color 300ms ease-out 0s;
+}
+/* line 40, ../../../bower_components/tipi.component.button/__core.scss */
+.button.button--disabled, .button[disabled] {
+  cursor: not-allowed;
+}
+/* line 45, ../../../bower_components/tipi.component.button/__core.scss */
+.button.button--wide {
+  display: block;
+  width: 100%;
+}
+/* line 50, ../../../bower_components/tipi.component.button/__core.scss */
+.button, .button:focus, .button:active, .button:hover {
+  text-decoration: none;
+}
+/* line 58, ../../../bower_components/tipi.component.button/__core.scss */
+.button.button--glyph {
+  position: relative;
+}
+
+/* line 65, ../../../bower_components/tipi.component.button/__core.scss */
+.button-glyph-placeholder {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: inherit;
+  right: 0;
+}
+/* line 83, ../../../bower_components/tipi.component.button/__core.scss */
+.button--glyph-reverse .button-glyph-placeholder {
+  right: auto;
+  left: 0;
+}
+
+/* line 90, ../../../bower_components/tipi.component.button/__core.scss */
+.button-glyph {
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  top: auto;
+}
+/* line 98, ../../../bower_components/tipi.component.button/__core.scss */
+.button-glyph:before, .button-glyph:after {
+  margin: 0;
+  padding: 0;
+}
+
 /*# sourceMappingURL=tipi.css.map */

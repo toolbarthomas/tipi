@@ -2,5 +2,6 @@ node_modules/
 npm-debug.log
 bower_components/
 .sass-cache/
+git_submodules/
 build/
 dist/
