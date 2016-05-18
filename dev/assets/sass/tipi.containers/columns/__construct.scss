@@ -16,7 +16,7 @@
 	}
 }
 
-@mixin construct_cms_columns($column-count-divide) {
+@mixin construct_cms_columns($column-count-divide:12) {
 	.row--cms {
 		@for $i from 1 through $column-count-divide {
 			@for $ii from 1 through $column-count / $column-count-divide {

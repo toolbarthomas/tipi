@@ -1,5 +1,5 @@
 @mixin construct_spaces($multiplier: 1, $min-width:false) {
-	@if $min-width == false {
+	@if include breakpoint($min-width) {
 		.space {
 			width: 100% / $multiplier;
 
@@ -9,20 +9,6 @@
 
 			&:nth-child(#{$multiplier}n+1) {
 				clear: both;
-			}
-		}
-	} @else {
-		@media only screen and (min-width: $min-width) {
-			.space {
-				width: 100% / $multiplier;
-
-				&:nth-child(1n+1) {
-					clear: none;
-				}
-
-				&:nth-child(#{$multiplier}n+1) {
-					clear: both;
-				}
 			}
 		}
 	}

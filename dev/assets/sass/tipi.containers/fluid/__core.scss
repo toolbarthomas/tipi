@@ -2,7 +2,8 @@
 	.fluid {
 		padding: $fluid-gutter 0;
 		min-width: $smartphone-min-width;
-		@if $fluid-background-color != transparent {
+
+		@if $fluid-background-color != false {
 			background-color: $fluid-background-color;
 		}
 	}
