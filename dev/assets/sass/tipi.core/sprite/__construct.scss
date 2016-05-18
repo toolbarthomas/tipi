@@ -1,0 +1,57 @@
+// Getting started
+
+// Here you can generate a sprite from multiple images in a selected folder. Each folder will be generated as a single sprite.
+
+// To get you started we included the default folder with a sample image: 'base'.
+// By default we have 3 settings that commands the sorting, layout and retina support.
+
+// If you want to generate an additional sprite you need to include the following line:
+// 	@import "layout/<folder>/*";
+
+// You need to duplicate the sprite-sprite-dimensions mixin and edit it to the correcter: "base" to <folder>.
+
+// For performance purposes we include every selector on it's own when we want to use the sprite functionality.
+// 	Example:
+// 		.myImage {
+// 			//Here we include the sprite location and background size
+// 			@include construct_sprite($base-sprites, 2);
+
+// 			//Here we can give the actual image an position.
+// 			@include construct_sprite-position($base-sprites, example);
+
+// 			//Eventualy we include the dimensions for the image
+// 			@include construct_sprite-dimension(example);
+// 		}
+
+
+//Mixin to set the correct values for the retina supported sprite
+@mixin construct_sprite($map:false, $size:$sprite-pixel-ratio) {
+	@if $map != false {
+		$map-path: sprite-path($map);
+		background-size: ceil(image-width($map-path) / $size) ceil(image-height($map-path) / $size);
+		//Set the background image
+		background-image: $map;
+	}
+}
+
+//Set the sprite locations for each individual sprite instance
+@mixin construct_sprite-position($map:false, $name:false, $size:$sprite-pixel-ratio) {
+	@if $map != false and $name != false {
+		//Get the correct destination for the retina sprite
+		$position: sprite-position($map, $name);
+
+		$position_x: nth($position, 1) / $size;
+		$position_y: nth($position, 2) / $size;
+
+		background-position: $position_x $position_y;
+	}
+}
+
+//Create the dimension mixin for the base sprite folder
+@mixin construct_sprite-dimension($name:false, $size:$sprite-pixel-ratio) {
+	@if $name != false {
+		width: sprite-sprite-width($name) / $size;
+		height: sprite-sprite-height($name) / $size;
+		text-indent: 0 - sprite-sprite-width($name) / $size * 5;
+	}
+}

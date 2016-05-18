@@ -1,0 +1,13 @@
+// @import "layout/sprite/*.png";
+
+@mixin core_sprite {
+	.sprite {
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		vertical-align: middle;
+		text-align: left;
+
+		@include construct_sprite($sprite-sprites);
+	}
+}

@@ -1,0 +1,12 @@
+@mixin webfont($font-family:false, $src:false, $font-weight: 400, $font-style: normal) {
+	@if $font-family != false and $src != false {
+		@font-face {
+			font-family: $font-family;
+			src: url('#{$src}.woff2') format('woff2'),
+				 url('#{$src}.woff') format('woff'),
+				 url('#{$src}.ttf') format('truetype');
+			font-weight: $font-weight;
+			font-style: $font-style;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+@import "__core";
+
+@mixin svg-sprite--smartphone {
+	@include core_svg-sprites;
+}

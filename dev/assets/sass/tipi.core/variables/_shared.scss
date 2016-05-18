@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    #VARIABLES - SHARED
+\*------------------------------------*/
+
+/**
+ * Define the global variables for your project here.
+ */
+
+$border-style: 			solid !default;
+$border-width:			2px !default;
+$border-radius:			false !default;
+
+$block-shadow: false;
+
+// WIDTHS
+$max-wrapper-width:		$tablet-landscape-min-width !default; /* Set the max-width of the wrapping classes */
+
+// GUTTERS
+$section-gutter:		25px !default; /* Spacing between different fluids */
+$block-gutter: 			15px !default; /* Spacing for element i.e. .box, .well etc. */
+
+ // TRANSITIONS
+$transition-slow:		1000ms !default;
+$transition-normal:		500ms !default;
+$transition-fast:		300ms !default;
+$transition-lightning:	200ms !default;
+$transition-instant:	0 !default;

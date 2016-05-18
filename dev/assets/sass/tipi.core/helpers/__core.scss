@@ -1,0 +1,17 @@
+@mixin core_helpers {
+	.clear {
+		clear: both;
+	}
+
+	.hide {
+		display: none !important;
+	}
+
+	@include construct_specific-helpers(smartphone, 0, $smartphone-max-width);
+	@include construct_specific-helpers(phablet, $phablet-min-width, $phablet-max-width);
+	@include construct_specific-helpers(tablet, $tablet-min-width, $tablet-max-width);
+	@include construct_specific-helpers(tablet-landscape, $tablet-landscape-min-width, $tablet-landscape-max-width);
+	@include construct_specific-helpers(desktop, $desktop-min-width, $desktop-max-width);
+	@include construct_specific-helpers(widescreen, $widescreen-min-width, $widescreen-max-width);
+	@include construct_specific-helpers(highroller, $highroller-min-width, $highroller-max-width);
+}
