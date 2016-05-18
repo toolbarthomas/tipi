@@ -1,7 +1,3 @@
-// Tipi 0.1.0
-// http://github.com/toolbarthomas/tipi
-// MIT License
-
 @import "compass";
 
 @import "tipi.core/variables/**";
@@ -21,7 +17,7 @@
 @import "tipi.containers/element-group/**";
 @import "tipi.containers/valign/**";
 
-@import "../../../bower_components/tipi.component.*/**";
+@import "../../../git_submodules/tipi.component.*/**";
 
 @import "tipi.responsive/smartphone/smartphone";
 @import "tipi.responsive/smartphone/smartphone--max";
