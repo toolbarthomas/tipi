@@ -1,10 +1,8 @@
-@mixin container_wrapper--smartphone {
-	@include core_wrapper;
+@include core_wrapper;
 
-	@include construct_wrapper($phablet-min-width, $phablet-max-width);
-	@include construct_wrapper($tablet-min-width, $tablet-max-width);
-	@include construct_wrapper($tablet-landscape-min-width, $tablet-landscape-max-width);
-	@include construct_wrapper($desktop-min-width, $desktop-max-width);
-	@include construct_wrapper($widescreen-min-width, $widescreen-max-width);
-	@include construct_wrapper($highroller-min-width);
-}
+@include construct_wrapper($phablet-min-width, $phablet-max-width);
+@include construct_wrapper($tablet-min-width, $tablet-max-width);
+@include construct_wrapper($tablet-landscape-min-width, $tablet-landscape-max-width);
+@include construct_wrapper($desktop-min-width, $desktop-max-width);
+@include construct_wrapper($widescreen-min-width, $widescreen-max-width);
+@include construct_wrapper($highroller-min-width);
