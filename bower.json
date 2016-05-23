@@ -19,8 +19,9 @@
     "sass-cache",
     "build/"
   ],
-  "dependencies" : {
-    "tipi.component.button" : "~0.1.4",
-    "tipi.component.big-banner" : "~0.1.0"
+  "dependencies": {
+    "tipi.component.button": "~0.1.4",
+    "tipi.component.big-banner": "~0.1.0",
+    "tipi.base.typography": "^0.0.1"
   }
 }

@@ -22,7 +22,6 @@
 /**
  * Define the global variables for your project here.
  */
-/* Set the max-width of the wrapping classes */
 /* Spacing between different fluids */
 /* Spacing for element i.e. .box, .well etc. */
 /* line 2, ../sass/tipi.core/defaults/__core.scss */
@@ -256,7 +255,7 @@ input::selection {
   text-shadow: none;
 }
 
-@media screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
   @-ms-viewport {
     width: device-width;
   }
@@ -266,376 +265,122 @@ script {
   display: none !important;
 }
 
-/*------------------------------------*\
-    #TYPOGRAPHY - CONFIG
-\*------------------------------------*/
-/*------------------------------------*\
-    #TYPOGRAPHY - CONFIG
-\*------------------------------------*/
-/* line 2, ../sass/tipi.core/typography/__core.scss */
-body {
-  font-family: "Helvetica Neue", "Segoe UI", "arial", "sans-serif";
-  font-weight: 400;
-  color: #555555;
-  -moz-font-feature-settings: "liga" 0;
-  -ms-font-feature-settings: "liga" 0;
-  -o-font-feature-settings: "liga" 0;
-  -webkit-font-feature-settings: "liga" 0;
-  font-feature-settings: "liga" 0;
-  -webkit-font-variant-ligatures: none;
-  font-variant-ligatures: none;
-  font-size: 1.4rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 2, ../sass/tipi.core/typography/__core.scss */
-  body {
-    font-size: 1.6rem;
-  }
-}
-
-/* line 20, ../sass/tipi.core/typography/__core.scss */
-.display1, .display2, .display3 {
-  font-weight: 700;
-  line-height: 1.32em;
-}
-
-/* line 35, ../sass/tipi.core/typography/__core.scss */
-.display1 {
-  font-size: 3.6rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 35, ../sass/tipi.core/typography/__core.scss */
-  .display1 {
-    font-size: 4.1rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 35, ../sass/tipi.core/typography/__core.scss */
-  .display1 {
-    font-size: 4.8rem;
-  }
-}
-
-/* line 39, ../sass/tipi.core/typography/__core.scss */
-.display2 {
-  font-size: 3.2rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 39, ../sass/tipi.core/typography/__core.scss */
-  .display2 {
-    font-size: 3.4rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 39, ../sass/tipi.core/typography/__core.scss */
-  .display2 {
-    font-size: 3.9rem;
-  }
-}
-
-/* line 43, ../sass/tipi.core/typography/__core.scss */
-.display3 {
-  font-size: 2.8rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 43, ../sass/tipi.core/typography/__core.scss */
-  .display3 {
-    font-size: 3.1rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 43, ../sass/tipi.core/typography/__core.scss */
-  .display3 {
-    font-size: 3.5rem;
-  }
-}
-
-/* line 48, ../sass/tipi.core/typography/__core.scss */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin-bottom: 0.5em;
-  font-weight: 700;
-  line-height: 1.3em;
-}
-
-/* line 68, ../sass/tipi.core/typography/__core.scss */
-h1, .h1 {
-  font-size: 2.6rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 68, ../sass/tipi.core/typography/__core.scss */
-  h1, .h1 {
-    font-size: 2.7rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 68, ../sass/tipi.core/typography/__core.scss */
-  h1, .h1 {
-    font-size: 3.2rem;
-  }
-}
-
-/* line 72, ../sass/tipi.core/typography/__core.scss */
-h2, .h2 {
-  font-size: 2.4rem;
-}
-@media only screen and (min-width: 1025px) {
-  /* line 72, ../sass/tipi.core/typography/__core.scss */
-  h2, .h2 {
-    font-size: 2.7rem;
-  }
-}
-
-/* line 76, ../sass/tipi.core/typography/__core.scss */
-h3, .h3 {
-  font-size: 2.1rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 76, ../sass/tipi.core/typography/__core.scss */
-  h3, .h3 {
-    font-size: 2.2rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 76, ../sass/tipi.core/typography/__core.scss */
-  h3, .h3 {
-    font-size: 2.4rem;
-  }
-}
-
-/* line 80, ../sass/tipi.core/typography/__core.scss */
-h4, .h4 {
-  font-size: 1.9rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 80, ../sass/tipi.core/typography/__core.scss */
-  h4, .h4 {
-    font-size: 2rem;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 80, ../sass/tipi.core/typography/__core.scss */
-  h4, .h4 {
-    font-size: 2.1rem;
-  }
-}
-
-/* line 84, ../sass/tipi.core/typography/__core.scss */
-h5, .h5 {
-  font-size: 1.7rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 84, ../sass/tipi.core/typography/__core.scss */
-  h5, .h5 {
-    font-size: 1.8rem;
-  }
-}
-
-/* line 88, ../sass/tipi.core/typography/__core.scss */
-h6, .h6 {
-  font-size: 1.4rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 88, ../sass/tipi.core/typography/__core.scss */
-  h6, .h6 {
-    font-size: 1.6rem;
-  }
-}
-
-/* line 92, ../sass/tipi.core/typography/__core.scss */
-.display1, .display2, .display3,
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  display: block;
-  margin-bottom: 0.69em;
-}
-/* line 97, ../sass/tipi.core/typography/__core.scss */
-.display1 a, .display2 a, .display3 a,
-h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
-  color: inherit;
-}
-/* line 100, ../sass/tipi.core/typography/__core.scss */
-.display1 a, .no-touchevents .display1 a:hover, .display2 a, .no-touchevents .display2 a:hover, .display3 a, .no-touchevents .display3 a:hover,
-h1 a, .no-touchevents
-h1 a:hover, .h1 a, .no-touchevents .h1 a:hover, h2 a, .no-touchevents h2 a:hover, .h2 a, .no-touchevents .h2 a:hover, h3 a, .no-touchevents h3 a:hover, .h3 a, .no-touchevents .h3 a:hover, h4 a, .no-touchevents h4 a:hover, .h4 a, .no-touchevents .h4 a:hover, h5 a, .no-touchevents h5 a:hover, .h5 a, .no-touchevents .h5 a:hover, h6 a, .no-touchevents h6 a:hover, .h6 a, .no-touchevents .h6 a:hover {
-  text-decoration: none;
-}
-
-/* line 107, ../sass/tipi.core/typography/__core.scss */
-.lead {
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.6em;
-}
-@media only screen and (min-width: 640px) {
-  /* line 107, ../sass/tipi.core/typography/__core.scss */
-  .lead {
-    font-size: 1.8rem;
-  }
-}
-
-/* line 127, ../sass/tipi.core/typography/__core.scss */
-p,
-address {
-  line-height: 1.6em;
-  margin-top: 1.31em;
-}
-/* line 132, ../sass/tipi.core/typography/__core.scss */
-p:empty,
-address:empty {
-  display: none;
-}
-
-/* line 137, ../sass/tipi.core/typography/__core.scss */
-a {
-  text-decoration: underline;
-}
-/* line 145, ../sass/tipi.core/typography/__core.scss */
-p a, p a:hover, p a:active, p a:focus, p a:visited {
-  color: inherit;
-}
-/* line 150, ../sass/tipi.core/typography/__core.scss */
-a:focus {
-  outline: thin dotted !important;
-  outline: 4px auto -webkit-focus-ring-color !important;
-  text-decoration: underline;
-}
-
-/* line 157, ../sass/tipi.core/typography/__core.scss */
-small,
-sub,
-sup {
-  font-size: 80%;
-}
-
-/* line 163, ../sass/tipi.core/typography/__core.scss */
-blockquote,
-q {
-  display: block;
-  font-size: 1.7rem;
-}
-@media only screen and (min-width: 640px) {
-  /* line 163, ../sass/tipi.core/typography/__core.scss */
-  blockquote,
-  q {
-    font-size: 1.8rem;
-  }
-}
-/* line 169, ../sass/tipi.core/typography/__core.scss */
-blockquote img,
-q img {
-  vertical-align: baseline;
-}
-/* line 173, ../sass/tipi.core/typography/__core.scss */
-blockquote p,
-q p {
-  font-size: 100%;
-  display: inline;
-}
-
-/* line 179, ../sass/tipi.core/typography/__core.scss */
-ul,
-ol {
-  margin: 0;
-  margin-left: 1.1em;
-  margin-top: 1.31em;
-}
-
-/* line 187, ../sass/tipi.core/typography/__core.scss */
-li + li {
-  margin-top: 0.655em;
-}
-
-/* line 194, ../sass/tipi.core/typography/__core.scss */
-address a {
-  color: inherit;
-  text-decoration: none;
-}
-/* line 198, ../sass/tipi.core/typography/__core.scss */
-address a[href^="mailto"] {
-  word-break: break-all;
-}
-
-/* line 204, ../sass/tipi.core/typography/__core.scss */
-hr {
-  clear: both;
-  display: block;
-  border: 0;
-  border-top: solid 2px #bbbbbb;
-  color: #4694ff;
-  padding: 0;
-  margin: 2.62em 0;
-}
-
-/* line 214, ../sass/tipi.core/typography/__core.scss */
-em,
-i,
-.italic {
-  font-style: italic;
-}
-
-/* line 220, ../sass/tipi.core/typography/__core.scss */
-strong,
-b,
-.bold {
-  font-weight: 700;
-}
-
+/* No files to import found in tipi.core/typography/** */
 /* No files to import found in tipi.core/containers/** */
 /* line 2, ../sass/tipi.core/svg-sprite/__core.scss */
 #svg-sprite {
   display: none;
 }
 
-/* line 2, ../sass/tipi.core/helpers/__core.scss */
-.clear {
-  clear: both;
-}
-
-/* line 6, ../sass/tipi.core/helpers/__core.scss */
-.hide {
-  display: none !important;
-}
-
 @media only screen and (min-width: 0) and (max-width: 399px) {
-  /* line 5, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--smartphone {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
   .hide--smartphone {
     display: none !important;
   }
 
-  /* line 9, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
   .show--smartphone {
     display: block !important;
   }
 }
 @media only screen and (min-width: 400px) and (max-width: 639px) {
-  /* line 5, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--phablet {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
   .hide--phablet {
     display: none !important;
   }
 
-  /* line 9, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
   .show--phablet {
     display: block !important;
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 969px) {
-  /* line 5, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--tablet {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
   .hide--tablet {
     display: none !important;
   }
 
-  /* line 9, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
   .show--tablet {
     display: block !important;
   }
 }
 @media only screen and (min-width: 970px) and (max-width: 1024px) {
-  /* line 5, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--tablet-landscape {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
   .hide--tablet-landscape {
     display: none !important;
   }
 
-  /* line 9, ../sass/tipi.core/helpers/__construct.scss */
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
   .show--tablet-landscape {
+    display: block !important;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--desktop {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
+  .hide--desktop {
+    display: none !important;
+  }
+
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
+  .show--desktop {
+    display: block !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1367px) {
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--widescreen {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
+  .hide--widescreen {
+    display: none !important;
+  }
+
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
+  .show--widescreen {
+    display: block !important;
+  }
+}
+@media only screen and (min-width: 1368px) and (max-width: 1560px) {
+  /* line 7, ../sass/tipi.core/helpers/__construct.scss */
+  .clear--highroller {
+    clear: both !important;
+  }
+
+  /* line 11, ../sass/tipi.core/helpers/__construct.scss */
+  .hide--highroller {
+    display: none !important;
+  }
+
+  /* line 15, ../sass/tipi.core/helpers/__construct.scss */
+  .show--highroller {
     display: block !important;
   }
 }
@@ -1627,12 +1372,6 @@ body {
   vertical-align: bottom;
 }
 
-/* line 59, ../sass/tipi.containers/combined/__core.scss */
-.combined--header > .combined-body > *,
-.combined--header > .combined-aside > * {
-  margin-bottom: 0;
-}
-
 @media only screen and (min-width: 0) and (max-width: 399px) {
   /* line 6, ../sass/tipi.containers/combined/__construct.scss */
   .combined--reset-smartphone.combined, .combined--reset-smartphone.combined > .combined-aside, .combined--reset-smartphone.combined > .combined-body {
@@ -1820,6 +1559,431 @@ body {
   vertical-align: bottom;
 }
 
+/* line 2, ../../../git_submodules/tipi.base.typography/__core.scss */
+body {
+  font-family: "Helvetica Neue", "Segoe UI", "arial", "sans-serif";
+  font-weight: 400;
+  color: #555555;
+  -moz-font-feature-settings: "liga" 0;
+  -ms-font-feature-settings: "liga" 0;
+  -o-font-feature-settings: "liga" 0;
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  font-size: 1.4rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 2, ../../../git_submodules/tipi.base.typography/__core.scss */
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+/* line 20, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display1, .display2, .display3 {
+  font-weight: 700;
+  line-height: 1.32em;
+}
+
+/* line 35, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display1 {
+  font-size: 3.6rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 35, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .display1 {
+    font-size: 4.1rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 35, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .display1 {
+    font-size: 4.8rem;
+  }
+}
+
+/* line 39, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display2 {
+  font-size: 3.2rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 39, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .display2 {
+    font-size: 3.4rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 39, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .display2 {
+    font-size: 3.9rem;
+  }
+}
+
+/* line 43, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display3 {
+  font-size: 2.8rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 43, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .display3 {
+    font-size: 3.1rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 43, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .display3 {
+    font-size: 3.5rem;
+  }
+}
+
+/* line 48, ../../../git_submodules/tipi.base.typography/__core.scss */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+/* line 51, ../../../git_submodules/tipi.base.typography/__core.scss */
+h1:only-child, .h1:only-child, h2:only-child, .h2:only-child, h3:only-child, .h3:only-child, h4:only-child, .h4:only-child, h5:only-child, .h5:only-child, h6:only-child, .h6:only-child {
+  margin-bottom: 0;
+}
+
+/* line 72, ../../../git_submodules/tipi.base.typography/__core.scss */
+h1, .h1 {
+  font-size: 2.6rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 72, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h1, .h1 {
+    font-size: 2.7rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 72, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h1, .h1 {
+    font-size: 3.2rem;
+  }
+}
+
+/* line 76, ../../../git_submodules/tipi.base.typography/__core.scss */
+h2, .h2 {
+  font-size: 2.4rem;
+}
+@media only screen and (min-width: 1025px) {
+  /* line 76, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h2, .h2 {
+    font-size: 2.7rem;
+  }
+}
+
+/* line 80, ../../../git_submodules/tipi.base.typography/__core.scss */
+h3, .h3 {
+  font-size: 2.1rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 80, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h3, .h3 {
+    font-size: 2.2rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 80, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h3, .h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* line 84, ../../../git_submodules/tipi.base.typography/__core.scss */
+h4, .h4 {
+  font-size: 1.9rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 84, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h4, .h4 {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 84, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h4, .h4 {
+    font-size: 2.1rem;
+  }
+}
+
+/* line 88, ../../../git_submodules/tipi.base.typography/__core.scss */
+h5, .h5 {
+  font-size: 1.7rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 88, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h5, .h5 {
+    font-size: 1.8rem;
+  }
+}
+
+/* line 92, ../../../git_submodules/tipi.base.typography/__core.scss */
+h6, .h6 {
+  font-size: 1.4rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 92, ../../../git_submodules/tipi.base.typography/__core.scss */
+  h6, .h6 {
+    font-size: 1.6rem;
+  }
+}
+
+/* line 96, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display1, .display2, .display3,
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  display: block;
+  margin-bottom: 0.69em;
+}
+/* line 101, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display1 a, .display2 a, .display3 a,
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
+  color: inherit;
+}
+/* line 104, ../../../git_submodules/tipi.base.typography/__core.scss */
+.display1 a, .no-touchevents .display1 a:hover, .display2 a, .no-touchevents .display2 a:hover, .display3 a, .no-touchevents .display3 a:hover,
+h1 a, .no-touchevents
+h1 a:hover, .h1 a, .no-touchevents .h1 a:hover, h2 a, .no-touchevents h2 a:hover, .h2 a, .no-touchevents .h2 a:hover, h3 a, .no-touchevents h3 a:hover, .h3 a, .no-touchevents .h3 a:hover, h4 a, .no-touchevents h4 a:hover, .h4 a, .no-touchevents .h4 a:hover, h5 a, .no-touchevents h5 a:hover, .h5 a, .no-touchevents .h5 a:hover, h6 a, .no-touchevents h6 a:hover, .h6 a, .no-touchevents .h6 a:hover {
+  text-decoration: none;
+}
+
+/* line 111, ../../../git_submodules/tipi.base.typography/__core.scss */
+.lead {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+@media only screen and (min-width: 640px) {
+  /* line 111, ../../../git_submodules/tipi.base.typography/__core.scss */
+  .lead {
+    font-size: 1.8rem;
+  }
+}
+
+/* line 131, ../../../git_submodules/tipi.base.typography/__core.scss */
+p,
+address {
+  line-height: 1.6em;
+  margin-top: 1.31em;
+}
+/* line 136, ../../../git_submodules/tipi.base.typography/__core.scss */
+p:empty,
+address:empty {
+  display: none;
+}
+
+/* line 141, ../../../git_submodules/tipi.base.typography/__core.scss */
+a {
+  text-decoration: underline;
+}
+/* line 149, ../../../git_submodules/tipi.base.typography/__core.scss */
+p a, p a:hover, p a:active, p a:focus, p a:visited {
+  color: inherit;
+}
+/* line 154, ../../../git_submodules/tipi.base.typography/__core.scss */
+a:focus {
+  outline: thin dotted !important;
+  outline: 4px auto -webkit-focus-ring-color !important;
+  text-decoration: underline;
+}
+
+/* line 161, ../../../git_submodules/tipi.base.typography/__core.scss */
+small,
+sub,
+sup {
+  font-size: 80%;
+}
+
+/* line 167, ../../../git_submodules/tipi.base.typography/__core.scss */
+blockquote,
+q {
+  display: block;
+  font-size: 1.7rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 167, ../../../git_submodules/tipi.base.typography/__core.scss */
+  blockquote,
+  q {
+    font-size: 1.8rem;
+  }
+}
+/* line 173, ../../../git_submodules/tipi.base.typography/__core.scss */
+blockquote img,
+q img {
+  vertical-align: baseline;
+}
+/* line 177, ../../../git_submodules/tipi.base.typography/__core.scss */
+blockquote p,
+q p {
+  font-size: 100%;
+  display: inline;
+}
+
+/* line 183, ../../../git_submodules/tipi.base.typography/__core.scss */
+ul,
+ol {
+  margin: 0;
+  margin-left: 1.1em;
+  margin-top: 1.31em;
+}
+
+/* line 191, ../../../git_submodules/tipi.base.typography/__core.scss */
+li + li {
+  margin-top: 0.655em;
+}
+
+/* line 198, ../../../git_submodules/tipi.base.typography/__core.scss */
+address a {
+  color: inherit;
+  text-decoration: none;
+}
+/* line 202, ../../../git_submodules/tipi.base.typography/__core.scss */
+address a[href^="mailto"] {
+  word-break: break-all;
+}
+
+/* line 208, ../../../git_submodules/tipi.base.typography/__core.scss */
+hr {
+  clear: both;
+  display: block;
+  border: 0;
+  border-top: solid 2px #bbbbbb;
+  color: #4694ff;
+  padding: 0;
+  margin: 2.62em 0;
+}
+
+/* line 218, ../../../git_submodules/tipi.base.typography/__core.scss */
+em,
+i,
+.italic {
+  font-style: italic;
+}
+
+/* line 224, ../../../git_submodules/tipi.base.typography/__core.scss */
+strong,
+b,
+.bold {
+  font-weight: 700;
+}
+
+/* line 2, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 7, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-align {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+/* line 13, ../sass/tipi.core/mixins/_clear.scss */
+.big-banner-align:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+/* line 14, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-align:before {
+  display: block;
+  content: " ";
+  float: left;
+  margin-right: -1px;
+  width: 1px;
+  min-height: 50vh;
+  visibility: hidden;
+}
+
+/* line 25, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-align-content {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 34, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-fields {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+
+/* line 41, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-body,
+.big-banner-footer {
+  display: table-row;
+  width: 100%;
+}
+
+/* line 47, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-body {
+  height: 100%;
+}
+
+/* line 51, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-footer {
+  height: 1px;
+}
+
+/* line 55, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-body-align,
+.big-banner-footer-align {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* line 63, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-body-align {
+  padding-top: 40px;
+}
+/* line 66, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-fields > .big-banner-body:only-child > .big-banner-body-align {
+  padding-bottom: 40px;
+}
+
+/* line 71, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-footer-align {
+  padding-bottom: 40px;
+}
+
+/* line 75, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-wrapper {
+  margin: 0 auto;
+  max-width: 970px;
+  padding: 0 20px;
+}
+
+/* line 81, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+/* line 91, ../../../git_submodules/tipi.component.big-banner/__core.scss */
+.big-banner-image > img {
+  visibility: hidden;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* line 2, ../../../git_submodules/tipi.component.button/__core.scss */
 .button {
   display: inline-block;
@@ -1845,25 +2009,25 @@ body {
   -webkit-transition-delay: 0s, 0s, 0s;
   transition: background-color 300ms ease-out 0s, color 300ms ease-out 0s, border-color 300ms ease-out 0s;
 }
-/* line 41, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 40, ../../../git_submodules/tipi.component.button/__core.scss */
 .button.button--disabled, .button[disabled] {
   cursor: not-allowed;
 }
-/* line 46, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 45, ../../../git_submodules/tipi.component.button/__core.scss */
 .button.button--wide {
   display: block;
   width: 100%;
 }
-/* line 51, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 50, ../../../git_submodules/tipi.component.button/__core.scss */
 .button, .button:focus, .button:active, .button:hover {
   text-decoration: none;
 }
-/* line 59, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 58, ../../../git_submodules/tipi.component.button/__core.scss */
 .button.button--glyph {
   position: relative;
 }
 
-/* line 66, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 65, ../../../git_submodules/tipi.component.button/__core.scss */
 .button-glyph-placeholder {
   position: absolute;
   display: block;
@@ -1873,13 +2037,13 @@ body {
   line-height: inherit;
   right: 0;
 }
-/* line 84, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 83, ../../../git_submodules/tipi.component.button/__core.scss */
 .button--glyph-reverse .button-glyph-placeholder {
   right: auto;
   left: 0;
 }
 
-/* line 91, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 90, ../../../git_submodules/tipi.component.button/__core.scss */
 .button-glyph {
   vertical-align: middle;
   line-height: normal;
@@ -1888,7 +2052,7 @@ body {
   padding: 0;
   top: auto;
 }
-/* line 99, ../../../git_submodules/tipi.component.button/__core.scss */
+/* line 98, ../../../git_submodules/tipi.component.button/__core.scss */
 .button-glyph:before, .button-glyph:after {
   margin: 0;
   padding: 0;
