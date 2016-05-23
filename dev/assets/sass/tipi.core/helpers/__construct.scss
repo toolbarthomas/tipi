@@ -1,15 +1,19 @@
-@mixin construct_specific-helpers($viewport, $min-width:false, $max-width:false) {
-	@if $min-width != false and $max-width != false {
-		@if $helpers-max-width >= $min-width {
-			@include breakpoint($min-width, $max-width) {
-				.hide--#{$viewport} {
-					display: none !important;
-				}
+@mixin construct_specific-helpers($viewport:'', $min-width:false, $max-width:false) {
+	@if $min-width != false {
+		$viewport: '--' + $viewport;
+	}
 
-				.show--#{$viewport} {
-					display: block !important;
-				}
-			}
+	@include breakpoint($min-width, $max-width) {
+		.clear#{$viewport} {
+			clear: both !important;
+		}
+
+		.hide#{$viewport} {
+			display: none !important;
+		}
+
+		.show#{$viewport} {
+			display: block !important;
 		}
 	}
 }

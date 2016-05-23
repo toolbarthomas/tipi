@@ -1,12 +1,4 @@
 @mixin core_helpers {
-	.clear {
-		clear: both;
-	}
-
-	.hide {
-		display: none !important;
-	}
-
 	@include construct_specific-helpers(smartphone, 0, $smartphone-max-width);
 	@include construct_specific-helpers(phablet, $phablet-min-width, $phablet-max-width);
 	@include construct_specific-helpers(tablet, $tablet-min-width, $tablet-max-width);
