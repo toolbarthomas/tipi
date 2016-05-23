@@ -52,13 +52,4 @@
 			vertical-align: bottom;
 		}
 	}
-
-	.combined--header {
-		> .combined-body,
-		> .combined-aside {
-			> * {
-				margin-bottom: 0;
-			}
-		}
-	}
 }
