@@ -1,0 +1,13 @@
+@import "__config";
+@import "__construct";
+@import "__core";
+
+@include core_columns;
+
+@include construct_columns-specific('scol', 'sleft', $smartphone-min-width, $smartphone-max-width);
+@include construct_columns-specific('pcol', 'pleft', $phablet-min-width, $phablet-max-width);
+@include construct_columns-specific('tcol', 'tleft', $tablet-min-width, $tablet-max-width);
+@include construct_columns-specific('tlcol', 'tlleft', $tablet-landscape-min-width, $tablet-landscape-max-width);
+@include construct_columns-specific('dcol', 'dleft', $desktop-min-width, $desktop-max-width);
+@include construct_columns-specific('wcol', 'wleft', $widescreen-min-width, $widescreen-max-width);
+@include construct_columns-specific('hcol', 'hleft', $highroller-min-width, false);

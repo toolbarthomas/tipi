@@ -1,0 +1,57 @@
+@mixin construct_columns-gutter($gutter:$column-gutter) {
+	.row {
+		margin-top: -$gutter;
+		margin-left: -$gutter;
+		width: 100%;
+		width: calc(100% + #{$gutter}); /* Stretch the width to 100% with the extra margin we use for positioning our columns  */
+
+		> [class*="col"] {
+			padding-left: $gutter;
+			margin-top: $gutter;
+		}
+
+		+ .row {
+			margin-top: 0;
+		}
+	}
+}
+
+@mixin construct_cms_columns($column-count-divide:12) {
+	.row--cms {
+		@for $i from 1 through $column-count-divide {
+			@for $ii from 1 through $column-count / $column-count-divide {
+				> .col#{$ii + (($column-count / $column-count-divide) * ($i - 1))} {
+					width: 100% / $column-count-divide * $i;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+@mixin construct_columns-specific($column-class, $margin-class:false, $breakpoint-min-width: 0, $breakpoint-max-width: false) {
+	@include breakpoint($breakpoint-min-width, $breakpoint-max-width) {
+		.row {
+			@if $column-specific-width == true {
+				@for $i from 1 through $column-count {
+					.#{$column-class}#{$i} {
+						width: 100% / $column-count * $i;
+					}
+				}
+
+				> [class*='#{$column-class}'] {
+					margin-left: 0;
+				}
+			}
+
+			@if $column-specific-margin == true and $margin-class != false {
+				@for $i from 1 through $column-count - 1 {
+					$class: #{$margin-class}#{$i};
+					> [class*='#{$class}'] {
+						margin-left: 100% / $column-count * $i;
+					}
+				}
+			}
+		}
+	}
+}
