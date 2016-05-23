@@ -48,6 +48,10 @@
 	#{$headings} {
 		margin-bottom: 0.5em;
 
+		&:only-child {
+			margin-bottom: 0;
+		}
+
 		@if $head-font-family != false {
 			font-family: $head-font-family;
 		}
