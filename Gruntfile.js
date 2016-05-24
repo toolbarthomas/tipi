@@ -141,13 +141,16 @@ module.exports = function(grunt) {
 				'bake:dist',
 				'compass:dist',
 				'svgstore:dist',
-				'concat:dist'
+				'concat:dist',
 			],
 			minify: [
 				'cssmin:build',
 				'svgmin:build',
 				'imageoptim:build',
-				'uglify:build'
+				'uglify:build',
+				'replace:assets',
+				'cacheBust'
+
 			]
 		},
 
@@ -214,7 +217,7 @@ module.exports = function(grunt) {
 		},
 
 		replace: {
-			build: {
+			assets: {
 				src: ['build/**.html'],
 				dest: 'build/',
 				replacements: [
@@ -235,6 +238,16 @@ module.exports = function(grunt) {
 						to: 'tipi.ux.min.js'
 					},
 				]
+			},
+			svgSprite: {
+				src: ['dist/**.html'],
+				dest: 'dist/',
+				replacements: [
+					{
+						from: 'svgRev',
+						to: '<%= grunt.template.today("yyyymmddHHMMss") %>'
+					},
+				]
 			}
 		},
 
@@ -243,7 +256,7 @@ module.exports = function(grunt) {
 				expand: true,
 				baseDir: 'build/',
 				queryString: true
-			}
+			},
 			css: {
 				options: {
 					assets: ['assets/css/**'],
@@ -340,7 +353,8 @@ module.exports = function(grunt) {
 				tasks: [
 					'svgstore:dist',
 					'newer:copy:svg',
-					'bake:dist'
+					'bake:dist',
+					'replace:svgSprite'
 				],
 				options : {
 					event: ['added', 'deleted']
@@ -373,6 +387,7 @@ module.exports = function(grunt) {
 		'default', [
 			'clean:dist',
 			'concurrent:compile',
+			'replace:svgSprite',
 			'copy:img',
 			'copy:svg',
 			'copy:dist',
@@ -384,13 +399,12 @@ module.exports = function(grunt) {
 			'clean:dist',
 			'clean:build',
 			'concurrent:compile',
+			'replace:svgSprite',
 			'copy:dist',
 			'copy:img',
 			'copy:svg',
 			'copy:build',
 			'concurrent:minify',
-			'replace',
-			'cacheBust:assets'
 		]
 	);
 
@@ -398,6 +412,7 @@ module.exports = function(grunt) {
 		'serve', [
 			'clean:dist',
 			'concurrent:compile',
+			'replace:svgSprite',
 			'copy:dist',
 			'copy:img',
 			'copy:svg',
