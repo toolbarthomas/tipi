@@ -1,0 +1,87 @@
+// Returns the correct font-size for every breakpoint.
+// @param {String} $size - The defined size we wan't to retreive.
+// @return font-size: $font-size;
+
+
+@mixin responsive-font-size($size:'base-font-size') {
+	@if $size != false {
+
+		$font-sizes : (
+			0 : (
+				breakpoint: 0,
+				sizes: (
+					'display1-font-size': 			3.6rem,
+					'display2-font-size': 			3.2rem,
+					'display3-font-size': 			2.8rem,
+					'h1-font-size': 				2.6rem,
+					'h2-font-size': 				2.4rem,
+					'h3-font-size': 				2.1rem,
+					'h4-font-size':					1.9rem,
+					'h5-font-size':					1.7rem,
+					'h6-font-size':					1.4rem,
+					'lead-font-size': 				1.7rem,
+					'base-font-size': 				1.4rem,
+					'meta-font-size': 				1.2rem,
+					'small-font-size': 				1.2rem,
+					'tiny-font-size': 				1.2rem
+				)
+			),
+			1 : (
+				breakpoint: $tablet-min-width,
+				sizes: (
+					'display1-font-size': 			4.1rem,
+					'display2-font-size': 			3.4rem,
+					'display3-font-size': 			3.1rem,
+					'h1-font-size': 				2.7rem,
+					'h2-font-size': 				2.4rem,
+					'h3-font-size': 				2.2rem,
+					'h4-font-size':					2.0rem,
+					'h5-font-size':					1.8rem,
+					'h6-font-size':					1.6rem,
+					'lead-font-size': 				1.8rem,
+					'base-font-size': 				1.6rem,
+					'meta-font-size': 				1.4rem,
+					'small-font-size': 				1.2rem,
+					'tiny-font-size': 				1.1rem
+				)
+			),
+			2 : (
+				breakpoint: $desktop-min-width,
+				sizes: (
+					'display1-font-size': 			4.8rem,
+					'display2-font-size': 			3.9rem,
+					'display3-font-size': 			3.5rem,
+					'h1-font-size': 				3.2rem,
+					'h2-font-size': 				2.7rem,
+					'h3-font-size': 				2.4rem,
+					'h4-font-size':					2.1rem,
+					'h5-font-size':					1.8rem,
+					'h6-font-size':					1.6rem,
+					'lead-font-size': 				1.8rem,
+					'base-font-size': 				1.6rem,
+					'meta-font-size': 				1.4rem,
+					'small-font-size': 				1.2rem,
+					'tiny-font-size': 				1.1rem
+				)
+			)
+		);
+
+
+		//Store the current font-size so we can
+		$previous-font-size: 0;
+		@for $i from 0 through length($font-sizes) - 1 {
+			$font-size: map-get(map-get(map-get($font-sizes, $i), 'sizes'), $size);
+			$breakpoint: map-get(map-get($font-sizes, $i), 'breakpoint');
+
+			@if $font-size != null and $breakpoint != null {
+				@if $previous-font-size != $font-size {
+					@include breakpoint($breakpoint) {
+						font-size: $font-size;
+					}
+				}
+
+				$previous-font-size: $font-size;
+			}
+		}
+	}
+}
