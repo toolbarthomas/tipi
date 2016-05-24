@@ -59,6 +59,15 @@ module.exports = function(grunt) {
 					'assets/img/**/*.svg',
 				],
 				dest: 'dist/'
+			},
+			bower_components: {
+				expand: true,
+				cwd: 'bower_components/',
+				src: [
+					'svg-localstorage/svg-localstorage.js',
+				],
+				dest: 'dist/assets/js/lib/'
+
 			}
 		},
 
@@ -120,11 +129,8 @@ module.exports = function(grunt) {
 						'dev/assets/js/main.js'
 					],
 					'dist/assets/js/tipi/tipi.ui.js' : [
-						'dev/assets/js/tipi/tipi.ui/tipi.ui.top-bar.js',
-						'dev/assets/js/tipi/tipi.ui/tipi.ui.unified/tipi.ui.unified-radio-tile.js',
 					],
 					'dist/assets/js/tipi/tipi.ux.js' : [
-						//'dev/assets/js/tipi/tipi.ux/tipi.ux.classy.js',
 					]
 				}
 			}
@@ -229,35 +235,60 @@ module.exports = function(grunt) {
 						to: 'tipi.ux.min.js'
 					},
 				]
-		  	}
+			}
 		},
 
-		'cache-busting': {
-			tipi_css: {
-				replace: ['build/**/*.html'],
-				replacement: 'tipi.min.css',
-				file: 'build/assets/css/tipi.css',
-				get_param: true,
+		cacheBust: {
+			options: {
+				expand: true,
+				baseDir: 'build/',
+				queryString: true
+			}
+			css: {
+				options: {
+					assets: ['assets/css/**'],
+				},
+				src: ['build/**.html']
 			},
-			main_js: {
-				replace: ['build/**/*.html'],
-				replacement: 'main.min.js',
-				file: 'build/assets/js/main.min.js',
-				get_param: true,
-			},
-			tipi_ui_js: {
-				replace: ['build/**/*.html'],
-				replacement: 'tipi.ui.min.js',
-				file: 'build/assets/js/tipi/tipi.ui.min.js',
-				get_param: true,
-			},
-			tipi_ux_js: {
-				replace: ['build/**/*.html'],
-				replacement: 'tipi.ux.min.js',
-				file: 'build/assets/js/tipi/tipi.ux.min.js',
-				get_param: true,
-			},
+			js: {
+				options: {
+					assets: ['assets/js/**'],
+				},
+				src: ['build/**.html']
+			}
 		},
+
+		// 'cache-busting': {
+		// 	tipi_css: {
+		// 		replace: ['build/**/*.html'],
+		// 		replacement: 'tipi.min.css',
+		// 		file: 'build/assets/css/tipi.css',
+		// 		get_param: true,
+		// 	},
+		// 	main_js: {
+		// 		replace: ['build/**/*.html'],
+		// 		replacement: 'main.min.js',
+		// 		file: 'build/assets/js/main.min.js',
+		// 		get_param: true,
+		// 	},
+		// 	tipi_ui_js: {
+		// 		replace: ['build/**/*.html'],
+		// 		replacement: 'tipi.ui.min.js',
+		// 		file: 'build/assets/js/tipi/tipi.ui.min.js',
+		// 		get_param: true,
+		// 	},
+		// 	tipi_ux_js: {
+		// 		replace: ['build/**/*.html'],
+		// 		replacement: 'tipi.ux.min.js',
+		// 		file: 'build/assets/js/tipi/tipi.ux.min.js',
+		// 		get_param: true,
+		// 	},
+		// 	svg_localstorage: {
+		// 		replace: ['build/**/*.html'],
+		// 		replacement: 'svgLocalStorageRevision',
+		// 		file:
+		// 	}
+		// },
 
 
 		connect: {
@@ -392,7 +423,7 @@ module.exports = function(grunt) {
 			'copy:build',
 			'concurrent:minify',
 			'replace',
-			'cache-busting'
+			'cacheBust:assets'
 		]
 	);
 
@@ -403,6 +434,7 @@ module.exports = function(grunt) {
 			'copy:dist',
 			'copy:img',
 			'copy:svg',
+			'copy:bower_components',
 			'connect:server',
 			'watch',
 		]
