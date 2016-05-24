@@ -9,8 +9,7 @@
 @import "tipi.core/svg-sprite/**";
 @import "tipi.core/helpers/**";
 
-@import "../../../bower_components/tipi.base.*/**";
-@import "../../../bower_components/tipi.component.*/**";
+@import "tipi.components/*/**";
 
 @import "tipi.responsive/smartphone/smartphone";
 @import "tipi.responsive/smartphone/smartphone--max";
