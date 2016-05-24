@@ -384,11 +384,12 @@ script {
     display: block !important;
   }
 }
+/* No files to import found in tipi.containers/wrapper/** */
 /* Enable the column viewport specific widths */
 /* Enable the column viewport specific margin */
 /* Enable the column viewport specific widths */
 /* Enable the column viewport specific margin */
-/* line 2, ../sass/tipi.containers/columns/__core.scss */
+/* line 2, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row {
   display: table;
   /* Remove the white space between each column on the Android Jellybean Browser */
@@ -406,7 +407,7 @@ script {
   /* Internet Explorer bugfix for calc function on a table */
   margin-top: -20px;
 }
-/* line 14, ../sass/tipi.containers/columns/__core.scss */
+/* line 14, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > [class*="col"] {
   vertical-align: top;
   display: inline-block;
@@ -415,944 +416,860 @@ script {
   padding-left: 20px;
   margin-top: 20px;
 }
-/* line 23, ../sass/tipi.containers/columns/__core.scss */
+/* line 23, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > * {
   font-size: 1.4rem;
 }
 @media only screen and (min-width: 640px) {
-  /* line 23, ../sass/tipi.containers/columns/__core.scss */
+  /* line 23, ../../../git_submodules/tipi.base.columns/__core.scss */
   .row > * {
     font-size: 1.6rem;
   }
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col1 {
   width: 8.33333%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left1 {
   margin-left: 8.33333%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col2 {
   width: 16.66667%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left2 {
   margin-left: 16.66667%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col3 {
   width: 25%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left3 {
   margin-left: 25%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col4 {
   width: 33.33333%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left4 {
   margin-left: 33.33333%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col5 {
   width: 41.66667%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left5 {
   margin-left: 41.66667%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col6 {
   width: 50%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left6 {
   margin-left: 50%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col7 {
   width: 58.33333%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left7 {
   margin-left: 58.33333%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col8 {
   width: 66.66667%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left8 {
   margin-left: 66.66667%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col9 {
   width: 75%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left9 {
   margin-left: 75%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col10 {
   width: 83.33333%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left10 {
   margin-left: 83.33333%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col11 {
   width: 91.66667%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left11 {
   margin-left: 91.66667%;
 }
-/* line 29, ../sass/tipi.containers/columns/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .col12 {
   width: 100%;
 }
-/* line 33, ../sass/tipi.containers/columns/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row > .left12 {
   margin-left: 100%;
 }
-/* line 39, ../sass/tipi.containers/columns/__core.scss */
+/* line 39, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row + .row {
   margin-top: 0;
 }
 
-/* line 44, ../sass/tipi.containers/columns/__core.scss */
+/* line 44, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row--reverse {
   direction: rtl;
 }
-/* line 47, ../sass/tipi.containers/columns/__core.scss */
+/* line 47, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row--reverse > [class*="col"] {
   direction: ltr;
 }
 
-/* line 53, ../sass/tipi.containers/columns/__core.scss */
+/* line 53, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row--middle > [class*="col"] {
   vertical-align: middle;
 }
 
-/* line 59, ../sass/tipi.containers/columns/__core.scss */
+/* line 59, ../../../git_submodules/tipi.base.columns/__core.scss */
 .row--bottom > [class*="col"] {
   vertical-align: bottom;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 399px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .scol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='scol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='sleft11'] {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 400px) and (max-width: 639px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .pcol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pcol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='pleft11'] {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 969px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tcol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tcol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tleft11'] {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 970px) and (max-width: 1024px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .tlcol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlcol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='tlleft11'] {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1199px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .dcol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dcol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='dleft11'] {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1367px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .wcol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wcol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='wleft11'] {
     margin-left: 91.66667%;
   }
 }
 @media only screen and (min-width: 1368px) {
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol1 {
     width: 8.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol2 {
     width: 16.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol3 {
     width: 25%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol4 {
     width: 33.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol5 {
     width: 41.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol6 {
     width: 50%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol7 {
     width: 58.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol8 {
     width: 66.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol9 {
     width: 75%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol10 {
     width: 83.33333%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol11 {
     width: 91.66667%;
   }
-  /* line 37, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 37, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row .hcol12 {
     width: 100%;
   }
-  /* line 42, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 42, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hcol'] {
     margin-left: 0;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft1'] {
     margin-left: 8.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft2'] {
     margin-left: 16.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft3'] {
     margin-left: 25%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft4'] {
     margin-left: 33.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft5'] {
     margin-left: 41.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft6'] {
     margin-left: 50%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft7'] {
     margin-left: 58.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft8'] {
     margin-left: 66.66667%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft9'] {
     margin-left: 75%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft10'] {
     margin-left: 83.33333%;
   }
-  /* line 50, ../sass/tipi.containers/columns/__construct.scss */
+  /* line 50, ../../../git_submodules/tipi.base.columns/__construct.scss */
   .row > [class*='hleft11'] {
     margin-left: 91.66667%;
   }
 }
-/* line 2, ../sass/tipi.containers/sticky-end/__core.scss */
-html,
-body {
-  height: 100%;
-}
-
-/* line 7, ../sass/tipi.containers/sticky-end/__core.scss */
-.sticky-end {
-  width: 100%;
-  height: 100%;
-  display: table;
-  table-layout: fixed;
-}
-
-/* line 14, ../sass/tipi.containers/sticky-end/__core.scss */
-.sticky-end-body,
-.sticky-end-footer {
-  display: table-row;
-  height: 1px;
-}
-
-/* line 20, ../sass/tipi.containers/sticky-end/__core.scss */
-.sticky-end-body {
-  height: 100%;
-}
-
-/* line 2, ../sass/tipi.containers/fluid/__core.scss */
-.fluid {
-  padding: 25px 0;
-  min-width: 320px;
-  background-color: #fff;
-}
-
-@media only screen and (min-width: 400px) {
-  /* line 4, ../sass/tipi.containers/fluid/__construct.scss */
-  .fluid {
-    min-width: 400px;
-  }
-}
-@media only screen and (min-width: 640px) {
-  /* line 4, ../sass/tipi.containers/fluid/__construct.scss */
-  .fluid {
-    min-width: 640px;
-  }
-}
-@media only screen and (min-width: 970px) {
-  /* line 4, ../sass/tipi.containers/fluid/__construct.scss */
-  .fluid {
-    min-width: 970px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  /* line 4, ../sass/tipi.containers/fluid/__construct.scss */
-  .fluid {
-    min-width: 1025px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  /* line 4, ../sass/tipi.containers/fluid/__construct.scss */
-  .fluid {
-    min-width: 1200px;
-  }
-}
-@media only screen and (min-width: 1368px) {
-  /* line 4, ../sass/tipi.containers/fluid/__construct.scss */
-  .fluid {
-    min-width: 1368px;
-  }
-}
-/* line 2, ../sass/tipi.containers/wrapper/__core.scss */
-.wrapper {
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 970px;
-}
-/* line 13, ../sass/tipi.core/mixins/_clear.scss */
-.wrapper:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-
-/* line 2, ../sass/tipi.containers/combined/__core.scss */
+/* line 2, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined {
   width: 100%;
   display: table;
   line-height: normal;
 }
 
-/* line 8, ../sass/tipi.containers/combined/__core.scss */
+/* line 8, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined-body,
 .combined-aside {
   display: table-cell;
   line-height: inherit;
 }
 
-/* line 14, ../sass/tipi.containers/combined/__core.scss */
+/* line 14, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined-body {
   margin: 0;
   padding-right: 20px;
 }
 
-/* line 19, ../sass/tipi.containers/combined/__core.scss */
+/* line 19, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined-aside {
   width: 1%;
   white-space: nowrap;
   vertical-align: top;
 }
 
-/* line 25, ../sass/tipi.containers/combined/__core.scss */
+/* line 25, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined-aside + .combined-body {
   padding-right: 0;
   padding-left: 20px;
 }
-/* line 29, ../sass/tipi.containers/combined/__core.scss */
+/* line 29, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined-aside + .combined-body + .combined-aside {
   padding-left: 20px;
 }
 
-/* line 36, ../sass/tipi.containers/combined/__core.scss */
+/* line 36, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined--middle > .combined-body,
 .combined--middle > .combined-aside,
 .combined--bottom > .combined-body,
@@ -1360,20 +1277,20 @@ body {
   height: 100%;
 }
 
-/* line 43, ../sass/tipi.containers/combined/__core.scss */
+/* line 43, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined--middle > .combined-body,
 .combined--middle > .combined-aside {
   vertical-align: middle;
 }
 
-/* line 50, ../sass/tipi.containers/combined/__core.scss */
+/* line 50, ../../../git_submodules/tipi.base.combined/__core.scss */
 .combined--bottom > .combined-body,
 .combined--bottom > .combined-aside {
   vertical-align: bottom;
 }
 
 @media only screen and (min-width: 0) and (max-width: 399px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-smartphone.combined, .combined--reset-smartphone.combined > .combined-aside, .combined--reset-smartphone.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1382,13 +1299,13 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-smartphone > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
 @media only screen and (min-width: 400px) and (max-width: 639px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-phablet.combined, .combined--reset-phablet.combined > .combined-aside, .combined--reset-phablet.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1397,13 +1314,13 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-phablet > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
 @media only screen and (min-width: 640px) and (max-width: 969px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-tablet.combined, .combined--reset-tablet.combined > .combined-aside, .combined--reset-tablet.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1412,13 +1329,13 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-tablet > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
 @media only screen and (min-width: 970px) and (max-width: 1024px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-tablet-landscape.combined, .combined--reset-tablet-landscape.combined > .combined-aside, .combined--reset-tablet-landscape.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1427,13 +1344,13 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-tablet-landscape > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1199px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-desktop.combined, .combined--reset-desktop.combined > .combined-aside, .combined--reset-desktop.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1442,13 +1359,13 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-desktop > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1367px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-widescreen.combined, .combined--reset-widescreen.combined > .combined-aside, .combined--reset-widescreen.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1457,13 +1374,13 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-widescreen > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
 @media only screen and (min-width: 1368px) and (max-width: 1560px) {
-  /* line 6, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 5, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-highroller.combined, .combined--reset-highroller.combined > .combined-aside, .combined--reset-highroller.combined > .combined-body {
     display: block;
     margin: 0;
@@ -1472,12 +1389,12 @@ body {
     vertical-align: baseline;
     white-space: normal;
   }
-  /* line 18, ../sass/tipi.containers/combined/__construct.scss */
+  /* line 17, ../../../git_submodules/tipi.base.combined/__construct.scss */
   .combined--reset-highroller > [class*="combined-"] + [class*="combined-"] {
     margin-top: 20px;
   }
 }
-/* line 2, ../sass/tipi.containers/element-group/__core.scss */
+/* line 2, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group {
   display: block;
   list-style: none;
@@ -1487,7 +1404,7 @@ body {
   padding: 0;
   text-align: left;
 }
-/* line 11, ../sass/tipi.containers/element-group/__core.scss */
+/* line 11, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group > li {
   text-align: left;
   vertical-align: middle;
@@ -1498,65 +1415,114 @@ body {
   margin-top: 15px;
 }
 
-/* line 22, ../sass/tipi.containers/element-group/__core.scss */
+/* line 22, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--right {
   text-align: right;
   margin-left: 0;
   margin-right: -15px;
 }
-/* line 27, ../sass/tipi.containers/element-group/__core.scss */
+/* line 27, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--right > li {
   padding-left: 0;
   padding-right: 15px;
 }
 
-/* line 33, ../sass/tipi.containers/element-group/__core.scss */
+/* line 33, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--center {
   text-align: center;
   margin-left: -7.5px;
   margin-right: -7.5px;
 }
-/* line 39, ../sass/tipi.containers/element-group/__core.scss */
+/* line 39, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--center > li {
   padding-left: 7.5px;
   padding-right: 7.5px;
 }
 
-/* line 45, ../sass/tipi.containers/element-group/__core.scss */
+/* line 45, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--vertical {
   margin: 0;
 }
-/* line 48, ../sass/tipi.containers/element-group/__core.scss */
+/* line 48, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--vertical > li {
   display: block;
   padding: 0;
   margin: 0;
 }
-/* line 53, ../sass/tipi.containers/element-group/__core.scss */
+/* line 53, ../../../git_submodules/tipi.base.element-group/__core.scss */
 .element-group--vertical > li + li {
   margin-top: 15px;
 }
 
-/* line 2, ../sass/tipi.containers/valign/__core.scss */
-.valign {
+/* line 2, ../../../git_submodules/tipi.base.fluid/__core.scss */
+.fluid {
+  padding: 25px 0;
+  min-width: 320px;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 400px) {
+  /* line 3, ../../../git_submodules/tipi.base.fluid/__construct.scss */
+  .fluid {
+    min-width: 400px;
+  }
+}
+@media only screen and (min-width: 640px) {
+  /* line 3, ../../../git_submodules/tipi.base.fluid/__construct.scss */
+  .fluid {
+    min-width: 640px;
+  }
+}
+@media only screen and (min-width: 970px) {
+  /* line 3, ../../../git_submodules/tipi.base.fluid/__construct.scss */
+  .fluid {
+    min-width: 970px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* line 3, ../../../git_submodules/tipi.base.fluid/__construct.scss */
+  .fluid {
+    min-width: 1025px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* line 3, ../../../git_submodules/tipi.base.fluid/__construct.scss */
+  .fluid {
+    min-width: 1200px;
+  }
+}
+@media only screen and (min-width: 1368px) {
+  /* line 3, ../../../git_submodules/tipi.base.fluid/__construct.scss */
+  .fluid {
+    min-width: 1368px;
+  }
+}
+/* line 2, ../../../git_submodules/tipi.base.sticky-end/__core.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 7, ../../../git_submodules/tipi.base.sticky-end/__core.scss */
+.sticky-end {
+  width: 100%;
+  height: 100%;
   display: table;
-  width: 100%;
-  height: 100%;
   table-layout: fixed;
-  line-height: normal;
 }
 
-/* line 10, ../sass/tipi.containers/valign/__core.scss */
-.valign-body {
-  display: table-cell;
+/* line 14, ../../../git_submodules/tipi.base.sticky-end/__core.scss */
+.sticky-end-body,
+.sticky-end-footer {
+  display: table-row;
+  height: 1px;
+}
+
+/* line 20, ../../../git_submodules/tipi.base.sticky-end/__core.scss */
+.sticky-end-body {
   height: 100%;
-  width: 100%;
-  vertical-align: middle;
-}
-
-/* line 18, ../sass/tipi.containers/valign/__core.scss */
-.valign--bottom > .valign-body {
-  vertical-align: bottom;
 }
 
 /* line 2, ../../../git_submodules/tipi.base.typography/__core.scss */
@@ -1868,6 +1834,41 @@ strong,
 b,
 .bold {
   font-weight: 700;
+}
+
+/* line 2, ../../../git_submodules/tipi.base.valign/__core.scss */
+.valign {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  line-height: normal;
+}
+
+/* line 10, ../../../git_submodules/tipi.base.valign/__core.scss */
+.valign-body {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* line 18, ../../../git_submodules/tipi.base.valign/__core.scss */
+.valign--bottom > .valign-body {
+  vertical-align: bottom;
+}
+
+/* line 2, ../../../git_submodules/tipi.base.wrapper/__core.scss */
+.wrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 970px;
+}
+/* line 13, ../sass/tipi.core/mixins/_clear.scss */
+.wrapper:after {
+  content: " ";
+  display: table;
+  clear: both;
 }
 
 /* line 2, ../../../git_submodules/tipi.component.big-banner/__core.scss */
