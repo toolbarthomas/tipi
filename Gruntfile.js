@@ -258,39 +258,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// 'cache-busting': {
-		// 	tipi_css: {
-		// 		replace: ['build/**/*.html'],
-		// 		replacement: 'tipi.min.css',
-		// 		file: 'build/assets/css/tipi.css',
-		// 		get_param: true,
-		// 	},
-		// 	main_js: {
-		// 		replace: ['build/**/*.html'],
-		// 		replacement: 'main.min.js',
-		// 		file: 'build/assets/js/main.min.js',
-		// 		get_param: true,
-		// 	},
-		// 	tipi_ui_js: {
-		// 		replace: ['build/**/*.html'],
-		// 		replacement: 'tipi.ui.min.js',
-		// 		file: 'build/assets/js/tipi/tipi.ui.min.js',
-		// 		get_param: true,
-		// 	},
-		// 	tipi_ux_js: {
-		// 		replace: ['build/**/*.html'],
-		// 		replacement: 'tipi.ux.min.js',
-		// 		file: 'build/assets/js/tipi/tipi.ux.min.js',
-		// 		get_param: true,
-		// 	},
-		// 	svg_localstorage: {
-		// 		replace: ['build/**/*.html'],
-		// 		replacement: 'svgLocalStorageRevision',
-		// 		file:
-		// 	}
-		// },
-
-
 		connect: {
 			server: {
 				options: {
