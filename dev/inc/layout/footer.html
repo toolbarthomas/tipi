@@ -9,7 +9,9 @@
 		<script src="/assets/js/lib/svg-localstorage/svg-localstorage.js"></script>
 		<script>
 			if(typeof svgLocalstorage == 'function') {
-				svgLocalstorage(file, revision);
+				svgLocalstorage('assets/img/layout/svg-sprite.svg', 'svgRev').then(svg => {
+					document.getElementById('svg-sprite').insertAdjacentHTML('afterbegin', svg);
+				});
 			}
 		</script>
 
