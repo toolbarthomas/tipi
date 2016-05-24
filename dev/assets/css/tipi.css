@@ -1499,6 +1499,78 @@ script {
     min-width: 1368px;
   }
 }
+/* line 2, ../../../git_submodules/tipi.base.spaces/__core.scss */
+.spaces {
+  display: block;
+  list-style: none;
+  margin: 0;
+  margin-left: -15px;
+  margin-top: -15px;
+  padding: 0;
+}
+/* line 13, ../sass/tipi.core/mixins/_clear.scss */
+.spaces:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+/* line 12, ../../../git_submodules/tipi.base.spaces/__core.scss */
+.spaces > .space {
+  margin-top: 15px;
+}
+
+/* line 17, ../../../git_submodules/tipi.base.spaces/__core.scss */
+.space {
+  position: relative;
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+
+@media only screen and (min-width: 400px) {
+  /* line 3, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space {
+    width: 50%;
+  }
+  /* line 6, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space:nth-child(1n+1) {
+    clear: none;
+  }
+  /* line 10, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space:nth-child(2n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 640px) {
+  /* line 3, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space {
+    width: 33.33333%;
+  }
+  /* line 6, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space:nth-child(1n+1) {
+    clear: none;
+  }
+  /* line 10, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space:nth-child(3n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 970px) {
+  /* line 3, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space {
+    width: 25%;
+  }
+  /* line 6, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space:nth-child(1n+1) {
+    clear: none;
+  }
+  /* line 10, ../../../git_submodules/tipi.base.spaces/__construct.scss */
+  .space:nth-child(4n+1) {
+    clear: both;
+  }
+}
 /* line 2, ../../../git_submodules/tipi.base.sticky-end/__core.scss */
 html,
 body {
