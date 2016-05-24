@@ -11,7 +11,6 @@
     "tipi"
   ],
   "license": "MIT",
-  "main": "",
   "ignore": [
     "node_modules",
     "bower_components",
@@ -21,6 +20,14 @@
   "dependencies": {
     "tipi.component.button": "~0.1.4",
     "tipi.component.big-banner": "~0.1.0",
-    "tipi.base.typography": "^0.0.1"
+    "tipi.base.typography": "^0.0.1",
+    "tipi.base.sticky-end": "^0.0.1",
+    "tipi.base.columns": "^0.0.2",
+    "tipi.base.fluid": "^0.0.1",
+    "tipi.base.spaces": "^0.0.1",
+    "tipi.base.combined": "^0.0.2",
+    "tipi.base.element-group": "^0.0.1",
+    "tipi.base.valign": "^0.0.3",
+    "tipi.base.wrapper": "^0.0.4"
   }
 }
