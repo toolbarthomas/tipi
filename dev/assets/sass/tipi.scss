@@ -9,10 +9,8 @@
 @import "tipi.core/svg-sprite/**";
 @import "tipi.core/helpers/**";
 
-@import "tipi.containers/wrapper/**";
-
-@import "../../../git_submodules/tipi.base.*/**";
-@import "../../../git_submodules/tipi.component.*/**";
+@import "../../../bower_components/tipi.base.*/**";
+@import "../../../bower_components/tipi.component.*/**";
 
 @import "tipi.responsive/smartphone/smartphone";
 @import "tipi.responsive/smartphone/smartphone--max";
