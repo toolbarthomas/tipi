@@ -58,3 +58,30 @@ $displays: (
 	$displays2,
 	$displays3,
 );
+
+
+$font-family: 'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
+$font-ligatures: false !default;
+
+$base-font-family: $font-family !default;
+$base-font-weight: 400 !default;
+$base-font-style: normal !default;
+$base-line-height: 1.6em !default;
+
+$lead-font-family: false !default;
+$lead-font-weight: 400 !default;
+$lead-font-style: false !default;
+$lead-line-height: 1.6em !default;
+
+$head-font-family: false !default;
+$head-font-weight: 700 !default;
+$head-font-style: false !default;
+$head-line-height: 1.3em !default;
+
+$display-font-family: false !default;
+$display-font-weight: 700 !default;
+$display-font-style: false !default;
+$display-line-height: 1.32em !default;
+
+$vertical-baseline: 1.31em !default;
+$horizontal-baseline: 1.1em !default;
