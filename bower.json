@@ -26,8 +26,6 @@
     "tipi.base.element-group": "^0.0.1",
     "tipi.base.valign": "^0.0.3",
     "tipi.base.wrapper": "^0.0.4",
-    "tipi.component.button": "~0.1.4",
-    "tipi.component.big-banner": "~0.1.0",
     "svg-localstorage": "^1.0.0"
   }
 }
