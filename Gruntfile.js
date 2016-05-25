@@ -208,9 +208,8 @@ module.exports = function(grunt) {
 					sourceMap : false,
 				},
 				files: {
+					'build/assets/js/tipi/tipi.components.min.js': 'dist/assets/js/tipi/tipi.components.js',
 					'build/assets/js/main.min.js': 'dist/assets/js/main.js',
-					'build/assets/js/tipi/tipi.ui.min.js': 'dist/assets/js/tipi/tipi.ui.js',
-					'build/assets/js/tipi/tipi.ux.min.js': 'dist/assets/js/tipi/tipi.ux.js'
 				}
 			}
 		},
@@ -229,13 +228,9 @@ module.exports = function(grunt) {
 						to: 'main.min.js'
 					},
 					{
-						from: 'tipi.ui.js',
-						to: 'tipi.ui.min.js'
-					},
-					{
-						from: 'tipi.ux.js',
-						to: 'tipi.ux.min.js'
-					},
+						from: 'tipi.components.js',
+						to: 'tipi.components.min.js'
+					}
 				]
 			},
 			svgSprite: {
