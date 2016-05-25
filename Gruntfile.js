@@ -128,9 +128,8 @@ module.exports = function(grunt) {
 					'dist/assets/js/main.js' : [
 						'dev/assets/js/main.js'
 					],
-					'dist/assets/js/tipi/tipi.ui.js' : [
-					],
-					'dist/assets/js/tipi/tipi.ux.js' : [
+					'dist/assets/js/tipi/tipi.components.js' : [
+						'bower_components/**/tipi.*.js'
 					]
 				}
 			}
