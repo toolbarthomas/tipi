@@ -1804,7 +1804,7 @@ h1 a:hover, .h1 a, .no-touchevents .h1 a:hover, h2 a, .no-touchevents h2 a:hover
 /* line 131, ../../../git_submodules/tipi.base.typography/__core.scss */
 p,
 address {
-  line-height: 1.6em;
+  line-height: 24px;
   margin-top: 1.31em;
 }
 /* line 136, ../../../git_submodules/tipi.base.typography/__core.scss */
@@ -2133,29 +2133,29 @@ b,
 
 /* line 3, ../../../git_submodules/tipi.component.button/__construct.scss */
 .button {
-  height: 44px;
+  height: 36px;
   padding: 0 24px;
-  line-height: 40px;
+  line-height: 32px;
 }
 /* line 17, ../../../git_submodules/tipi.component.button/__construct.scss */
 .button.button--glyph {
   text-align: left;
   position: relative;
-  padding-right: 44px;
+  padding-right: 36px;
   padding-left: 24px;
 }
 /* line 28, ../../../git_submodules/tipi.component.button/__construct.scss */
 .button.button--glyph.button--glyph-reverse {
   padding-right: 24px;
-  padding-left: 44px;
+  padding-left: 36px;
 }
 /* line 39, ../../../git_submodules/tipi.component.button/__construct.scss */
 .button .button-glyph-placeholder {
-  width: 44px;
+  width: 36px;
 }
 /* line 45, ../../../git_submodules/tipi.component.button/__construct.scss */
 .button.button--square {
-  width: 44px;
+  width: 36px;
   padding: 0;
 }
 
@@ -2187,6 +2187,130 @@ b,
   fill: #fff;
 }
 
+/* line 3, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu ol,
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+/* line 10, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu ol > li,
+.menu ul > li {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  line-height: normal;
+  position: relative;
+}
+/* line 17, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu ol > li > a,
+.menu ul > li > a {
+  position: relative;
+  display: block;
+  font-size: inherit;
+}
+/* line 22, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu ol > li > a, .menu ol > li > a:active, .menu ol > li > a:focus, .menu ol > li > a:hover,
+.menu ul > li > a,
+.menu ul > li > a:active,
+.menu ul > li > a:focus,
+.menu ul > li > a:hover {
+  text-decoration: none;
+}
+/* line 32, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu > ol,
+.menu > ul {
+  display: block;
+  font-size: 0;
+  margin: 0 -10px;
+}
+/* line 39, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu > ol > li,
+.menu > ul > li {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* line 48, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu > ol > li > a,
+.menu > ul > li > a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 66, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu li {
+  font-size: 1.4rem;
+}
+@media only screen and (min-width: 640px) {
+  /* line 66, ../../../git_submodules/tipi.component.menu/__core.scss */
+  .menu li {
+    font-size: 1.6rem;
+  }
+}
+
+/* line 78, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu--right > ol,
+.menu--right > ul {
+  text-align: right;
+}
+
+/* line 85, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu--center > ol,
+.menu--center > ul {
+  text-align: center;
+}
+
+/* line 92, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu--justify > ul,
+.menu--justify > ol {
+  text-align: justify;
+}
+/* line 96, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu--justify > ul:after,
+.menu--justify > ol:after {
+  content: " ";
+  width: 100%;
+  display: inline-block;
+  height: 1px;
+  margin-bottom: -1px;
+}
+/* line 104, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu--justify > ul > li,
+.menu--justify > ol > li {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 115, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  padding-top: 10px;
+}
+
+/* line 131, ../../../git_submodules/tipi.component.menu/__core.scss */
+.menu-dropdown-wrapper li + li {
+  margin-top: 10px;
+}
+
+/* line 139, ../../../git_submodules/tipi.component.menu/__core.scss */
+.no-touchevents li:hover > .menu-dropdown,
+.__menu-item--active > .menu-dropdown {
+  display: block;
+}
+
 /* line 2, ../../../git_submodules/tipi.component.top-bar/__core.scss */
 .top-bar {
   position: relative;
@@ -2194,9 +2318,8 @@ b,
   right: 0;
   z-index: 350;
   padding: 15px 0;
-  background: #4694ff;
 }
-/* line 16, ../../../git_submodules/tipi.component.top-bar/__core.scss */
+/* line 12, ../../../git_submodules/tipi.component.top-bar/__core.scss */
 .top-bar.__top-bar--ready {
   position: absolute;
   top: 0;
