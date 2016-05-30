@@ -126,12 +126,21 @@
 		@if $lead-line-height != false {
 			line-height: $lead-line-height;
 		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 
 	p,
 	address {
 		line-height: $base-line-height;
+		margin-bottom: $vertical-baseline;
 		margin-top: $vertical-baseline;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 
 		&:empty {
 			display: none;
