@@ -5,3 +5,4 @@ bower_components/
 git_submodules/
 build/
 dist/
+dev/assets/css/*
