@@ -71,16 +71,33 @@ module.exports = function(grunt) {
 			}
 		},
 
-		bake: {
-			dist: {
-				options: {
-
-				},
-				files: {
-					'dist/index.html' : 'dev/index.html'
-				}
+		zetzer: {
+			options: {
+				partials: "dev/inc/partials/",
+				templates: "dev/inc/templates/"
+			},
+			bower_components: {
+				files: [{
+					expand: true,
+					cwd: 'git_submodules/',
+					src: '**/*.html',
+					dest: 'dist/pages/',
+					ext: '.html',
+					flatten: false
+				}]
+			},
+			getting_started: {
+				files: [{
+					expand: true,
+					cwd: 'dev/',
+					src: '*.html',
+					dest: 'dist/',
+					ext: '.html',
+					flatten: false
+				}]
 			}
 		},
+
 
 		//Compile the sass files with Compass
 		compass: {
@@ -137,7 +154,7 @@ module.exports = function(grunt) {
 
 		concurrent: {
 			compile: [
-				'bake:dist',
+				'zetzer',
 				'compass:dist',
 				'svgstore:dist',
 				'concat:dist',
@@ -289,7 +306,7 @@ module.exports = function(grunt) {
 					'!**/build/**',
 					'!**/node_modules/**',
 				],
-				tasks: ['bake:dist'],
+				tasks: ['zetzer'],
 
 			},
 			scss: {
@@ -347,7 +364,7 @@ module.exports = function(grunt) {
 				tasks: [
 					'svgstore:dist',
 					'newer:copy:svg',
-					'bake:dist',
+					'zetzer',
 					'replace:svgSprite'
 				],
 				options : {

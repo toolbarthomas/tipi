@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-		<title>{{title}}</title>
+		<title>Tipi - {{= it.document.title }}</title>
 
 		<meta name="description" content="" />
 		<meta name="robots" content="index, follow" />
@@ -44,8 +44,37 @@
 		<link rel="stylesheet" href="/assets/css/tipi.css" type="text/css">
 	</head>
 	<body>
-	<div id="svg-sprite"></div>
-	<div class="container">
-		<div class="container-body">
-			<div class="sticky-end">
-				<div class="sticky-end-body">
+		<div id="svg-sprite"></div>
+
+		<div class="container">
+			<div class="container-body">
+				<div class="sticky-end">
+					<div class="sticky-end-body">
+						{{= it.include("header") }}
+						{{= it.document }}
+					</div>
+					<div class="sticky-end-footer">
+						{{= it.include("footer") }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/assets/js/lib/modernizr/modernizr-custom.js"></script>
+		<script src="/assets/js/lib/svg-localstorage/svg-localstorage.js"></script>
+		<script>
+			if(typeof svgLocalstorage == 'function') {
+				svgLocalstorage('assets/img/layout/svg-sprite.svg', 'svgRev').then(svg => {
+					document.getElementById('svg-sprite').insertAdjacentHTML('afterbegin', svg);
+				});
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="assets/js/lib/jquery/dist/jquery.min.js"><\/script>')</script>
+
+		<script src="assets/js/tipi/tipi.components.js"></script>
+
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
