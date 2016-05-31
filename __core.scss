@@ -18,6 +18,9 @@
 	}
 
 	#{$displays} {
+		margin-top: $display-margin-top;
+		margin-bottom: $display-margin-bottom;
+
 		@if $display-font-family != false {
 			font-family: $display-font-family;
 		}
@@ -46,6 +49,9 @@
 
 
 	#{$headings} {
+		margin-top: $head-margin-top;
+		margin-bottom: $head-margin-bottom;
+
 		@if $head-font-family != false {
 			font-family: $head-font-family;
 		}
@@ -90,8 +96,6 @@
 	#{$displays},
 	#{$headings} {
 		display: block;
-		margin-top: 0.82em;
-		margin-bottom: 0.69em;
 
 		&:only-child {
 			margin-bottom: 0;
@@ -110,13 +114,15 @@
 			}
 		}
 
-		// + #{$textblocks} {
-		// 	margin-top: 0;
-		// }
+		+ #{$formats} {
+			margin-top: 0;
+		}
 	}
 
 	#{$leads} {
 		@include responsive-font-size('lead-font-size');
+		margin-top: $lead-margin-top;
+		margin-bottom: $lead-margin-bottom;
 
 		@if $lead-font-family != false {
 			font-family: $lead-font-family;
@@ -133,13 +139,9 @@
 		@if $lead-line-height != false {
 			line-height: $lead-line-height;
 		}
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
 	}
 
-	#{$textblocks} {
+	#{$formats} {
 		line-height: $base-line-height;
 		margin-bottom: $vertical-baseline;
 		margin-top: $vertical-baseline;
@@ -151,23 +153,26 @@
 		&:empty {
 			display: none;
 		}
-
-		#{$displays} + &,
-		#{$headings} + & {
-			margin-top: 0;
-		}
 	}
 
 	a {
-		text-decoration: underline;
+		@if $anchor-text-decoration == false {
+			text-decoration: none;
+		} @else {
+			text-decoration: $anchor-text-decoration;
+		}
 
 		&,
 		&:hover,
 		&:active,
 		&:focus,
 		&:visited {
-			p & {
-				color: inherit;
+			color: inherit;
+		}
+
+		@if $anchor-text-decoration--hover != false {
+			.no-touchevents &:hover {
+				text-decoration: $anchor-text-decoration--hover;
 			}
 		}
 
@@ -187,8 +192,6 @@
 	blockquote,
 	q {
 		display: block;
-		@include responsive-font-size('lead-font-size');
-
 
 		img {
 			vertical-align: baseline;
@@ -205,6 +208,11 @@
 		margin: 0;
 		margin-left: $horizontal-baseline;
 		margin-top: $vertical-baseline;
+		margin-bottom: $vertical-baseline;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	li {
@@ -228,9 +236,15 @@
 	hr {
 		clear: both;
 		display: block;
+
 		border: 0;
-		border-top: $border-style $border-width $border-color;
-		color: $primary-color;
+
+		border-top: $border-style $border-width;
+
+		@if $hr-color != false {
+			color: $hr-color;
+		}
+
 		padding: 0;
 		margin: $vertical-baseline*2 0;
 	}

@@ -1,6 +1,10 @@
-$textblocks: (
+$formats: (
 	'p',
-	'address'
+	'address',
+	'li',
+	'blockquote',
+	'q',
+	'small'
 );
 
 $leads: (
@@ -64,33 +68,39 @@ $displays: (
 	$displays3,
 );
 
-
 $font-family: 'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
 $font-ligatures: false !default;
 
-$base-font-family: $font-family !default;
-$base-font-weight: 400 !default;
-$base-font-style: normal !default;
-$base-line-height: 1.6em !default;
+$base-font-family:				$font-family !default;
+$base-font-weight:				400 !default;
+$base-font-style:				normal !default;
+$base-line-height:				1.6em !default;
 
-$lead-font-family: false !default;
-$lead-font-weight: 400 !default;
-$lead-font-style: false !default;
-$lead-line-height: 1.6em !default;
+$lead-font-family:				false !default;
+$lead-font-weight:				400 !default;
+$lead-font-style:				false !default;
+$lead-line-height:				1.6em !default;
+$lead-margin-top:				0.44em !default;
+$lead-margin-bottom:			0.57em !default;
 
-$head-font-family: false !default;
-$head-font-weight: 700 !default;
-$head-font-style: false !default;
-$head-line-height: 1.3em !default;
-$head-margin-top: 0.82em !default;
-$head-margin-bottom: 0.69em !default;
+$head-font-family:				false !default;
+$head-font-weight:				700 !default;
+$head-font-style:				false !default;
+$head-line-height:				1.3em !default;
+$head-margin-top:				0.82em !default;
+$head-margin-bottom:			0.69em !default;
 
-$display-font-family: false !default;
-$display-font-weight: 700 !default;
-$display-font-style: false !default;
-$display-line-height: 1.32em !default;
-$display-margin-top: 0.82em !default;
-$display-margin-bottom: 0.69em !default;
+$display-font-family:			false !default;
+$display-font-weight:			700 !default;
+$display-font-style:			false !default;
+$display-line-height:			1.32em !default;
+$display-margin-top:			0.4em !default;
+$display-margin-bottom: 		0.23em !default;
 
-$vertical-baseline: 1.31em !default;
-$horizontal-baseline: 1.1em !default;
+$anchor-text-decoration: 		underline !default;
+$anchor-text-decoration--hover: underline !default;
+
+$hr-color:						false !default;
+
+$vertical-baseline:				1.31em !default;
+$horizontal-baseline: 			1.1em !default;
