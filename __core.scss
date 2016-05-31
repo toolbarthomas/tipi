@@ -46,12 +46,6 @@
 
 
 	#{$headings} {
-		margin-bottom: 0.5em;
-
-		&:only-child {
-			margin-bottom: 0;
-		}
-
 		@if $head-font-family != false {
 			font-family: $head-font-family;
 		}
@@ -96,7 +90,16 @@
 	#{$displays},
 	#{$headings} {
 		display: block;
+		margin-top: 0.82em;
 		margin-bottom: 0.69em;
+
+		&:only-child {
+			margin-bottom: 0;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
 
 		a {
 			color: inherit;
@@ -106,6 +109,10 @@
 				text-decoration: none;
 			}
 		}
+
+		// + #{$textblocks} {
+		// 	margin-top: 0;
+		// }
 	}
 
 	#{$leads} {
@@ -132,8 +139,7 @@
 		}
 	}
 
-	p,
-	address {
+	#{$textblocks} {
 		line-height: $base-line-height;
 		margin-bottom: $vertical-baseline;
 		margin-top: $vertical-baseline;
@@ -144,6 +150,11 @@
 
 		&:empty {
 			display: none;
+		}
+
+		#{$displays} + &,
+		#{$headings} + & {
+			margin-top: 0;
 		}
 	}
 
