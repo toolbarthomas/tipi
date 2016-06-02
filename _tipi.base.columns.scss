@@ -4,7 +4,7 @@
 
 @include core_columns;
 
-@include construct_columns-specific('scol', 'sleft', $smartphone-min-width, $smartphone-max-width);
+@include construct_columns-specific('scol', 'sleft', 0, $smartphone-max-width);
 @include construct_columns-specific('pcol', 'pleft', $phablet-min-width, $phablet-max-width);
 @include construct_columns-specific('tcol', 'tleft', $tablet-min-width, $tablet-max-width);
 @include construct_columns-specific('tlcol', 'tlleft', $tablet-landscape-min-width, $tablet-landscape-max-width);
