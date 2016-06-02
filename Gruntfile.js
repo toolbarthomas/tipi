@@ -301,6 +301,7 @@ module.exports = function(grunt) {
 					'dev/*.html',
 					'dev/inc/**/*.html',
 					'dev/docs/**/*.html',
+					'git_submodules/**/*.html',
 
 					'!**/dist/**',
 					'!**/build/**',
