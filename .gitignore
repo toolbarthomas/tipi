@@ -1,8 +1,9 @@
-node_modules/
 npm-debug.log
+node_modules/
 bower_components/
 .sass-cache/
 git_submodules/
 build/
 dist/
-dev/assets/css/*
+*.css.map
+*.js.map
