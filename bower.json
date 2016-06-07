@@ -17,15 +17,15 @@
     "build/"
   ],
   "dependencies": {
-    "tipi.base.typography": "^0.0.1",
-    "tipi.base.sticky-end": "^0.0.1",
-    "tipi.base.columns": "^0.0.2",
-    "tipi.base.fluid": "^0.0.1",
-    "tipi.base.spaces": "^0.0.1",
-    "tipi.base.combined": "^0.0.2",
-    "tipi.base.element-group": "^0.0.1",
-    "tipi.base.valign": "^0.0.3",
-    "tipi.base.wrapper": "^0.0.4",
+    "tipi.base.typography": "^0.2.0",
+    "tipi.base.sticky-end": "^0.1.0",
+    "tipi.base.columns": "^0.1.1",
+    "tipi.base.fluid": "^0.2.0",
+    "tipi.base.spaces": "^0.2.0",
+    "tipi.base.combined": "^0.1.0",
+    "tipi.base.element-group": "^0.2.0",
+    "tipi.base.valign": "^0.1.0",
+    "tipi.base.wrapper": "^0.2.0",
     "svg-localstorage": "^1.0.0"
   }
 }
