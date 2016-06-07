@@ -257,7 +257,7 @@ module.exports = function(grunt) {
 			html: {
 				files: [
 					'<%= developmentPath %>/**/*.html',
-					'<%= modulePath %>/tipi.*/*.html'
+					'<%= modulePath %>/**/*.html'
 				],
 				tasks: [
 					'zetzer:development',
