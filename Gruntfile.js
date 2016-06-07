@@ -217,7 +217,8 @@ module.exports = function(grunt) {
 				],
 				tasks: [
 					'compass:development',
-					'svgstore:development'
+					'svgstore:development',
+					'newer:copy:development'
 				],
 				options: {
 					spawn : true
@@ -241,7 +242,8 @@ module.exports = function(grunt) {
 					'<%= developmentPath %>/**/*.svg'
 				],
 				tasks: [
-					'svgstore:development'
+					'svgstore:development',
+					'newer:copy:development'
 				]
 			},
 			js: {
