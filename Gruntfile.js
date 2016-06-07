@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
 	require('jit-grunt')(grunt, {
-		cachebreaker : 'grunt-cache-breaker',
-		replace: 'grunt-text-replace'
+		cachebreaker : 	'grunt-cache-breaker',
+		replace: 		'grunt-text-replace'
 	});
 
 	grunt.initConfig({
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '<%= modulePath %>/',
-					src: '**/tipi.*.html',
+					src: 'tipi.*/*.html',
 					dest: '<%= productionPath %>/pages/',
 					ext: '.html',
 					flatten: false
