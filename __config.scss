@@ -1,45 +1,50 @@
-$formats: (
-	'p',
-	'address',
-	'li',
-	'blockquote',
-	'q',
-	'small'
-);
+$displays1: (
+	'.display1'
+) !default;
 
-$leads: (
-	'.lead'
-);
+$displays2: (
+	'.display2'
+) !default;
+
+$displays3: (
+	'.display3'
+) !default;
+
+$displays: (
+	$displays1,
+	$displays2,
+	$displays3,
+) !default;
 
 $headings1: (
 	'h1',
 	'.h1'
-);
+) !default;
 
 $headings2: (
 	'h2',
 	'.h2',
-);
+) !default;
 
 $headings3: (
 	'h3',
 	'.h3',
-);
+) !default;
 
 $headings4: (
 	'h4',
 	'.h4',
-);
+) !default;
 
 $headings5: (
 	'h5',
 	'.h5',
-);
+) !default;
 
 $headings6: (
 	'h6',
 	'.h6'
-);
+) !default;
 
 $headings: (
 	$headings1,
@@ -48,47 +53,37 @@ $headings: (
 	$headings4,
 	$headings5,
 	$headings6
-);
+) !default;
 
-$displays1: (
-	'.display1'
-);
+$leads: (
+	'.lead'
+) !default;
 
-$displays2: (
-	'.display2'
-);
+$formats: (
+	'p',
+	'address',
+	'ul',
+	'dl',
+	'ol',
+	'blockquote',
+	'q',
+	'small'
+) !default;
 
-$displays3: (
-	'.display3'
-);
+$italics: (
+	'em',
+	'i',
+	'.italic'
+) !default;
 
-$displays: (
-	$displays1,
-	$displays2,
-	$displays3,
-);
+$bolds: (
+	'strong',
+	'b',
+	'.bold'
+) !default;
 
 $font-family: 'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
 $font-ligatures: false !default;
-
-$base-font-family:				$font-family !default;
-$base-font-weight:				400 !default;
-$base-font-style:				normal !default;
-$base-line-height:				1.6em !default;
-
-$lead-font-family:				false !default;
-$lead-font-weight:				400 !default;
-$lead-font-style:				false !default;
-$lead-line-height:				1.6em !default;
-$lead-margin-top:				0.44em !default;
-$lead-margin-bottom:			0.57em !default;
-
-$head-font-family:				false !default;
-$head-font-weight:				700 !default;
-$head-font-style:				false !default;
-$head-line-height:				1.3em !default;
-$head-margin-top:				0.82em !default;
-$head-margin-bottom:			0.69em !default;
 
 $display-font-family:			false !default;
 $display-font-weight:			700 !default;
@@ -97,10 +92,37 @@ $display-line-height:			1.32em !default;
 $display-margin-top:			0.4em !default;
 $display-margin-bottom: 		0.23em !default;
 
+$head-font-family:				false !default;
+$head-font-weight:				700 !default;
+$head-font-style:				false !default;
+$head-line-height:				1.3em !default;
+$head-margin-top:				0.82em !default;
+$head-margin-bottom:			0.69em !default;
+
+$lead-font-family:				false !default;
+$lead-font-weight:				400 !default;
+$lead-font-style:				false !default;
+$lead-line-height:				1.6em !default;
+$lead-margin-top:				0.44em !default;
+$lead-margin-bottom:			0.57em !default;
+
+$base-font-family:				$font-family !default;
+$base-font-weight:				400 !default;
+$base-font-style:				normal !default;
+$base-line-height:				1.6em !default;
+
+$format-baseline:				1.31em !default;
+$format-gutter: 				1.1em !default;
+$format-shrink-value:			80% !default;
+
 $anchor-text-decoration: 		underline !default;
 $anchor-text-decoration--hover: underline !default;
 
-$hr-color:						false !default;
+$quote-font-style:				italic !default;
+$quote-font-weight:				normal !default;
 
-$vertical-baseline:				1.31em !default;
-$horizontal-baseline: 			1.1em !default;
+$hr-color:						false !default;
+$hr-style:						solid !default;
+$hr-width:						2px !default;
+$hr-border-radius:				false !default;
+$hr-baseline:					2em !default;

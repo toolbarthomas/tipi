@@ -144,8 +144,8 @@
 
 	#{$formats} {
 		line-height: $base-line-height;
-		margin-bottom: $vertical-baseline;
-		margin-top: $vertical-baseline;
+		margin-bottom: $format-baseline;
+		margin-top: $format-baseline;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -155,6 +155,25 @@
 			display: none;
 		}
 	}
+
+	ul,
+	ol {
+		margin: 0;
+		margin-left: $format-baseline;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	li {
+		margin-bottom: 0;
+
+		+ li {
+			margin-top: $format-baseline / 2;
+		}
+	}
+
 
 	a {
 		@if $anchor-text-decoration == false {
@@ -187,12 +206,20 @@
 	small,
 	sub,
 	sup {
-		font-size: 80%;
+		font-size: $format-shrink-value;
 	}
 
 	blockquote,
 	q {
 		display: block;
+
+		@if $quote-font-style != false {
+			font-style: $quote-font-style;
+		}
+
+		@if $quote-font-weight != false {
+			font-weight: $quote-font-weight;
+		}
 
 		img {
 			vertical-align: baseline;
@@ -203,25 +230,6 @@
 			display: inline;
 		}
 	}
-
-	ul,
-	ol {
-		margin: 0;
-		margin-left: $horizontal-baseline;
-		margin-top: $vertical-baseline;
-		margin-bottom: $vertical-baseline;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	li {
-		+ li {
-			margin-top: $vertical-baseline/2;
-		}
-	}
-
 
 	address {
 		a {
@@ -237,28 +245,32 @@
 	hr {
 		clear: both;
 		display: block;
-
+		padding: 0;
+		margin: $hr-baseline 0;
 		border: 0;
+		border-style: $hr-style;
 
-		border-top: $border-style $border-width;
+		@if $hr-width > 1 {
+			border-top-width: $hr-width / 2;
+			border-bottom-width: $hr-width / 2;
+		} @else {
+			border-top-width: $hr-width;
+		}
+
+		@if $hr-border-radius != false {
+			border-radius: $hr-border-radius;
+		}
 
 		@if $hr-color != false {
 			color: $hr-color;
 		}
-
-		padding: 0;
-		margin: $vertical-baseline*2 0;
 	}
 
-	em,
-	i,
-	.italic {
+	#{$italics} {
 		font-style: italic;
 	}
 
-	strong,
-	b,
-	.bold {
+	#{$bolds} {
 		font-weight: 700;
 	}
 }
