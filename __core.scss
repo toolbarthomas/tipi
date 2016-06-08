@@ -97,12 +97,13 @@
 	#{$headings} {
 		display: block;
 
+		&:first-child,
 		&:only-child {
-			margin-bottom: 0;
+			margin-top: 0;
 		}
 
-		&:first-child {
-			margin-top: 0;
+		&:only-child {
+			margin-bottom: 0;
 		}
 
 		a {
