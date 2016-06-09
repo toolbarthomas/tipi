@@ -237,6 +237,7 @@ module.exports = function(grunt) {
 					'<%= developmentPath %>/assets/sass/**/*.scss',
 					'<%= modulePath %>/**/*.scss',
 
+					'!<%= developmentPath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**',
 				],
 				tasks: [
