@@ -15,8 +15,11 @@ module.exports = function(grunt) {
 		sass_globbing: {
 			development: {
 				files: {
-					'<%= developmentPath %>/assets/sass/_tipi.components.scss': [
-						'<%= modulePath %>/**/*.scss',
+					'<%= developmentPath %>/assets/sass/_tipi.import.components.scss': [
+						'<%= modulePath %>/**/*.base.*.scss',
+						'<%= modulePath %>/**/*.component.*.scss',
+						'<%= modulePath %>/**/*.extend.*.scss',
+
 						'!<%= modulePath %>/**/__*.scss'
 					]
 				},
