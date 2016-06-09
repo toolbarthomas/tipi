@@ -236,6 +236,7 @@ module.exports = function(grunt) {
 					'!**/node_modules/**',
 				],
 				tasks: [
+					'sass_globbing:development',
 					'compass:development',
 					'svgstore:development',
 					'newer:copy:development'
@@ -307,6 +308,7 @@ module.exports = function(grunt) {
 
 		concurrent: {
 			development: [
+				'sass_globbing:development',
 				'compass:development',
 				'svgstore:development',
 				'concat:modules',
