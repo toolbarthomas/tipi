@@ -221,6 +221,7 @@ module.exports = function(grunt) {
 				files: [
 					'<%= developmentPath %>/assets/**/*',
 
+					'!<%= developmentPath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**'
 				],
 				tasks: [
