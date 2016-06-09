@@ -97,15 +97,6 @@
 	#{$headings} {
 		display: block;
 
-		&:first-child,
-		&:only-child {
-			margin-top: 0;
-		}
-
-		&:only-child {
-			margin-bottom: 0;
-		}
-
 		a {
 			color: inherit;
 
@@ -144,8 +135,8 @@
 
 	#{$formats} {
 		line-height: $default-line-height;
-		margin-bottom: $format-baseline;
 		margin-top: $format-baseline;
+		margin-bottom: $format-baseline;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -155,6 +146,19 @@
 			display: none;
 		}
 	}
+
+	#{$displays},
+	#{$headings},
+	#{$leads},
+	#{$formats}
+		&:first-child,
+		&:only-child {
+			margin-top: 0;
+		}
+
+		&:only-child {
+			margin-bottom: 0;
+		}
 
 	ul,
 	ol {
