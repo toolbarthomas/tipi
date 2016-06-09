@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 			development: {
 				files: {
 					'<%= productionPath %>/assets/img/layout/svg-sprite.svg': [
-						'<%= developmentPath %>/assets/img/layout/svg/**/*.svg'
+						'<%= developmentPath %>/assets/img/layout/svg-sprite/**/*.svg'
 					]
 				},
 				options: {
@@ -115,14 +115,6 @@ module.exports = function(grunt) {
 				cwd: '<%= developmentPath %>/',
 				src: [
 					'assets/**'
-				],
-				dest: '<%= productionPath %>/'
-			},
-			img: {
-				expand: true,
-				cwd: '<%= developmentPath %>/',
-				src: [
-					'assets/**/*.{.png,jpg,gif,svg}'
 				],
 				dest: '<%= productionPath %>/'
 			}
@@ -206,7 +198,21 @@ module.exports = function(grunt) {
 
 		watch: {
 			options: {
-				interrupt: true,
+				spawn: false
+			},
+			assets: {
+				files: [
+					'<%= developmentPath %>/assets/**/*',
+
+					'!**/node_modules/**'
+				],
+				tasks: [
+					'newer:copy:development',
+					'cachebreaker:production'
+				],
+				options : {
+					event: ['added', 'deleted']
+				}
 			},
 			scss: {
 				files: [
@@ -221,20 +227,8 @@ module.exports = function(grunt) {
 					'newer:copy:development'
 				],
 				options: {
+					interrupt: true,
 					spawn : true
-				}
-			},
-			img: {
-				files: [
-					'<%= developmentPath %>/assets/img/**/*.{png,jpg,gif,svg}',
-
-					'!**/node_modules/**'
-				],
-				tasks: [
-					'newer:copy:img'
-				],
-				options : {
-					event: ['added', 'deleted']
 				}
 			},
 			svg: {
@@ -262,6 +256,7 @@ module.exports = function(grunt) {
 				tasks: [
 					'zetzer:development',
 					'zetzer:modules',
+					'cachebreaker:production'
 				]
 			},
 			reload: {
