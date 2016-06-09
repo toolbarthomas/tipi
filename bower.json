@@ -17,7 +17,7 @@
     "build/"
   ],
   "dependencies": {
-    "tipi.base.typography": "^0.2.0",
+    "tipi.base.typography": "^0.2.2",
     "tipi.base.sticky-end": "^0.1.0",
     "tipi.base.columns": "^0.1.1",
     "tipi.base.fluid": "^0.2.0",
