@@ -150,7 +150,7 @@
 	#{$displays},
 	#{$headings},
 	#{$leads},
-	#{$formats}
+	#{$formats} {
 		&:first-child,
 		&:only-child {
 			margin-top: 0;
@@ -159,6 +159,7 @@
 		&:only-child {
 			margin-bottom: 0;
 		}
+	}
 
 	ul,
 	ol {
