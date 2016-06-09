@@ -7,3 +7,12 @@ build/
 dist/
 *.css.map
 *.js.map
+
+_tipi.import.variables.scss
+_tipi.import.mixins.scss
+_tipi.import.defaults.scss
+_tipi.import.containers.scss
+_tipi.import.sprite.scss
+_tipi.import.svg-sprite.scss
+_tipi.import.helpers.scss
+_tipi.import.components.scss
