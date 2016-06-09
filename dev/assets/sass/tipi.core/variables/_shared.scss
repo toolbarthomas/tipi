@@ -1,22 +1,92 @@
 /*------------------------------------*\
-    #VARIABLES - SHARED
+	_tipi.base.columns
 \*------------------------------------*/
+$column-gutter:						20px;
+$column-count:						12;
+$column-specific-width:				true;
+$column-specific-margin:			true;
 
-/**
- * Define the global variables for your project here.
- */
-$border-style: 			solid !default;
-$border-width:			2px !default;
-$border-radius:			false !default;
 
-// GUTTERS
-$section-gutter:		25px !default; /* Spacing between different fluids */
-$block-gutter: 			15px !default; /* Spacing for element i.e. .box, .well etc. */
+/*------------------------------------*\
+	_tipi.base.combined
+\*------------------------------------*/
+$combined-gutter:					20px;
+$combined-baseline:					20px;
 
- // TRANSITIONS
-$transition-slow:		1000ms !default;
-$transition-normal:		500ms !default;
-$transition-fast:		300ms !default;
-$transition-lightning:	200ms !default;
 
-// OVERRIDES
+/*------------------------------------*\
+	_tipi.base.element-group
+\*------------------------------------*/
+$element-group-gutter:				15px;
+$element-group-baseline:			15px;
+
+/*------------------------------------*\
+	_tipi.base.fluid
+\*------------------------------------*/
+$fluid-gutter:						25px;
+$fluid-background-color:			false;
+
+
+/*------------------------------------*\
+	_tipi.base.spaces
+\*------------------------------------*/
+$space-gutter:						15px;
+$spaces-enable-gallery:				false;
+
+
+/*------------------------------------*\
+	_tipi.base.typography
+\*------------------------------------*/
+$default-font-family: 				'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
+$default-font-ligatures: 			false;
+$default-font-weight:				400;
+$default-font-style:				normal;
+$default-line-height:				1.6em;
+
+$display-font-family:				false;
+$display-font-weight:				700;
+$display-font-style:				false;
+$display-line-height:				1.32em;
+$display-margin-top:				0.4em;
+$display-margin-bottom: 			0.23em;
+
+$head-font-family:					false;
+$head-font-weight:					700;
+$head-font-style:					false;
+$head-line-height:					1.3em;
+$head-margin-top:					0.82em;
+$head-margin-bottom:				0.69em;
+
+$lead-font-family:					false;
+$lead-font-weight:					400;
+$lead-font-style:					false;
+$lead-line-height:					1.6em;
+$lead-margin-top:					0.44em;
+$lead-margin-bottom:				0.57em;
+
+$format-baseline:					1.31em;
+$format-gutter: 					1.1em;
+$format-shrink-value:				80%;
+
+$anchor-text-decoration: 			underline;
+$anchor-text-decoration--hover: 	underline;
+
+$quote-font-style:					italic;
+$quote-font-weight:					normal;
+
+$hr-color:							false;
+$hr-style:							solid;
+$hr-width:							2px;
+$hr-border-radius:					false;
+$hr-baseline:						2em;
+
+
+/*------------------------------------*\
+	_tipi.base.wrapper
+\*------------------------------------*/
+$wrapper-gutter:					20px;
+$wrapper-fluid:						true;
+$wrapper-max-width:					960px;
+
+$section-gutter:					25px;
+$block-gutter: 						15px;
