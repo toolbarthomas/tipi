@@ -1,10 +1,10 @@
 @mixin core_typography {
 	body {
-		font-family: $base-font-family;
-		font-weight: $base-font-weight;
+		font-family: $default-font-family;
+		font-weight: $default-font-weight;
 		color: $base-color;
 
-		@if $font-ligatures == false {
+		@if $default-font-ligatures == false {
 			-moz-font-feature-settings: "liga" 0;
 			-ms-font-feature-settings: "liga" 0;
 			-o-font-feature-settings: "liga" 0;
@@ -14,7 +14,7 @@
 			font-variant-ligatures: none;
 		}
 
-		@include responsive-font-size('base-font-size');
+		@include responsive-font-size('default-font-size');
 	}
 
 	#{$displays} {
@@ -143,7 +143,7 @@
 	}
 
 	#{$formats} {
-		line-height: $base-line-height;
+		line-height: $default-line-height;
 		margin-bottom: $format-baseline;
 		margin-top: $format-baseline;
 

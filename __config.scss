@@ -82,8 +82,11 @@ $bolds: (
 	'.bold'
 ) !default;
 
-$font-family: 'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
-$font-ligatures: false !default;
+$default-font-family: 			'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
+$default-font-ligatures: 		false !default;
+$default-font-weight:			400 !default;
+$default-font-style:			normal !default;
+$default-line-height:			1.6em !default;
 
 $display-font-family:			false !default;
 $display-font-weight:			700 !default;
@@ -105,11 +108,6 @@ $lead-font-style:				false !default;
 $lead-line-height:				1.6em !default;
 $lead-margin-top:				0.44em !default;
 $lead-margin-bottom:			0.57em !default;
-
-$base-font-family:				$font-family !default;
-$base-font-weight:				400 !default;
-$base-font-style:				normal !default;
-$base-line-height:				1.6em !default;
 
 $format-baseline:				1.31em !default;
 $format-gutter: 				1.1em !default;
