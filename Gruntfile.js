@@ -12,6 +12,20 @@ module.exports = function(grunt) {
 		productionPath: 'dist',
 		modulePath: 'git_submodules',
 
+		sass_globbing: {
+			development: {
+				files: {
+					'<%= developmentPath %>/assets/sass/_tipi.components.scss': [
+						'<%= modulePath %>/**/*.scss',
+						'!<%= modulePath %>/**/__*.scss'
+					]
+				},
+				options: {
+					signature: false
+				}
+			}
+		},
+
 		compass: {
 			options: {
 				cssDir: 'assets/css',

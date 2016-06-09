@@ -9,7 +9,8 @@
 @import "tipi.core/helpers/**";
 
 @import "tipi.custom-components/*/**";
-@import "../../../git_submodules/*/**";
+
+@import "tipi.components";
 
 @import "tipi.responsive/smartphone/smartphone";
 @import "tipi.responsive/smartphone/smartphone--max";
