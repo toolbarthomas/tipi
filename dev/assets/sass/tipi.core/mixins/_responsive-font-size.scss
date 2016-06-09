@@ -3,7 +3,7 @@
 // @return font-size: $font-size;
 
 
-@mixin responsive-font-size($size:'base-font-size') {
+@mixin responsive-font-size($size:'default-font-size') {
 	@if $size != false {
 
 		$font-sizes : (
@@ -20,7 +20,7 @@
 					'h5-font-size':					1.7rem,
 					'h6-font-size':					1.4rem,
 					'lead-font-size': 				1.7rem,
-					'base-font-size': 				1.4rem,
+					'default-font-size': 			1.4rem,
 					'meta-font-size': 				1.2rem,
 					'small-font-size': 				1.2rem,
 					'tiny-font-size': 				1.2rem
@@ -39,7 +39,7 @@
 					'h5-font-size':					1.8rem,
 					'h6-font-size':					1.6rem,
 					'lead-font-size': 				1.8rem,
-					'base-font-size': 				1.6rem,
+					'default-font-size': 			1.6rem,
 					'meta-font-size': 				1.4rem,
 					'small-font-size': 				1.2rem,
 					'tiny-font-size': 				1.1rem
@@ -58,7 +58,7 @@
 					'h5-font-size':					1.8rem,
 					'h6-font-size':					1.6rem,
 					'lead-font-size': 				1.8rem,
-					'base-font-size': 				1.6rem,
+					'default-font-size': 			1.6rem,
 					'meta-font-size': 				1.4rem,
 					'small-font-size': 				1.2rem,
 					'tiny-font-size': 				1.1rem
