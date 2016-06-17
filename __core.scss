@@ -106,6 +106,7 @@
 			}
 		}
 
+		+ #{$leads},
 		+ #{$formats} {
 			margin-top: 0;
 		}
@@ -138,10 +139,6 @@
 		margin-top: $format-baseline;
 		margin-bottom: $format-baseline;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
-
 		&:empty {
 			display: none;
 		}
@@ -156,6 +153,7 @@
 			margin-top: 0;
 		}
 
+		&:last-child,
 		&:only-child {
 			margin-bottom: 0;
 		}
@@ -165,10 +163,6 @@
 	ol {
 		margin: 0;
 		margin-left: $format-baseline;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
 	}
 
 	li {
