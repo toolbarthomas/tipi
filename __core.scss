@@ -270,6 +270,6 @@
 	}
 
 	#{$bolds} {
-		font-weight: 700;
+		font-weight: $default-bold-font-weight;
 	}
 }
