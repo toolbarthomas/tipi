@@ -17,10 +17,7 @@ module.exports = function(grunt) {
 				files: {
 					'<%= developmentPath %>/assets/sass/_tipi.import.components.scss': [
 						'<%= modulePath %>/**/*.base.*.scss',
-						'<%= modulePath %>/**/*.component.*.scss',
-						'<%= modulePath %>/**/*.extend.*.scss',
-
-						'!<%= modulePath %>/**/__*.scss'
+						'<%= modulePath %>/**/*.component.*.scss'
 					]
 				},
 				options: {
@@ -262,10 +259,12 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'<%= modulePath %>/**/tipi.*.js'
+					'<%= modulePath %>/**/tipi.*.js',
+					'<%= developmentPath %>/assets/js/*.js'
 				],
 				tasks: [
-					'concat:modules'
+					'concat:modules',
+					'newer:copy:development'
 				]
 			},
 			html: {

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Sprite Injector</title>
+</head>
+<body data-svg-sprite="sprite.svg" data-svg-sprite-revision="1">
+
+<svg><use xlink:href="#shape-24"></use></svg>
+<svg><use xlink:href="#shape-search"></use></svg>
+<svg><use xlink:href="#shape-delivery"></use></svg>
+<svg><use xlink:href="#shape-man"></use></svg>
+
+<script src="svg-sprite-injector.js"></script>
+<script>
+
+svgSpriteInjector(document.body);
+
+</script>
+
+</body>
+</html>
