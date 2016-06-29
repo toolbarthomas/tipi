@@ -17,14 +17,14 @@
     "build/"
   ],
   "dependencies": {
-    "tipi.base.typography": "^0.2.2",
+    "tipi.base.typography": "^0.2.6",
     "tipi.base.sticky-end": "^0.1.0",
     "tipi.base.columns": "^0.1.1",
     "tipi.base.fluid": "^0.2.0",
     "tipi.base.spaces": "^0.2.0",
     "tipi.base.combined": "^0.1.0",
-    "tipi.base.element-group": "^0.2.0",
+    "tipi.base.element-group": "^1.0.3",
     "tipi.base.valign": "^0.1.0",
-    "tipi.base.wrapper": "^0.2.0"
+    "tipi.base.wrapper": "^1.0.0"
   }
 }
