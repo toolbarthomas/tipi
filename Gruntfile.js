@@ -172,6 +172,21 @@ module.exports = function(grunt) {
 			}
 		},
 
+		uglify: {
+			production: {
+				options: {
+					compress : {
+						drop_console : true
+					},
+					sourceMap : false
+				},
+				files: {
+					'<%= productionPath %>/assets/js/main.min.js': '<%= productionPath %>/assets/js/main.js',
+					'<%= productionPath %>/assets/js/lib/tipi/tipi.min.js': '<%= productionPath %>/assets/js/lib/tipi/tipi.js'
+				}
+			}
+		},
+
 		replace: {
 			production: {
 				src: ['<%= productionPath%>/**/*.html'],
@@ -322,7 +337,8 @@ module.exports = function(grunt) {
 			production: [
 				'combine_mq:production',
 				'cssmin:production',
-				'newer:image:production'
+				'newer:image:production',
+				'uglify:production'
 			]
 		}
 	});
