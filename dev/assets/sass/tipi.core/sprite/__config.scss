@@ -1,3 +1,4 @@
-$sprite-layout: 'smart';
-$sprite-pixel-ratio: 2;
-$sprite-spacing: 4px * $sprite-pixel-ratio;
+$sprite-enabled: true !default;
+$sprite-layout: 'smart' !default;
+$sprite-pixel-ratio: 2 !default;
+$sprite-spacing: 4px * $sprite-pixel-ratio !default;

@@ -1,14 +1,17 @@
-// @import "layout/sprite/*.png";
+@if $sprite-enabled == true {
+	@import "layout/sprite/*.png";
 
-@mixin core_sprite {
-	@if variable-exists(sprite-sprites) == true {
-		.sprite {
-			display: inline-block;
-			position: relative;
-			overflow: hidden;
-			vertical-align: middle;
-			text-align: left;
-			@include construct_sprite($sprite-sprites);
+	@mixin core_sprite {
+		@if variable-exists(sprite-sprites) == true {
+			.sprite {
+				display: inline-block;
+				position: relative;
+				overflow: hidden;
+				vertical-align: middle;
+				text-align: left;
+				@include construct_sprite($sprite-sprites);
+				white-space: normal;
+			}
 		}
 	}
 }
