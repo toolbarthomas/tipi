@@ -24,14 +24,26 @@
 		@if $display-font-family != false {
 			font-family: $display-font-family;
 		}
+
 		@if $display-font-weight != false {
 			font-weight: $display-font-weight;
 		}
+
 		@if $display-font-style != false {
 			font-style: $display-font-style;
 		}
+
 		@if $display-line-height != false {
 			line-height: $display-line-height;
+		}
+
+		@if $display-text-transform != false {
+			text-transform: $display-text-transform;
+		}
+
+		@if $display-font-smoothing != false {
+			-webkit-font-smoothing: $display-font-smoothing;
+			-moz-osx-font-smoothing: $display-font-smoothing;
 		}
 	}
 
@@ -67,6 +79,16 @@
 		@if $head-line-height != false {
 			line-height: $head-line-height;
 		}
+
+		@if $head-text-transform != false {
+
+			text-transform: $head-text-transform;
+		}
+		@if $head-font-smoothing != false {
+			-webkit-font-smoothing: $head-font-smoothing;
+			-moz-osx-font-smoothing: $head-font-smoothing;
+		}
+
 	}
 
 	#{$headings1} {
@@ -131,6 +153,15 @@
 
 		@if $lead-line-height != false {
 			line-height: $lead-line-height;
+		}
+
+		@if $lead-text-transform != false {
+			text-transform: $lead-text-transform;
+		}
+
+		@if $lead-font-smoothing != false {
+			-webkit-font-smoothing: $lead-font-smoothing;
+			-moz-osx-font-smoothing: $lead-font-smoothing;
 		}
 	}
 

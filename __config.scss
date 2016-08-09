@@ -95,6 +95,8 @@ $display-font-style:			false !default;
 $display-line-height:			1.32em !default;
 $display-margin-top:			0.4em !default;
 $display-margin-bottom: 		0.23em !default;
+$display-text-transform:		false !default;
+$display-font-smoothing:		antialiased !default;
 
 $head-font-family:				false !default;
 $head-font-weight:				700 !default;
@@ -102,6 +104,8 @@ $head-font-style:				false !default;
 $head-line-height:				1.3em !default;
 $head-margin-top:				0.82em !default;
 $head-margin-bottom:			0.69em !default;
+$head-text-transform:			false !default;
+$head-font-smoothing:			antialiased !default;
 
 $lead-font-family:				false !default;
 $lead-font-weight:				400 !default;
@@ -109,6 +113,8 @@ $lead-font-style:				false !default;
 $lead-line-height:				1.6em !default;
 $lead-margin-top:				0.44em !default;
 $lead-margin-bottom:			0.57em !default;
+$lead-text-transform:			false !default;
+$lead-font-smoothing:			antialiased !default;
 
 $format-baseline:				1.31em !default;
 $format-gutter: 				1.1em !default;
