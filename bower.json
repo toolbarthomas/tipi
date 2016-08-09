@@ -22,7 +22,7 @@
     "tipi.base.columns": "^0.1.1",
     "tipi.base.fluid": "^0.2.0",
     "tipi.base.spaces": "^0.2.1",
-    "tipi.base.combined": "^0.1.0",
+    "tipi.base.combined": "^1.0.0",
     "tipi.base.element-group": "^2.0.0",
     "tipi.base.valign": "^0.1.0",
     "tipi.base.wrapper": "^1.0.0",
