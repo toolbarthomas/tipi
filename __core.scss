@@ -1,43 +1,24 @@
 @mixin core_columns {
 	.row {
-		display: table; /* Remove the white space between each column on the Android Jellybean Browser */
-		margin-left: -$column-gutter;
+		position: relative;
+		display: table; /* Remove the white space between each column on the Stock Android Jellybean Browser */
+		display: block\9; /* Internet Explorer 9 fix for calc function on element with table display property */
 		font-size: 0; /* Remove the white space between columns */
 		text-align: left; /* Prevent columns from aligning to center or right when a parent element has the text-align property */
 		direction: ltr;
 		table-layout: fixed;
 		width: 100%;
-		width: calc(100% + #{$column-gutter}); /* Stretch the width to 100% with the extra margin we use for positioning our columns  */
-		display: block\9; /* Internet Explorer bugfix for calc function on a table */
-		margin-top: -$column-gutter;
+
 
 		> [class*="col"] {
 			vertical-align: top;
 			display: inline-block;
 			width: 100%;
 			position: relative;
-			padding-left: $column-gutter;
-			margin-top: $column-gutter;
 		}
 
 		> * {
-			@include responsive-font-size('base-font-size');
-		}
-
-		@if $column-specific-width == true {
-			@for $i from 1 through $column-count {
-				> .col#{$i} {
-					width: 100% / $column-count * $i;
-				}
-
-				> .left#{$i} {
-					margin-left: 100% / $column-count *$i;
-				}
-			}
-		}
-
-		+ .row {
-			margin-top: 0;
+			@include responsive-font-size('default-font-size');
 		}
 	}
 
@@ -60,4 +41,14 @@
 			vertical-align: bottom;
 		}
 	}
+
+	@include columns-gutter('&', $column-gutter);
+	@include responsive-columns('col', 'left', false, false);
+	@include responsive-columns('scol', 'sleft', 0, $smartphone-max-width);
+	@include responsive-columns('pcol', 'pleft', $phablet-min-width, $phablet-max-width);
+	@include responsive-columns('tcol', 'tleft', $tablet-min-width, $tablet-max-width);
+	@include responsive-columns('tlcol', 'tlleft', $tablet-landscape-min-width, $tablet-landscape-max-width);
+	@include responsive-columns('dcol', 'dleft', $desktop-min-width, $desktop-max-width);
+	@include responsive-columns('wcol', 'wleft', $widescreen-min-width, $widescreen-max-width);
+	@include responsive-columns('hcol', 'hleft', $highroller-min-width, false);
 }

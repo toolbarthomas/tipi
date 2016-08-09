@@ -1,0 +1,23 @@
+@mixin responsive-columns($column-class:false, $margin-class:false, $breakpoint-min-width:false, $breakpoint-max-width: false) {
+	@include breakpoint($breakpoint-min-width, $breakpoint-max-width) {
+		.row {
+			@for $i from 1 through $column-count {
+				.#{$column-class}#{$i} {
+					width: 100% / $column-count * $i;
+				}
+			}
+
+			//Reset the margin to prevent the responsive column from shifting with the previous push classes
+			> [class*='#{$column-class}'] {
+				margin-left: 0;
+			}
+
+			@for $i from 1 through $column-count - 1 {
+				$class: #{$margin-class}#{$i};
+				> [class*='#{$class}'] {
+					margin-left: 100% / $column-count * $i;
+				}
+			}
+		}
+	}
+}
