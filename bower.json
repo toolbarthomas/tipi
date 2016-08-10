@@ -19,7 +19,7 @@
   "dependencies": {
     "tipi.base.typography": "^0.2.6",
     "tipi.base.sticky-end": "^1.0.0",
-    "tipi.base.columns": "^0.1.1",
+    "tipi.base.columns": "^1.0.0",
     "tipi.base.fluid": "^0.2.0",
     "tipi.base.spaces": "^0.2.1",
     "tipi.base.combined": "^1.0.0",

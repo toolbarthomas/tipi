@@ -158,15 +158,19 @@ module.exports = function(grunt) {
 		image: {
 			production: {
 				options: {
+					pngquant: true,
+					optipng: false,
+					zopflipng: true,
 					jpegRecompress: true,
 					jpegoptim: true,
 					mozjpeg: true,
+					gifsicle: true,
 					svgo: true
 				},
 				files: [{
 					expand: true,
 					cwd: '<%= productionPath %>/assets/img/',
-					src: ['**/*.{png,jpg,gif,svg}'],
+					src: ['**/*.{png,jpg,gif}'],
 					dest: '<%= productionPath %>/assets/img/'
 				}]
 			}
