@@ -165,12 +165,12 @@ module.exports = function(grunt) {
 					jpegoptim: true,
 					mozjpeg: true,
 					gifsicle: true,
-					svgo: true
+					svgo: false
 				},
 				files: [{
 					expand: true,
 					cwd: '<%= productionPath %>/assets/img/',
-					src: ['**/*.{png,jpg,gif}'],
+					src: ['**/*.{png,jpg,jpeg,gif}'],
 					dest: '<%= productionPath %>/assets/img/'
 				}]
 			}
