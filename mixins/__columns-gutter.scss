@@ -4,15 +4,11 @@
 			#{$selector} {
 				margin-left: -$gutter;
 				width: calc(100% + #{$column-gutter});
-				top: -$gutter;
-
-				&:last-of-type {
-					margin-bottom: -$column-gutter;
-				}
+				margin-top: -$gutter;
 
 				> [class*="col"] {
 					padding-left: $gutter;
-					margin-top: $gutter;
+					padding-top: $gutter;
 				}
 			}
 		}
