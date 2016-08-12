@@ -14,7 +14,7 @@
 
 			@for $i from 1 through $column-count - 1 {
 				$class: #{$margin-class}#{$i};
-				> [class*='#{$class}'] {
+				> [class~='#{$class}'] {
 					margin-left: 100% / $column-count * $i;
 				}
 			}
