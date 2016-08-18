@@ -10,6 +10,12 @@
 					padding-left: $gutter;
 					padding-top: $gutter;
 				}
+
+				+ .row {
+					#{$selector} {
+						margin-top: 0;
+					}
+				}
 			}
 		}
 	}
