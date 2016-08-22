@@ -2,7 +2,8 @@ module.exports = function(grunt) {
 
 	require('jit-grunt')(grunt, {
 		cachebreaker : 	'grunt-cache-breaker',
-		replace: 		'grunt-text-replace'
+		replace: 		'grunt-text-replace',
+		cmq : 'grunt-combine-media-queries'
 	});
 
 	grunt.initConfig({
@@ -134,15 +135,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		combine_mq: {
-			production: {
-				expand: true,
-				cwd: '<%= developmentPath %>/assets/css/',
-				src: ['**/*.css', '!**/*.min.css'],
-				dest: '<%= developmentPath %>/assets/css/'
-			}
-		},
-
 		cssmin: {
 			production: {
 				files: [{
@@ -152,6 +144,14 @@ module.exports = function(grunt) {
 					dest: '<%= productionPath %>/assets/css',
 					ext: '.min.css'
 				}]
+			}
+		},
+
+		cmq: {
+			production: {
+				files: {
+					'<%= productionPath %>/assets/css/': ['<%= productionPath %>/assets/css/*.css']
+				}
 			}
 		},
 
@@ -339,7 +339,7 @@ module.exports = function(grunt) {
 				'zetzer:modules',
 			],
 			production: [
-				'combine_mq:production',
+				'cmq:production',
 				'cssmin:production',
 				'newer:image:production',
 				'uglify:production'

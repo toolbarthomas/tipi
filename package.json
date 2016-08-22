@@ -1,13 +1,12 @@
 {
   "name": "tipi",
-  "version": "0.9.8",
   "homepage": "https://github.com/toolbarthomas/tipi",
   "author": "Thomas van der Velde <contact@toolbarthomas.net>",
   "description": "Modular front-end workflow core package",
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-cache-breaker": "^2.0.1",
-    "grunt-combine-mq": "^0.9.0",
+    "grunt-combine-media-queries": "^1.0.20",
     "grunt-concurrent": "^2.3.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-compass": "^1.1.1",
