@@ -1,9 +1,10 @@
 module.exports = function(grunt) {
 
 	require('jit-grunt')(grunt, {
-		cachebreaker : 	'grunt-cache-breaker',
-		replace: 		'grunt-text-replace',
-		cmq : 'grunt-combine-media-queries'
+		sprite: 'grunt-spritesmith',
+		cachebreaker: 'grunt-cache-breaker',
+		replace: 'grunt-text-replace',
+		cmq: 'grunt-combine-media-queries'
 	});
 
 	grunt.initConfig({
@@ -47,6 +48,20 @@ module.exports = function(grunt) {
 					outputStyle: 'expanded',
 					noLineComments: false,
 					sourcemap: true
+				}
+			}
+		},
+
+		sprite:{
+			development: {
+				src: '<%= developmentPath %>/assets/img/layout/sprite/*.png',
+				dest: '<%= productionPath %>/assets/img/layout/sprite.png',
+				destCss: '<%= productionPath %>/assets/css/sprite.css',
+				cssTemplate: '<%= developmentPath %>/assets/img/layout/sprite/config.handlebars',
+				cssHandlebarsHelpers : {
+					divideRetina : function(value) {
+						return parseInt(value) / 2;
+					}
 				}
 			}
 		},
@@ -139,7 +154,7 @@ module.exports = function(grunt) {
 			production: {
 				files: [{
 					expand: true,
-					cwd: '<%= developmentPath %>/assets/css',
+					cwd: '<%= productionPath %>/assets/css',
 					src: ['*.css', '!*.min.css'],
 					dest: '<%= productionPath %>/assets/css',
 					ext: '.min.css'
@@ -199,6 +214,10 @@ module.exports = function(grunt) {
 					{
 						from: 'tipi.css',
 						to: 'tipi.min.css'
+					},
+					{
+						from: 'sprite.css',
+						to: 'sprite.min.css'
 					},
 					{
 						from: 'main.js',
@@ -267,6 +286,14 @@ module.exports = function(grunt) {
 					spawn : true
 				}
 			},
+			sprite: {
+				files: [
+					'<%= developmentPath %>/**/*.png'
+				],
+				tasks: [
+					'sprite:development'
+				]
+			},
 			svg: {
 				files: [
 					'<%= developmentPath %>/**/*.svg'
@@ -332,6 +359,7 @@ module.exports = function(grunt) {
 		concurrent: {
 			development: [
 				'sass_globbing:development',
+				'sprite:development',
 				'compass:development',
 				'svgstore:development',
 				'concat:modules',
