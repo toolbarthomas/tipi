@@ -3,7 +3,7 @@
 		.row {
 			#{$selector} {
 				margin-left: -$gutter;
-				width: calc(100% + #{$column-gutter});
+				width: calc(100% + #{$gutter});
 				margin-top: -$gutter;
 
 				> [class*="col"] {
