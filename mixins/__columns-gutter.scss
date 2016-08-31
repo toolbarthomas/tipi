@@ -2,9 +2,14 @@
 	@if $selector != false {
 		.row {
 			#{$selector} {
-				margin-left: -$gutter;
-				width: calc(100% + #{$gutter});
 				margin-top: -$gutter;
+				margin-left: -$gutter;
+
+				@if $gutter != 0 {
+					width: calc(100% + #{$gutter});
+				} @else {
+					width: 100%;
+				}
 
 				> [class*="col"] {
 					padding-left: $gutter;
