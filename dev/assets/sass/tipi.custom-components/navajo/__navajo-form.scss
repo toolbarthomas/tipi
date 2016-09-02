@@ -1,0 +1,18 @@
+@mixin navajo-form {
+	@include form-style (
+		$selector: null,
+		$background-color: #ededed,
+		$background-color--hover: $body-color,
+		$background-color--focus: $body-color,
+		$color: false,
+		$color--hover: false,
+		$color--focus: false,
+		$border: solid 1px $border-color,
+		$border-color--hover: $base-color,
+		$border-color--focus: $primary-color,
+		$border-radius: 3px,
+		$box-shadow: 0 1px 3px rgba(black, 0.2),
+		$box-shadow--hover: false,
+		$box-shadow--focus: false
+	);
+}
