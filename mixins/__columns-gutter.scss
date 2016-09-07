@@ -13,7 +13,7 @@
 
 				> [class*="col"] {
 					padding-left: $gutter;
-					padding-top: $gutter;
+					margin-top: $gutter;
 				}
 
 				+ .row {
