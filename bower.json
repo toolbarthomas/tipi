@@ -20,13 +20,13 @@
     "tipi.base.defaults": "^1.0.0",
     "tipi.base.typography": "^0.2.6",
     "tipi.base.sticky-end": "^1.0.0",
-    "tipi.base.columns": "^1.0.0",
-    "tipi.base.fluid": "^0.2.0",
+    "tipi.base.columns": "^1.1.0",
+    "tipi.base.fluid": "^1.0.0",
     "tipi.base.spaces": "^1.0.0",
     "tipi.base.combined": "^1.0.0",
     "tipi.base.element-group": "^2.0.0",
     "tipi.base.valign": "^0.1.0",
-    "tipi.base.wrapper": "^1.0.0",
+    "tipi.base.wrapper": "^2.0.0",
     "tipi.base.helpers": "^1.0.0"
   }
 }

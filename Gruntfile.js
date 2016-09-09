@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 				files: {
 					'<%= developmentPath %>/assets/sass/_tipi.import.components.scss': [
 						'<%= modulePath %>/**/*.base.*.scss',
+						'<%= modulePath %>/**/*.tool.*.scss',
 						'<%= modulePath %>/**/*.component.*.scss'
 					]
 				},
@@ -41,6 +42,7 @@ module.exports = function(grunt) {
 					'sass-globbing',
 				]
 			},
+
 			development: {
 				options: {
 					basePath: '<%= developmentPath %>/',
@@ -163,7 +165,7 @@ module.exports = function(grunt) {
 		},
 
 		cmq: {
-			production: {
+			development: {
 				files: {
 					'<%= productionPath %>/assets/css/': ['<%= productionPath %>/assets/css/*.css']
 				}
@@ -365,9 +367,9 @@ module.exports = function(grunt) {
 				'concat:modules',
 				'zetzer:development',
 				'zetzer:modules',
+				'cmq:development',
 			],
 			production: [
-				'cmq:production',
 				'cssmin:production',
 				'newer:image:production',
 				'uglify:production'
