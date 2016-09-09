@@ -43,11 +43,32 @@
 
 	@include columns-gutter('&', $column-gutter);
 	@include responsive-columns('col', 'left', false, false);
-	@include responsive-columns('scol', 'sleft', 0, $smartphone-max-width);
-	@include responsive-columns('pcol', 'pleft', $phablet-min-width, $phablet-max-width);
-	@include responsive-columns('tcol', 'tleft', $tablet-min-width, $tablet-max-width);
-	@include responsive-columns('tlcol', 'tlleft', $tablet-landscape-min-width, $tablet-landscape-max-width);
-	@include responsive-columns('dcol', 'dleft', $desktop-min-width, $desktop-max-width);
-	@include responsive-columns('wcol', 'wleft', $widescreen-min-width, $widescreen-max-width);
-	@include responsive-columns('hcol', 'hleft', $highroller-min-width, false);
+
+	@if $enable-specific-columns-for-smartphone != false {
+		@include responsive-columns('scol', 'sleft', 0, $smartphone-max-width);
+	}
+
+	@if $enable-specific-columns-for-phablet != false {
+		@include responsive-columns('pcol', 'pleft', $phablet-min-width, $phablet-max-width);
+	}
+
+	@if $enable-specific-columns-for-tablet != false {
+		@include responsive-columns('tcol', 'tleft', $tablet-min-width, $tablet-max-width);
+	}
+
+	@if $enable-specific-columns-for-tablet-landscape != false {
+		@include responsive-columns('tlcol', 'tlleft', $tablet-landscape-min-width, $tablet-landscape-max-width);
+	}
+
+	@if $enable-specific-columns-for-desktop != false {
+		@include responsive-columns('dcol', 'dleft', $desktop-min-width, $desktop-max-width);
+	}
+
+	@if $enable-specific-columns-for-widescreen != false {
+		@include responsive-columns('wcol', 'wleft', $widescreen-min-width, $widescreen-max-width);
+	}
+
+	@if $enable-specific-columns-for-highroller != false {
+		@include responsive-columns('hcol', 'hleft', $highroller-min-width, false);
+	}
 }

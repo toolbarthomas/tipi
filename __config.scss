@@ -1,2 +1,10 @@
 $column-gutter: 20px !default;
 $column-count: 12 !default;
+
+$enable-specific-columns-for-smartphone: true;
+$enable-specific-columns-for-phablet: true;
+$enable-specific-columns-for-tablet: true;
+$enable-specific-columns-for-tablet-landscape: true;
+$enable-specific-columns-for-desktop: true;
+$enable-specific-columns-for-widescreen: true;
+$enable-specific-columns-for-highroller: true;
