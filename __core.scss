@@ -37,13 +37,15 @@
 			line-height: $display-line-height;
 		}
 
+		@if $display-letter-spacing != false {
+			letter-spacing: $display-letter-spacing;
+		}
+
 		@if $display-text-transform != false {
 			text-transform: $display-text-transform;
 		}
 
 		@if $display-font-smoothing != false {
-			-webkit-font-smoothing: $display-font-smoothing;
-			-moz-osx-font-smoothing: $display-font-smoothing;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
@@ -82,17 +84,19 @@
 			line-height: $head-line-height;
 		}
 
+		@if $head-letter-spacing != false {
+			letter-spacing: $head-letter-spacing;
+		}
+
+
 		@if $head-text-transform != false {
 
 			text-transform: $head-text-transform;
 		}
 		@if $head-font-smoothing != false {
-			-webkit-font-smoothing: $head-font-smoothing;
-			-moz-osx-font-smoothing: $head-font-smoothing;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
-
 	}
 
 	#{$headings1} {
@@ -159,13 +163,15 @@
 			line-height: $lead-line-height;
 		}
 
+		@if $lead-letter-spacing != false {
+			letter-spacing: $lead-letter-spacing;
+		}
+
 		@if $lead-text-transform != false {
 			text-transform: $lead-text-transform;
 		}
 
 		@if $lead-font-smoothing != false {
-			-webkit-font-smoothing: $lead-font-smoothing;
-			-moz-osx-font-smoothing: $lead-font-smoothing;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
