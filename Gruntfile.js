@@ -367,7 +367,6 @@ module.exports = function(grunt) {
 				'concat:modules',
 				'zetzer:development',
 				'zetzer:modules',
-				'cmq:development',
 			],
 			production: [
 				'cssmin:production',
@@ -402,6 +401,7 @@ module.exports = function(grunt) {
 			'clean:development',
 			'concurrent:development',
 			'copy:development',
+			'cmq:development',
 			'concurrent:production',
 			'replace:production',
 			'cachebreaker:production'
