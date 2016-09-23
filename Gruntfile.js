@@ -262,6 +262,19 @@ module.exports = function(grunt) {
 		},
 
 		cachebreaker: {
+			distribution: {
+				options: {
+					match : [
+						'cached'
+					]
+				},
+				files: {
+					src: [
+						'<%= distributionPath %>/**/*.html',
+					]
+				}
+			},
+
 			build: {
 				options: {
 					match: [
@@ -306,9 +319,7 @@ module.exports = function(grunt) {
 				],
 				tasks: [
 					'sass_globbing:development',
-					'sprite:development',
 					'compass:development',
-					'svgstore:development',
 					'copy:precompiled_to_distribution',
 					'newer:copy:source_to_distribution',
 				],
@@ -333,6 +344,7 @@ module.exports = function(grunt) {
 				tasks: [
 					'svgstore:development',
 					'copy:precompiled_to_distribution',
+					'cachebreaker:distribution'
 				]
 			},
 			js: {
