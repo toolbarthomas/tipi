@@ -2,9 +2,10 @@ npm-debug.log
 node_modules/
 bower_components/
 .sass-cache/
-git_submodules/
-build/
-dist/
+/git_submodules/
+/dist/
+/build/
+/.tmp/
 *.css.map
 *.js.map
 
