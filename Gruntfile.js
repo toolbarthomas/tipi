@@ -140,7 +140,7 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			development: {
+			gruntFolders: {
 				src: [
 					'<%= precompiledPath %>',
 					'<%= distributionPath %>',
@@ -420,7 +420,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		'default', [
-			'clean:development',
+			'clean:gruntFolders',
 			'concurrent:development',
 			'copy:precompiled_to_distribution',
 			'newer:copy:source_to_distribution'
@@ -430,7 +430,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		'serve', [
-			'clean:development',
+			'clean:gruntFolders',
 			'concurrent:development',
 			'copy:precompiled_to_distribution',
 			'copy:source_to_distribution',
@@ -441,7 +441,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask(
 		'build', [
-			'clean:development',
+			'clean:gruntFolders',
 			'concurrent:development',
 			'copy:precompiled_to_distribution',
 			'newer:copy:source_to_distribution',
