@@ -10,14 +10,17 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		developmentPath: 'dev',
-		productionPath: 'dist',
+		sourcePath: 'src',
+		precompiledPath: '.tmp',
+		distributionPath: 'dist',
+		buildPath: 'build',
+
 		modulePath: 'git_submodules',
 
 		sass_globbing: {
 			development: {
 				files: {
-					'<%= developmentPath %>/assets/sass/_tipi.import.components.scss': [
+					'<%= sourcePath %>/assets/sass/_tipi.import.components.scss': [
 						'<%= modulePath %>/**/*.base.*.scss',
 						'<%= modulePath %>/**/*.tool.*.scss',
 						'<%= modulePath %>/**/*.component.*.scss'
@@ -31,11 +34,9 @@ module.exports = function(grunt) {
 
 		compass: {
 			options: {
-				cssDir: 'assets/css',
+				cssDir: '../<%= precompiledPath %>/assets/css',
 				sassDir: 'assets/sass',
 				imagesDir: 'assets/img',
-				javascriptsDir: 'assets/js',
-				fontsDir: 'assets/webfonts',
 				relativeAssets: true,
 				quiet: true,
 				require : [
@@ -45,7 +46,7 @@ module.exports = function(grunt) {
 
 			development: {
 				options: {
-					basePath: '<%= developmentPath %>/',
+					basePath: '<%= sourcePath %>/',
 					environment: 'development',
 					outputStyle: 'expanded',
 					noLineComments: false,
@@ -56,10 +57,10 @@ module.exports = function(grunt) {
 
 		sprite:{
 			development: {
-				src: '<%= developmentPath %>/assets/img/layout/sprite/*.png',
-				dest: '<%= productionPath %>/assets/img/layout/sprite.png',
-				destCss: '<%= productionPath %>/assets/css/sprite.css',
-				cssTemplate: '<%= developmentPath %>/assets/img/layout/sprite/config.handlebars',
+				src: '<%= sourcePath %>/assets/img/layout/sprite/*.png',
+				cssTemplate: '<%= sourcePath %>/assets/img/layout/sprite/config.handlebars',
+				dest: '<%= precompiledPath %>/assets/img/layout/sprite.png',
+				destCss: '<%= precompiledPath %>/assets/css/tipi.sprite.css',
 				cssHandlebarsHelpers : {
 					divideRetina : function(value) {
 						return parseInt(value) / 2;
@@ -71,8 +72,8 @@ module.exports = function(grunt) {
 		svgstore: {
 			development: {
 				files: {
-					'<%= productionPath %>/assets/img/layout/svg-sprite.svg': [
-						'<%= developmentPath %>/assets/img/layout/svg-sprite/**/*.svg'
+					'<%= precompiledPath %>/assets/img/layout/svg-sprite.svg': [
+						'<%= sourcePath %>/assets/img/layout/svg-sprite/**/*.svg'
 					]
 				},
 				options: {
@@ -102,33 +103,38 @@ module.exports = function(grunt) {
 
 					return files;
 				}()),
-				dest: '<%= productionPath %>/assets/js/lib/tipi/tipi.js',
+				dest: '<%= precompiledPath %>/assets/js/lib/tipi/tipi.js',
 			}
 		},
 
 		zetzer: {
 			options: {
-				partials: "<%= developmentPath %>/inc/partials/",
-				templates: "<%= developmentPath %>/inc/templates/"
+				partials: "<%= sourcePath %>/inc/partials/",
+				templates: "<%= sourcePath %>/inc/templates/",
+				flatten: false
 			},
 			development: {
 				files: [{
 					expand: true,
-					cwd: '<%= developmentPath %>/',
-					src: '*.html',
-					dest: '<%= productionPath %>/',
-					ext: '.html',
-					flatten: false
+					cwd: '<%= sourcePath %>/',
+					src: [
+						'**/*.html',
+						'!**/inc/**'
+					],
+					dest: '<%= precompiledPath %>/',
+					ext: '.html'
 				}]
 			},
 			modules: {
 				files: [{
 					expand: true,
 					cwd: '<%= modulePath %>/',
-					src: 'tipi.*/*.html',
-					dest: '<%= productionPath %>/pages/',
+					src: [
+						'tipi.*/*.html',
+						'!**/inc/**'
+					],
+					dest: '<%= precompiledPath %>/modules/',
 					ext: '.html',
-					flatten: false
 				}]
 			}
 		},
@@ -136,38 +142,60 @@ module.exports = function(grunt) {
 		clean: {
 			development: {
 				src: [
-					'<%= productionPath %>'
+					'<%= precompiledPath %>',
+					'<%= distributionPath %>',
+					'<%= buildPath %>'
 				]
 			}
 		},
 
 		copy: {
-			development: {
+			precompiled_to_distribution: {
 				expand: true,
-				cwd: '<%= developmentPath %>/',
+				cwd: '<%= precompiledPath %>/',
 				src: [
-					'assets/**'
+					'assets/**',
+					'**/*.html'
 				],
-				dest: '<%= productionPath %>/'
+				dest: '<%= distributionPath %>/'
+			},
+			source_to_distribution: {
+				expand: true,
+				cwd: '<%= sourcePath %>/',
+				src: [
+					'assets/js/**',
+					'assets/img/**',
+					'!assets/img/layout/sprite/**',
+					'!assets/img/layout/svg-sprite/**',
+				],
+				dest: '<%= distributionPath %>/'
+			},
+			distribution_to_build: {
+				expand: true,
+				cwd: '<%= distributionPath %>/',
+				dest: '<%= buildPath %>/',
+				src: [
+					'**'
+				],
 			}
 		},
 
 		cssmin: {
-			production: {
+			build: {
 				files: [{
 					expand: true,
-					cwd: '<%= productionPath %>/assets/css',
+					cwd: '<%= precompiledPath %>/assets/css',
 					src: ['*.css', '!*.min.css'],
-					dest: '<%= productionPath %>/assets/css',
+					dest: '<%= buildPath %>/assets/css',
 					ext: '.min.css'
 				}]
 			}
 		},
 
 		cmq: {
-			development: {
+			build: {
 				files: {
-					'<%= productionPath %>/assets/css/': ['<%= productionPath %>/assets/css/*.css']
+					'<%= buildPath %>/assets/css/': ['<%= buildPath %>/assets/css/*.css']
 				}
 			}
 		},
@@ -186,9 +214,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= productionPath %>/assets/img/',
+					cwd: '<%= sourcePath %>/assets/img/',
 					src: ['**/*.{png,jpg,jpeg,gif}'],
-					dest: '<%= productionPath %>/assets/img/'
+					dest: '<%= buildPath %>/assets/img/'
 				}]
 			}
 		},
@@ -202,24 +230,24 @@ module.exports = function(grunt) {
 					sourceMap : false
 				},
 				files: {
-					'<%= productionPath %>/assets/js/main.min.js': '<%= productionPath %>/assets/js/main.js',
-					'<%= productionPath %>/assets/js/lib/tipi/tipi.min.js': '<%= productionPath %>/assets/js/lib/tipi/tipi.js'
+					'<%= buildPath %>/assets/js/main.min.js': '<%= distributionPath %>/assets/js/main.js',
+					'<%= buildPath %>/assets/js/lib/tipi/tipi.min.js': '<%= distributionPath %>/assets/js/lib/tipi/tipi.js'
 				}
 			}
 		},
 
 		replace: {
-			production: {
-				src: ['<%= productionPath%>/**/*.html'],
-				dest: '<%= productionPath%>/',
+			build: {
+				src: ['<%= precompiledPath%>/**/*.html'],
+				overwrite: true,
 				replacements: [
 					{
 						from: 'tipi.css',
 						to: 'tipi.min.css'
 					},
 					{
-						from: 'sprite.css',
-						to: 'sprite.min.css'
+						from: 'tipi.sprite.css',
+						to: 'tipi.sprite.min.css'
 					},
 					{
 						from: 'main.js',
@@ -234,7 +262,7 @@ module.exports = function(grunt) {
 		},
 
 		cachebreaker: {
-			production: {
+			build: {
 				options: {
 					match: [
 						'cached',
@@ -244,7 +272,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					src: [
-						'<%= productionPath %>/**/*.html'
+						'<%= buildPath %>/**/*.html'
 					]
 				}
 			}
@@ -256,14 +284,13 @@ module.exports = function(grunt) {
 			},
 			assets: {
 				files: [
-					'<%= developmentPath %>/assets/**/*',
+					'<%= sourcePath %>/assets/**/*',
 
-					'!<%= developmentPath %>/assets/**/_tipi.import.*',
+					'!<%= sourcePath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**'
 				],
 				tasks: [
-					'newer:copy:development',
-					'cachebreaker:production'
+					'newer:copy:source_to_distribution',
 				],
 				options : {
 					event: ['added', 'deleted']
@@ -271,17 +298,19 @@ module.exports = function(grunt) {
 			},
 			scss: {
 				files: [
-					'<%= developmentPath %>/assets/sass/**/*.scss',
+					'<%= sourcePath %>/assets/sass/**/*.scss',
 					'<%= modulePath %>/**/*.scss',
 
-					'!<%= developmentPath %>/assets/**/_tipi.import.*',
+					'!<%= sourcePath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**',
 				],
 				tasks: [
 					'sass_globbing:development',
+					'sprite:development',
 					'compass:development',
 					'svgstore:development',
-					'newer:copy:development'
+					'copy:precompiled_to_distribution',
+					'newer:copy:source_to_distribution',
 				],
 				options: {
 					interrupt: true,
@@ -290,45 +319,46 @@ module.exports = function(grunt) {
 			},
 			sprite: {
 				files: [
-					'<%= developmentPath %>/**/*.png'
+					'<%= sourcePath %>/**/*.png'
 				],
 				tasks: [
-					'sprite:development'
+					'sprite:development',
+					'copy:precompiled_to_distribution',
 				]
 			},
-			svg: {
+			svgsprite: {
 				files: [
-					'<%= developmentPath %>/**/*.svg'
+					'<%= sourcePath %>/**/*.svg'
 				],
 				tasks: [
 					'svgstore:development',
-					'newer:copy:development'
+					'copy:precompiled_to_distribution',
 				]
 			},
 			js: {
 				files: [
 					'<%= modulePath %>/**/tipi.*.js',
-					'<%= developmentPath %>/assets/js/*.js'
+					'<%= sourcePath %>/assets/js/*.js'
 				],
 				tasks: [
 					'concat:modules',
-					'newer:copy:development'
+					'newer:copy:precompiled_to_distribution'
 				]
 			},
 			html: {
 				files: [
-					'<%= developmentPath %>/**/*.html',
+					'<%= sourcePath %>/**/*.html',
 					'<%= modulePath %>/**/*.html'
 				],
 				tasks: [
 					'zetzer:development',
 					'zetzer:modules',
-					'cachebreaker:production'
+					'newer:copy:precompiled_to_distribution'
 				]
 			},
 			reload: {
 				files: [
-					'<%= productionPath %>/**/*.css'
+					'<%= distributionPath %>/**/*.css'
 				],
 				options : {
 					livereload : true,
@@ -349,7 +379,7 @@ module.exports = function(grunt) {
 			development: {
 				options: {
 					port: 8000,
-					base: '<%= productionPath %>',
+					base: '<%= distributionPath %>',
 					livereload: true,
 					open: {
 						target: 'http://localhost:8000'
@@ -366,10 +396,10 @@ module.exports = function(grunt) {
 				'svgstore:development',
 				'concat:modules',
 				'zetzer:development',
-				'zetzer:modules',
+				'zetzer:modules'
 			],
-			production: [
-				'cssmin:production',
+			build: [
+				'cmq:build',
 				'newer:image:production',
 				'uglify:production'
 			]
@@ -380,7 +410,8 @@ module.exports = function(grunt) {
 		'default', [
 			'clean:development',
 			'concurrent:development',
-			'copy:development'
+			'copy:precompiled_to_distribution',
+			'newer:copy:source_to_distribution'
 		]
 	);
 
@@ -389,22 +420,24 @@ module.exports = function(grunt) {
 		'serve', [
 			'clean:development',
 			'concurrent:development',
-			'copy:development',
+			'copy:precompiled_to_distribution',
+			'copy:source_to_distribution',
 			'connect:development',
 			'watch'
 		]
 	);
 
-
 	grunt.registerTask(
 		'build', [
 			'clean:development',
 			'concurrent:development',
-			'copy:development',
-			'cmq:development',
-			'concurrent:production',
-			'replace:production',
-			'cachebreaker:production'
+			'copy:precompiled_to_distribution',
+			'newer:copy:source_to_distribution',
+			'copy:distribution_to_build',
+			'concurrent:build',
+			'cssmin:build',
+			'replace:build',
+			'cachebreaker:build'
 		]
 	);
 };

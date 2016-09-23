@@ -1,0 +1,122 @@
+// Returns the correct font-size for every breakpoint.
+// @param {String} $size - The defined size we wan't to retreive.
+// @return font-size: $font-size;
+
+
+@mixin responsive-font-size($size:false) {
+	@if $size != false {
+		//Set $found to FALSE so we can loop trough the default sizes.
+		$found: false;
+
+		//Set our default font sizes so can loop trough them
+		$default_sizes: (
+			'display1-font-size',
+			'display2-font-size',
+			'display3-font-size',
+			'h1-font-size',
+			'h2-font-size',
+			'h3-font-size',
+			'h4-font-size',
+			'h5-font-size',
+			'h6-font-size',
+			'lead-font-size',
+			'default-font-size',
+			'meta-font-size',
+			'small-font-size',
+			'tiny-font-size'
+		);
+
+		//Loop trough the default sizes to find the given $size value.
+		@each $default_size in $default_sizes {
+			//Proceed only if we haven't found our size.
+			@if $found == false {
+				//We have found our size, now we can proceed our mixin
+				@if $default_size == $size {
+					$found: true;
+				}
+			}
+		}
+
+		//If we have found the correct size we can skip this part.
+		@if $found == false {
+			$size: 'default-font-size';
+		}
+
+		$font-sizes : (
+			0 : (
+				breakpoint: 0,
+				sizes: (
+					'display1-font-size': 			3.6rem,
+					'display2-font-size': 			3.2rem,
+					'display3-font-size': 			2.8rem,
+					'h1-font-size': 				2.6rem,
+					'h2-font-size': 				2.4rem,
+					'h3-font-size': 				2.1rem,
+					'h4-font-size':					1.9rem,
+					'h5-font-size':					1.7rem,
+					'h6-font-size':					1.4rem,
+					'lead-font-size': 				1.7rem,
+					'default-font-size': 			1.4rem,
+					'meta-font-size': 				1.2rem,
+					'small-font-size': 				1.2rem,
+					'tiny-font-size': 				1.2rem
+				)
+			),
+			1 : (
+				breakpoint: $tablet-min-width,
+				sizes: (
+					'display1-font-size': 			4.1rem,
+					'display2-font-size': 			3.4rem,
+					'display3-font-size': 			3.1rem,
+					'h1-font-size': 				2.7rem,
+					'h2-font-size': 				2.4rem,
+					'h3-font-size': 				2.2rem,
+					'h4-font-size':					2.0rem,
+					'h5-font-size':					1.8rem,
+					'h6-font-size':					1.6rem,
+					'lead-font-size': 				1.8rem,
+					'default-font-size': 			1.6rem,
+					'meta-font-size': 				1.4rem,
+					'small-font-size': 				1.2rem,
+					'tiny-font-size': 				1.1rem
+				)
+			),
+			2 : (
+				breakpoint: $desktop-min-width,
+				sizes: (
+					'display1-font-size': 			4.8rem,
+					'display2-font-size': 			3.9rem,
+					'display3-font-size': 			3.5rem,
+					'h1-font-size': 				3.2rem,
+					'h2-font-size': 				2.7rem,
+					'h3-font-size': 				2.4rem,
+					'h4-font-size':					2.1rem,
+					'h5-font-size':					1.8rem,
+					'h6-font-size':					1.6rem,
+					'lead-font-size': 				1.8rem,
+					'default-font-size': 			1.6rem,
+					'meta-font-size': 				1.4rem,
+					'small-font-size': 				1.2rem,
+					'tiny-font-size': 				1.1rem
+				)
+			)
+		);
+
+
+		$previous-font-size: 0;
+		@for $i from 0 through length($font-sizes) - 1 {
+			$font-size: map-get(map-get(map-get($font-sizes, $i), 'sizes'), $size);
+			$breakpoint: map-get(map-get($font-sizes, $i), 'breakpoint');
+
+			@if $font-size != null and $breakpoint != null {
+				@if $previous-font-size != $font-size {
+					@include breakpoint($breakpoint) {
+						font-size: $font-size;
+					}
+				}
+
+				$previous-font-size: $font-size;
+			}
+		}
+	}
+}

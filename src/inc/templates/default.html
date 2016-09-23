@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<title>Tipi - {{= it.document.title }}</title>
+
+		<meta name="description" content="" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="ToolbarThomas" />
+
+		<!-- Microsoft Windows Application Settings -->
+		<meta name="application-name" content=""/>
+		<meta name="msapplication-TileColor" content="#000000"/>
+
+		<!-- Facebook Open Graph Meta Tags-->
+		<meta property="og:title" content=""/>
+		<meta property="og:type" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+
+		<!-- Twitter Cards -->
+		<meta name="twitter:title" content="">
+		<meta name="twitter:image" content="">
+		<meta name="twitter:description" content="">
+		<meta name="twitter:url" content="">
+
+		<!-- Respsonsive Meta Tags -->
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
+
+		<!-- Web Application Icon -->
+		<link rel="icon" type="image/png" href="/assets/img/layout/appicon.png">
+
+		<!-- Apple Touch Icon -->
+		<link rel="apple-touch-icon" href="/assets/img/layout/apple-touch-icon.png">
+		<link rel="mask-icon" href="/assets/img/layout/appicon.svg" color="#000000">
+
+		<!-- Webfonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="/assets/css/tipi.css" type="text/css">
+		<link rel="stylesheet" href="/assets/css/tipi.sprite.css" type="text/css">
+	</head>
+	<body>
+		<div class="sticky-end">
+			<div class="sticky-end-body">
+				{{= it.include("header") }}
+				{{= it.document }}
+			</div>
+			<div class="sticky-end-footer">
+				{{= it.include("footer") }}
+			</div>
+		</div>
+
+		<script src="/assets/js/lib/modernizr/modernizr-custom.js"></script>
+		<script src="/assets/js/lib/svg-sprite-injector/svg-sprite-injector.min.js"></script>
+		<script>
+			var cachebreaker = 'cached';
+			svgSpriteInjector('/assets/img/layout/svg-sprite.svg', {
+				revision: cachebreaker
+			});
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/assets/lib/jquery/jquery-2.2.4"><\/script>')</script>
+
+		<script src="/assets/js/lib/tipi/tipi.js"></script>
+
+		<script src="/assets/js/main.js"></script>
+	</body>
+</html>
