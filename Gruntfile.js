@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 		sprite: 'grunt-spritesmith',
 		cachebreaker: 'grunt-cache-breaker',
 		replace: 'grunt-text-replace',
-		cmq: 'grunt-combine-media-queries'
+		cmq: 'grunt-combine-media-queries',
+		bower: 'grunt-bower-task'
 	});
 
 	grunt.initConfig({
@@ -16,6 +17,23 @@ module.exports = function(grunt) {
 		buildPath: 'build',
 
 		modulePath: 'git_submodules',
+
+		bower: {
+			install : {
+				options: {
+					targetDir: './bower_components/',
+					layout: 'byComponent',
+					install: true,
+					verbose: false,
+					cleanTargetDir: false,
+					cleanBowerDir: false,
+					bowerOptions: {
+						forceLatest: false,
+						production: true,
+					}
+				}
+			}
+		},
 
 		sass_globbing: {
 			development: {
@@ -70,17 +88,17 @@ module.exports = function(grunt) {
 		},
 
 		svgstore: {
+			options: {
+				cleanup: true,
+				cleanupdefs: true,
+				prefix : 'glyph-',
+				inheritviewbox: true
+			},
 			development: {
 				files: {
 					'<%= precompiledPath %>/assets/img/layout/svg-sprite.svg': [
 						'<%= sourcePath %>/assets/img/layout/svg-sprite/**/*.svg'
 					]
-				},
-				options: {
-					cleanup: true,
-					cleanupdefs: true,
-					prefix : 'glyph-',
-					inheritviewbox: true
 				}
 			}
 		},
@@ -150,6 +168,15 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
+			bower_to_distribution: {
+				expand: true,
+				cwd: 'bower_components/',
+				src: [
+					'jquery/**',
+					'svg-sprite-injector/**'
+				],
+				dest: '<%= distributionPath %>/assets/js/lib/'
+			},
 			precompiled_to_distribution: {
 				expand: true,
 				cwd: '<%= precompiledPath %>/',
@@ -200,45 +227,50 @@ module.exports = function(grunt) {
 			}
 		},
 
-		image: {
-			production: {
+		imagemin: {
+			build: {
 				options: {
-					pngquant: true,
-					optipng: false,
-					zopflipng: true,
-					jpegRecompress: true,
-					jpegoptim: true,
-					mozjpeg: true,
-					gifsicle: true,
-					svgo: false
+					optimizationLevel: 3,
+					svgoPlugins: [
+						{removeViewBox: false},
+						{removeUselessStrokeAndFill: false},
+						{removeEmptyAttrs: true}
+					],
 				},
 				files: [{
 					expand: true,
 					cwd: '<%= sourcePath %>/assets/img/',
-					src: ['**/*.{png,jpg,jpeg,gif}'],
+					src: [
+						'**/*.{png,jpg,jpeg,gif,svg}',
+					],
 					dest: '<%= buildPath %>/assets/img/'
 				}]
 			}
 		},
 
 		uglify: {
-			production: {
-				options: {
-					compress : {
-						drop_console : true
-					},
-					sourceMap : false
+			options: {
+				compress : {
+					drop_console : true
 				},
+				sourceMap : false
+			},
+			bower_components: {
 				files: {
-					'<%= buildPath %>/assets/js/main.min.js': '<%= distributionPath %>/assets/js/main.js',
-					'<%= buildPath %>/assets/js/lib/tipi/tipi.min.js': '<%= distributionPath %>/assets/js/lib/tipi/tipi.js'
+					'<%= distributionPath %>/assets/js/lib/svg-sprite-injector/svg-sprite-injector.min.js': '<%= distributionPath %>/assets/js/lib/svg-sprite-injector/svg-sprite-injector.js'
+				}
+			},
+			production: {
+				files: {
+					'<%= buildPath %>/assets/js/lib/tipi/tipi.min.js': '<%= distributionPath %>/assets/js/lib/tipi/tipi.js',
+					'<%= buildPath %>/assets/js/main.min.js': '<%= distributionPath %>/assets/js/main.js'
 				}
 			}
 		},
 
 		replace: {
 			build: {
-				src: ['<%= precompiledPath%>/**/*.html'],
+				src: ['<%= buildPath %>/**/*.html'],
 				overwrite: true,
 				replacements: [
 					{
@@ -388,7 +420,7 @@ module.exports = function(grunt) {
 		},
 
 		connect: {
-			development: {
+			distribution: {
 				options: {
 					port: 8000,
 					base: '<%= distributionPath %>',
@@ -400,56 +432,67 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+
+
 		concurrent: {
-			development: [
-				'sass_globbing:development',
-				'sprite:development',
-				'compass:development',
-				'svgstore:development',
-				'concat:modules',
-				'zetzer:development',
-				'zetzer:modules'
+			distribution: [
+				[
+					'clean:gruntFolders',
+					'bower:install',
+					'copy:bower_to_distribution',
+					'uglify:bower_components'
+				],
+				[
+					'sass_globbing:development',
+					'compass:development',
+					'sprite:development',
+					'svgstore:development',
+					'concat:modules',
+					'zetzer:development',
+					'zetzer:modules',
+					'copy:precompiled_to_distribution',
+					'copy:source_to_distribution'
+				]
 			],
 			build: [
-				'cmq:build',
-				'newer:image:production',
-				'uglify:production'
+				[
+					'newer:image:production',
+				],
+				[
+					'uglify:production',
+					'cmq:build',
+					'cssmin:build'
+				],
+				[
+					'replace:build',
+					'cachebreaker:build'
+				]
+
 			]
 		}
 	});
 
 	grunt.registerTask(
 		'default', [
-			'clean:gruntFolders',
-			'concurrent:development',
-			'copy:precompiled_to_distribution',
-			'newer:copy:source_to_distribution'
+			'concurrent:distribution'
 		]
 	);
 
 
 	grunt.registerTask(
 		'serve', [
-			'clean:gruntFolders',
-			'concurrent:development',
-			'copy:precompiled_to_distribution',
-			'copy:source_to_distribution',
-			'connect:development',
+			'concurrent:distribution',
+			'connect:distribution',
 			'watch'
 		]
 	);
 
 	grunt.registerTask(
 		'build', [
-			'clean:gruntFolders',
-			'concurrent:development',
-			'copy:precompiled_to_distribution',
-			'newer:copy:source_to_distribution',
+			'concurrent:distribution',
 			'copy:distribution_to_build',
-			'concurrent:build',
-			'cssmin:build',
-			'replace:build',
-			'cachebreaker:build'
+			'concurrent:build'
 		]
 	);
 };
