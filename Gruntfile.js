@@ -39,9 +39,9 @@ module.exports = function(grunt) {
 			development: {
 				files: {
 					'<%= sourcePath %>/assets/sass/_tipi.import.components.scss': [
-						'<%= modulePath %>/**/*.base.*.scss',
-						'<%= modulePath %>/**/*.tool.*.scss',
-						'<%= modulePath %>/**/*.component.*.scss'
+						'<%= modulePath %>/**/*tipi.base.*.scss',
+						'<%= modulePath %>/**/*tipi.tool.*.scss',
+						'<%= modulePath %>/**/*tipi.component.*.scss'
 					]
 				},
 				options: {
