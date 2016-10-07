@@ -386,7 +386,8 @@ module.exports = function(grunt) {
 				],
 				tasks: [
 					'concat:modules',
-					'newer:copy:precompiled_to_distribution'
+					'newer:copy:precompiled_to_distribution',
+					'newer:copy:source_to_distribution'
 				]
 			},
 			html: {
