@@ -14,6 +14,7 @@
 			display: inline-block;
 			width: 100%;
 			position: relative;
+			text-align: left;
 		}
 
 		> * {
@@ -27,6 +28,14 @@
 		> [class*="col"] {
 			direction: ltr;
 		}
+	}
+
+	.row--right {
+		text-align: right;
+	}
+
+	.row--center {
+		text-align: center;
 	}
 
 	.row--middle {
