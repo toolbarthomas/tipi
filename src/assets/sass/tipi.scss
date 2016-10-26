@@ -1,12 +1,8 @@
 @import "compass";
 
-@import "tipi.core/variables/**";
-@import "tipi.core/mixins/**";
-@import "tipi.core/sprite/**";
-
-@import "tipi.import.components";
-
-@import "tipi.custom-components/**/*tipi.*";
+@import "tipi.import.core";
+@import "tipi.import.packages";
+@import "tipi.import.custom-components";
 
 @import "tipi.responsive/smartphone/smartphone";
 @import "tipi.responsive/smartphone/smartphone--max";

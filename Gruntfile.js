@@ -38,11 +38,21 @@ module.exports = function(grunt) {
 		sass_globbing: {
 			development: {
 				files: {
-					'<%= sourcePath %>/assets/sass/_tipi.import.components.scss': [
+					'<%= sourcePath %>/assets/sass/_tipi.import.core.scss': [
+						'<%= sourcePath %>/assets/sass/tipi.core/variables/**.scss',
+						'<%= sourcePath %>/assets/sass/tipi.core/mixins/**.scss',
+						'!**/__*.scss'
+					],
+					'<%= sourcePath %>/assets/sass/_tipi.import.custom-components.scss': [
+						'<%= sourcePath %>/assets/sass/tipi.custom-components/**/*.scss',
+						'!**/__*.scss'
+					],
+					'<%= sourcePath %>/assets/sass/_tipi.import.packages.scss': [
 						'<%= modulePath %>/**/*tipi.base.*.scss',
 						'<%= modulePath %>/**/*tipi.tool.*.scss',
-						'<%= modulePath %>/**/*tipi.component.*.scss'
-					]
+						'<%= modulePath %>/**/*tipi.component.*.scss',
+						'!**/__*.scss'
+					],
 				},
 				options: {
 					signature: false
