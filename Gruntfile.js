@@ -66,10 +66,7 @@ module.exports = function(grunt) {
 				sassDir: 'assets/sass',
 				imagesDir: 'assets/img',
 				relativeAssets: true,
-				quiet: true,
-				require : [
-					'sass-globbing',
-				]
+				quiet: true
 			},
 
 			development: {
