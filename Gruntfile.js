@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		distributionPath: 'dist',
 		buildPath: 'build',
 
-		modulePath: 'git_submodules',
+		packagePath: 'git_submodules',
 
 		bower: {
 			install : {
@@ -48,9 +48,9 @@ module.exports = function(grunt) {
 						'!**/__*.scss'
 					],
 					'<%= sourcePath %>/assets/sass/_tipi.import.packages.scss': [
-						'<%= modulePath %>/**/*tipi.base.*.scss',
-						'<%= modulePath %>/**/*tipi.tool.*.scss',
-						'<%= modulePath %>/**/*tipi.component.*.scss',
+						'<%= packagePath %>/**/*tipi.base.*.scss',
+						'<%= packagePath %>/**/*tipi.tool.*.scss',
+						'<%= packagePath %>/**/*tipi.component.*.scss',
 						'!**/__*.scss'
 					],
 				},
@@ -117,7 +117,22 @@ module.exports = function(grunt) {
 			},
 			modules : {
 				src: (function () {
-					var cwd = "<%= modulePath %>/";
+					var cwd = "<%= sourcePath %>/assets/js/modules/";
+					var files = [
+						"**/*.js",
+					];
+
+					files = files.map(function (file) {
+						return cwd + file;
+					});
+
+					return files;
+				}()),
+				dest: '<%= precompiledPath %>/assets/js/modules.js',
+			},
+			packages : {
+				src: (function () {
+					var cwd = "<%= packagePath %>/";
 					var files = [
 						"**/tipi.*.js",
 					];
@@ -153,7 +168,7 @@ module.exports = function(grunt) {
 			modules: {
 				files: [{
 					expand: true,
-					cwd: '<%= modulePath %>/',
+					cwd: '<%= packagePath %>/',
 					src: [
 						'tipi.*/*.html',
 						'!**/inc/**'
@@ -351,7 +366,7 @@ module.exports = function(grunt) {
 			scss: {
 				files: [
 					'<%= sourcePath %>/assets/sass/**/*.scss',
-					'<%= modulePath %>/**/*.scss',
+					'<%= packagePath %>/**/*.scss',
 
 					'!<%= sourcePath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**',
@@ -388,7 +403,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'<%= modulePath %>/**/tipi.*.js',
+					'<%= packagePath %>/**/tipi.*.js',
 					'<%= sourcePath %>/assets/js/*.js'
 				],
 				tasks: [
@@ -400,7 +415,7 @@ module.exports = function(grunt) {
 			html: {
 				files: [
 					'<%= sourcePath %>/**/*.html',
-					'<%= modulePath %>/**/*.html'
+					'<%= packagePath %>/**/*.html'
 				],
 				tasks: [
 					'zetzer:development',
@@ -456,6 +471,7 @@ module.exports = function(grunt) {
 					'compass:development',
 					'sprite:development',
 					'svgstore:development',
+					'concat:packages',
 					'concat:modules',
 					'zetzer:development',
 					'zetzer:modules',
