@@ -8,6 +8,8 @@ module.exports = function(grunt) {
 		bower: 'grunt-bower-task'
 	});
 
+	require('time-grunt')(grunt);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
