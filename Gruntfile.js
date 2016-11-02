@@ -159,7 +159,7 @@ module.exports = function(grunt) {
 				templates: "<%= sourcePath %>/inc/templates/",
 				flatten: false
 			},
-			development: {
+			source: {
 				files: [{
 					expand: true,
 					cwd: '<%= sourcePath %>/',
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
 				],
 				dest: '<%= distributionPath %>/'
 			},
-			distribution_to_build: {
+			distribution_to_production: {
 				expand: true,
 				cwd: '<%= distributionPath %>/',
 				dest: '<%= buildPath %>/',
@@ -236,7 +236,7 @@ module.exports = function(grunt) {
 		},
 
 		cssmin: {
-			build: {
+			production: {
 				files: [{
 					expand: true,
 					cwd: '<%= precompiledPath %>/assets/css',
@@ -248,7 +248,7 @@ module.exports = function(grunt) {
 		},
 
 		cmq: {
-			build: {
+			production: {
 				files: {
 					'<%= buildPath %>/assets/css/': ['<%= buildPath %>/assets/css/*.css']
 				}
@@ -256,7 +256,7 @@ module.exports = function(grunt) {
 		},
 
 		imagemin: {
-			build: {
+			production: {
 				options: {
 					optimizationLevel: 3,
 					svgoPlugins: [
@@ -297,7 +297,7 @@ module.exports = function(grunt) {
 		},
 
 		replace: {
-			build: {
+			production: {
 				src: ['<%= buildPath %>/**/*.html'],
 				overwrite: true,
 				replacements: [
@@ -335,7 +335,7 @@ module.exports = function(grunt) {
 				}
 			},
 
-			build: {
+			production: {
 				options: {
 					match: [
 						'cached',
@@ -399,7 +399,7 @@ module.exports = function(grunt) {
 			},
 			svgsprite: {
 				files: [
-					'<%= sourcePath %>/**/*.svg'
+					'<%= sourcePath %>/**/**.svg'
 				],
 				tasks: [
 					'svgstore:development',
@@ -420,11 +420,11 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [
-					'<%= sourcePath %>/**/*.html',
-					'<%= packagePath %>/**/*.html'
+					'<%= sourcePath %>/**/**.html',
+					'<%= packagePath %>/**/**.html'
 				],
 				tasks: [
-					'zetzer:development',
+					'zetzer:source',
 					'zetzer:modules',
 					'newer:copy:precompiled_to_distribution'
 				]
@@ -479,24 +479,24 @@ module.exports = function(grunt) {
 					'svgstore:development',
 					'concat:packages',
 					'concat:modules',
-					'zetzer:development',
+					'zetzer:source',
 					'zetzer:modules',
 					'copy:precompiled_to_distribution',
 					'copy:source_to_distribution'
 				]
 			],
-			build: [
+			production: [
 				[
-					'newer:image:production',
+					'imagemin:production',
 				],
 				[
 					'uglify:production',
-					'cmq:build',
-					'cssmin:build'
+					'cmq:production',
+					'cssmin:production'
 				],
 				[
-					'replace:build',
-					'cachebreaker:build'
+					'replace:production',
+					'cachebreaker:production'
 				]
 
 			]
@@ -521,8 +521,8 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		'build', [
 			'concurrent:distribution',
-			'copy:distribution_to_build',
-			'concurrent:build'
+			'copy:distribution_to_production',
+			'concurrent:production'
 		]
 	);
 };
