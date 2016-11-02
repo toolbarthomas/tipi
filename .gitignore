@@ -9,4 +9,4 @@ bower_components/
 *.css.map
 *.js.map
 
-_tipi.import.components.scss
+_tipi.import.*.scss
