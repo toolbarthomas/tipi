@@ -96,7 +96,13 @@ module.exports = function(grunt) {
 
 		svgstore: {
 			options: {
-				cleanup: true,
+				cleanup: [
+					'fill',
+					'stroke',
+					'fill-rule',
+					'stroke-width',
+					'id'
+				],
 				cleanupdefs: true,
 				prefix : 'glyph-',
 				inheritviewbox: true
