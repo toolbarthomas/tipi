@@ -62,6 +62,19 @@ module.exports = function(grunt) {
 			}
 		},
 
+		sass: {
+			options: {
+				sourceMap: true,
+				outputStyle: 'expanded',
+				sourceComments: false,
+			},
+			development: {
+				files: {
+					'<%= precompiledPath %>/assets/css/tipi.css': '<%= sourcePath %>/assets/sass/tipi.scss'
+				}
+			}
+		},
+
 		compass: {
 			options: {
 				cssDir: '../<%= precompiledPath %>/assets/css',
@@ -318,6 +331,10 @@ module.exports = function(grunt) {
 					{
 						from: 'tipi.js',
 						to: 'tipi.min.js'
+					},
+					{
+						from: 'svg-sprite-injector.js',
+						to: 'svg-sprite-injector.min.js'
 					}
 				]
 			}
@@ -429,7 +446,11 @@ module.exports = function(grunt) {
 					'zetzer:source',
 					'zetzer:modules',
 					'newer:copy:precompiled_to_distribution'
-				]
+				],
+				options : {
+					livereload : true,
+					livereloadOnError: false
+				}
 			},
 			reload: {
 				files: [
