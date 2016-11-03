@@ -172,7 +172,9 @@ module.exports = function(grunt) {
 			options: {
 				partials: "<%= sourcePath %>/inc/partials/",
 				templates: "<%= sourcePath %>/inc/templates/",
-				flatten: false
+				dot_template_settings: {
+					strip: false
+				}
 			},
 			source: {
 				files: [{
