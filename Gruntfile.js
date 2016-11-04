@@ -40,6 +40,9 @@ module.exports = function(grunt) {
 		sass_globbing: {
 			development: {
 				files: {
+					'<%= sourcePath %>/assets/sass/_tipi.import.frameworks.scss': [
+						'bower_components/bourbon/app/assets/stylesheets/_bourbon.scss',
+					],
 					'<%= sourcePath %>/assets/sass/_tipi.import.core.scss': [
 						'<%= sourcePath %>/assets/sass/tipi.core/variables/**.scss',
 						'<%= sourcePath %>/assets/sass/tipi.core/mixins/**.scss',
@@ -71,26 +74,6 @@ module.exports = function(grunt) {
 			development: {
 				files: {
 					'<%= precompiledPath %>/assets/css/tipi.css': '<%= sourcePath %>/assets/sass/tipi.scss'
-				}
-			}
-		},
-
-		compass: {
-			options: {
-				cssDir: '../<%= precompiledPath %>/assets/css',
-				sassDir: 'assets/sass',
-				imagesDir: 'assets/img',
-				relativeAssets: true,
-				quiet: true
-			},
-
-			development: {
-				options: {
-					basePath: '<%= sourcePath %>/',
-					environment: 'development',
-					outputStyle: 'expanded',
-					noLineComments: false,
-					sourcemap: true
 				}
 			}
 		},
@@ -385,7 +368,7 @@ module.exports = function(grunt) {
 					event: ['added', 'deleted']
 				}
 			},
-			scss: {
+			sass_globbing: {
 				files: [
 					'<%= sourcePath %>/assets/sass/**/*.scss',
 					'<%= packagePath %>/**/*.scss',
@@ -395,7 +378,21 @@ module.exports = function(grunt) {
 				],
 				tasks: [
 					'sass_globbing:development',
-					'compass:development',
+				],
+				options: {
+					event: ['added', 'deleted'],
+				}
+			},
+			scss: {
+				files: [
+					'<%= sourcePath %>/assets/sass/**/*.scss',
+					'<%= packagePath %>/**/*.scss',
+
+					'!<%= sourcePath %>/assets/**/_tipi.import.*',
+					'!**/node_modules/**',
+				],
+				tasks: [
+					'sass:development',
 					'copy:precompiled_to_distribution',
 					'newer:copy:source_to_distribution',
 				],
@@ -492,9 +489,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-
-
-
 		concurrent: {
 			distribution: [
 				[
@@ -505,7 +499,7 @@ module.exports = function(grunt) {
 				],
 				[
 					'sass_globbing:development',
-					'compass:development',
+					'sass:development',
 					'sprite:development',
 					'svgstore:development',
 					'concat:packages',

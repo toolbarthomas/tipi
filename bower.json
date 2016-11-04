@@ -28,6 +28,7 @@
     "tipi.base.valign": "^0.1.0",
     "tipi.base.wrapper": "^2.0.0",
     "tipi.base.helpers": "^1.0.0",
+    "bourbon": "^4.2.7",
     "svg-sprite-injector": "^1.0.0",
     "jquery": "^2.2.4"
   }
