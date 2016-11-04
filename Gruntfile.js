@@ -404,9 +404,20 @@ module.exports = function(grunt) {
 					spawn : true
 				}
 			},
+			images: {
+				files: [
+					'<%= sourcePath %>/assets/img/**/*',
+
+					'!<%= sourcePath %>/assets/img/**/sprite/**',
+					'!<%= sourcePath %>/assets/img/**/svg-sprite/**'
+				],
+				tasks: [
+					'newer:copy:source_to_distribution',
+				]
+			},
 			sprite: {
 				files: [
-					'<%= sourcePath %>/**/*.png'
+					'<%= sourcePath %>/assets/img/**/sprite/**/*.png'
 				],
 				tasks: [
 					'sprite:development',
@@ -415,7 +426,7 @@ module.exports = function(grunt) {
 			},
 			svgsprite: {
 				files: [
-					'<%= sourcePath %>/**/**.svg'
+					'<%= sourcePath %>/assets/img/**/svg-sprite/**/*.svg'
 				],
 				tasks: [
 					'svgstore:development',
