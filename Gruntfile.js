@@ -275,18 +275,13 @@ module.exports = function(grunt) {
 		imagemin: {
 			production: {
 				options: {
-					optimizationLevel: 3,
-					svgoPlugins: [
-						{removeViewBox: false},
-						{removeUselessStrokeAndFill: false},
-						{removeEmptyAttrs: true}
-					],
+					optimizationLevel: 3
 				},
 				files: [{
 					expand: true,
 					cwd: '<%= sourcePath %>/assets/img/',
 					src: [
-						'**/*.{png,jpg,jpeg,gif,svg}',
+						'**/*.{png,jpg,jpeg,gif}',
 					],
 					dest: '<%= buildPath %>/assets/img/'
 				}]
