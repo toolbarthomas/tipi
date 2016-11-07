@@ -1,6 +1,5 @@
 @mixin core_columns {
 	.row {
-		position: relative;
 		display: table; /* Remove the white space between each column on the Stock Android Jellybean Browser */
 		display: block\9; /* Internet Explorer 9 fix for calc function on element with table display property */
 		font-size: 0; /* Remove the white space between columns */
@@ -13,7 +12,6 @@
 			vertical-align: top;
 			display: inline-block;
 			width: 100%;
-			position: relative;
 			text-align: left;
 		}
 

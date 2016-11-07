@@ -1,8 +1,11 @@
-@mixin columns-gutter($selector:false, $gutter:false) {
-	@if $selector != false {
+@mixin columns-gutter(
+	$selector: false,
+	$gutter: false
+) {
+	@if $selector != false and $gutter != false {
 		.row {
 			#{$selector} {
-				margin-top: -$gutter;
+				margin-bottom: -$gutter;
 				margin-left: -$gutter;
 
 				@if $gutter != 0 {
@@ -13,13 +16,11 @@
 
 				> [class*="col"] {
 					padding-left: $gutter;
-					margin-top: $gutter;
+					margin-bottom: $gutter;
 				}
 
 				+ .row {
-					#{$selector} {
-						margin-top: 0;
-					}
+					margin-top: $gutter;
 				}
 			}
 		}
