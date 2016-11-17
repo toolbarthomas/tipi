@@ -38,11 +38,24 @@ module.exports = function(grunt) {
 		},
 
 		sass_globbing: {
-			development: {
+			options: {
+				signature: false
+			},
+			packages: {
 				files: {
 					'<%= sourcePath %>/assets/sass/_tipi.import.frameworks.scss': [
 						'bower_components/bourbon/app/assets/stylesheets/_bourbon.scss',
 					],
+					'<%= sourcePath %>/assets/sass/_tipi.import.packages.scss': [
+						'<%= packagePath %>/**/*tipi.base.*.scss',
+						'<%= packagePath %>/**/*tipi.tool.*.scss',
+						'<%= packagePath %>/**/*tipi.component.*.scss',
+						'!**/__*.scss'
+					]
+				}
+			},
+			source: {
+				files: {
 					'<%= sourcePath %>/assets/sass/_tipi.import.core.scss': [
 						'<%= sourcePath %>/assets/sass/tipi.core/variables/**.scss',
 						'<%= sourcePath %>/assets/sass/tipi.core/mixins/**.scss',
@@ -52,15 +65,7 @@ module.exports = function(grunt) {
 						'<%= sourcePath %>/assets/sass/tipi.custom-components/**/*.scss',
 						'!**/__*.scss'
 					],
-					'<%= sourcePath %>/assets/sass/_tipi.import.packages.scss': [
-						'<%= packagePath %>/**/*tipi.base.*.scss',
-						'<%= packagePath %>/**/*tipi.tool.*.scss',
-						'<%= packagePath %>/**/*tipi.component.*.scss',
-						'!**/__*.scss'
-					],
-				},
-				options: {
-					signature: false
+
 				}
 			}
 		},
@@ -71,7 +76,7 @@ module.exports = function(grunt) {
 				outputStyle: 'expanded',
 				sourceComments: false,
 			},
-			development: {
+			source: {
 				files: {
 					'<%= precompiledPath %>/assets/css/tipi.css': '<%= sourcePath %>/assets/sass/tipi.scss'
 				}
@@ -79,7 +84,7 @@ module.exports = function(grunt) {
 		},
 
 		sprite:{
-			development: {
+			source: {
 				src: '<%= sourcePath %>/assets/img/layout/sprite/*.png',
 				cssTemplate: '<%= sourcePath %>/assets/img/layout/sprite/config.handlebars',
 				dest: '<%= precompiledPath %>/assets/img/layout/sprite.png',
@@ -105,7 +110,7 @@ module.exports = function(grunt) {
 				prefix : 'glyph-',
 				inheritviewbox: true
 			},
-			development: {
+			source: {
 				files: {
 					'<%= precompiledPath %>/assets/img/layout/svg-sprite.svg': [
 						'<%= sourcePath %>/assets/img/layout/svg-sprite/**/*.svg'
@@ -368,16 +373,31 @@ module.exports = function(grunt) {
 					event: ['added', 'deleted']
 				}
 			},
+			packages: {
+				files: [
+					'<%= packagePath %>/**/*',
+
+					'!**/node_modules/**',
+				],
+				tasks: [
+					'sass_globbing:packages',
+					'concat:packages',
+					'copy:precompiled_to_distribution',
+					'copy:source_to_distribution'
+				],
+				options: {
+					event: ['added', 'deleted'],
+				}
+			},
 			sass_globbing: {
 				files: [
 					'<%= sourcePath %>/assets/sass/**/*.scss',
-					'<%= packagePath %>/**/*.scss',
 
 					'!<%= sourcePath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**',
 				],
 				tasks: [
-					'sass_globbing:development',
+					'sass_globbing:source',
 				],
 				options: {
 					event: ['added', 'deleted'],
@@ -386,13 +406,12 @@ module.exports = function(grunt) {
 			scss: {
 				files: [
 					'<%= sourcePath %>/assets/sass/**/*.scss',
-					'<%= packagePath %>/**/*.scss',
 
 					'!<%= sourcePath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**',
 				],
 				tasks: [
-					'sass:development',
+					'sass:source',
 					'copy:precompiled_to_distribution',
 					'newer:copy:source_to_distribution',
 				],
@@ -417,7 +436,7 @@ module.exports = function(grunt) {
 					'<%= sourcePath %>/assets/img/**/sprite/**/*.png'
 				],
 				tasks: [
-					'sprite:development',
+					'sprite:source',
 					'copy:precompiled_to_distribution',
 				]
 			},
@@ -426,7 +445,7 @@ module.exports = function(grunt) {
 					'<%= sourcePath %>/assets/img/**/svg-sprite/**/*.svg'
 				],
 				tasks: [
-					'svgstore:development',
+					'svgstore:source',
 					'copy:precompiled_to_distribution',
 					'cachebreaker:distribution'
 				]
@@ -498,10 +517,11 @@ module.exports = function(grunt) {
 					'uglify:bower_components'
 				],
 				[
-					'sass_globbing:development',
-					'sass:development',
-					'sprite:development',
-					'svgstore:development',
+					'sass_globbing:packages',
+					'sass_globbing:source',
+					'sass:source',
+					'sprite:source',
+					'svgstore:source',
 					'concat:packages',
 					'concat:modules',
 					'zetzer:source',
