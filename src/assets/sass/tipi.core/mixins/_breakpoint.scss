@@ -1,37 +1,35 @@
-// The breakpoint mixin is used as a shorthand for returning
-// a media-query.
+// Simple mixin for wrapping content in a media query with min and max-width.
 
-@mixin breakpoint($min-width:0, $max-width:false) {
-	//Combine the @content with a media query and the 'max-width' condition.
-	@if $min-width == false {
-		@if $max-width !=  false {
-			@media only screen and (max-width: $max-width) {
-				@content;
-			}
-		} @else {
+@mixin breakpoint(
+	$min-width: 0,
+	$max-width: false
+) {
+	//Output content with media query and given min width and max width
+	@if $min-width != false and $max-width != false
+	{
+		@media only screen and (min-width: $min-width) and (max-width: $max-width) {
 			@content;
 		}
 	}
-
-	//Only return a media query with the 'min-width' condition.
-	@elseif $max-width == false {
-		//Don't combine the @content with the media query when the given with is 0.
-		@if $min-width == 0 {
+	//Output content with media query and given max width
+	@elseif $min-width == false and $max-width != false
+	{
+		@media only screen and (max-width: $max-width) {
 			@content;
 		}
-		//Combine the @content with the media query
-		@else {
+	}
+	@else {
+		//Output content without the media query since our mediaquery has a value of 0
+		@if $min-width == 0
+		{
+			@content;
+		}
+		//Output content with media query and given min width
+		@else
+		{
 			@media only screen and (min-width: $min-width) {
 				@content;
 			}
-		}
-
-	}
-
-	//Combine the @content with a media query and the 'min-width & max-width' conditions.
-	@else {
-		@media only screen and (min-width: $min-width) and (max-width: $max-width) {
-			@content;
 		}
 	}
 }
