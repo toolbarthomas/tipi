@@ -1,5 +1,13 @@
-@mixin webfont($font-family:false, $src:false, $font-weight: 400, $font-style: normal) {
-	@if $font-family != false and $src != false {
+//Mixin that return @font-face with woff, woff2 and ttf files.
+
+@mixin webfont(
+	$font-family: false,
+	$src: false,
+	$font-weight: 400,
+	$font-style: normal
+) {
+	@if $font-family != false and $src != false
+	{
 		@font-face {
 			font-family: $font-family;
 			src: url('#{$src}.woff2') format('woff2'),

@@ -1,3 +1,5 @@
+//Mixin for adding the clearfix properties to the nested element.
+
 @mixin clear(
 	$before: false,
 	$after: true
