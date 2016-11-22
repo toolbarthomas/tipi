@@ -48,34 +48,78 @@
 		}
 	}
 
-	@include columns-gutter('&', $column-gutter);
-	@include responsive-columns('col', 'left', false, false);
+	@include columns-gutter(
+		$selector: null,
+		$gutter: $column-gutter
+	);
+
+	@include responsive-columns(
+		$column-class: 'col',
+		$margin-class: 'left',
+		$min-width: false,
+		$max-width: false
+	);
 
 	@if $enable-specific-columns-for-smartphone != false {
-		@include responsive-columns('scol', 'sleft', 0, $smartphone-max-width);
+		@include responsive-columns(
+			$column-class: 'scol',
+			$margin-class: 'sleft',
+			$min-width: false,
+			$max-width: $smartphone-max-width
+		);
 	}
 
 	@if $enable-specific-columns-for-phablet != false {
-		@include responsive-columns('pcol', 'pleft', $phablet-min-width, $phablet-max-width);
+		@include responsive-columns(
+			$column-class: 'pcol',
+			$margin-class: 'pleft',
+			$min-width: $phablet-min-width,
+			$max-width: $phablet-max-width
+		);
 	}
 
 	@if $enable-specific-columns-for-tablet != false {
-		@include responsive-columns('tcol', 'tleft', $tablet-min-width, $tablet-max-width);
+		@include responsive-columns(
+			$column-class: 'tcol',
+			$margin-class: 'tleft',
+			$min-width: $tablet-min-width,
+			$max-width: $tablet-max-width
+		);
 	}
 
 	@if $enable-specific-columns-for-tablet-landscape != false {
-		@include responsive-columns('tlcol', 'tlleft', $tablet-landscape-min-width, $tablet-landscape-max-width);
+		@include responsive-columns(
+			$column-class: 'tlcol',
+			$margin-class: 'tlleft',
+			$min-width: $tablet-landscape-min-width,
+			$max-width: $tablet-landscape-max-width
+		);
 	}
 
 	@if $enable-specific-columns-for-desktop != false {
-		@include responsive-columns('dcol', 'dleft', $desktop-min-width, $desktop-max-width);
+		@include responsive-columns(
+			$column-class: 'dcol',
+			$margin-class: 'dleft',
+			$min-width: $desktop-min-width,
+			$max-width: $desktop-max-width
+		);
 	}
 
 	@if $enable-specific-columns-for-widescreen != false {
-		@include responsive-columns('wcol', 'wleft', $widescreen-min-width, $widescreen-max-width);
+		@include responsive-columns(
+			$column-class: 'wcol',
+			$margin-class: 'wleft',
+			$min-width: $widescreen-min-width,
+			$max-width: $widescreen-max-width
+		);
 	}
 
 	@if $enable-specific-columns-for-highroller != false {
-		@include responsive-columns('hcol', 'hleft', $highroller-min-width, false);
+		@include responsive-columns(
+			$column-class: 'hcol',
+			$margin-class: 'hleft',
+			$min-width: $highroller-min-width,
+			$max-width: false
+		);
 	}
 }

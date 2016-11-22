@@ -1,5 +1,13 @@
-@mixin responsive-columns($column-class:false, $margin-class:false, $breakpoint-min-width:false, $breakpoint-max-width: false) {
-	@include breakpoint($breakpoint-min-width, $breakpoint-max-width) {
+@mixin responsive-columns(
+	$column-class: false,
+	$margin-class: false,
+	$min-width: false,
+	$max-width: false
+) {
+	@include breakpoint(
+		$min-width: $min-width,
+		$max-width: $max-width
+	) {
 		.row {
 			@for $i from 1 through $column-count {
 				.#{$column-class}#{$i} {

@@ -1,10 +1,10 @@
 @mixin columns-gutter(
-	$selector: false,
+	$selector: null,
 	$gutter: false
 ) {
-	@if $selector != false and $gutter != false {
+	@if $gutter != false {
 		.row {
-			#{$selector} {
+			&#{$selector} {
 				margin-bottom: -$gutter;
 				margin-left: -$gutter;
 
