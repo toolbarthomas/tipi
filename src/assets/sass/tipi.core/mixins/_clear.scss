@@ -1,15 +1,23 @@
-@mixin clear($before: false, $after: true) {
+@mixin clear(
+	$before: false,
+	$after: true
+) {
 	$selector: ();
 
-	@if $before == true {
+	//Add ::before pseudo selector to the output
+	@if $before == true
+	{
 		$selector: append($selector, '&:before', 'comma');
 	}
 
-	@if $after == true {
+	//Add ::after pseudo selector to the output
+	@if $after == true
+	{
 		$selector: append($selector, '&:after', 'comma');
 	}
 
-	@if length($selector) > 0 {
+	@if length($selector) > 0
+	{
 		#{$selector} {
 			content: " ";
 			display: table;
