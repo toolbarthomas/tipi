@@ -20,7 +20,7 @@
 	}
 	@else {
 		//Output content without the media query since our mediaquery has a value of 0
-		@if $min-width == 0
+		@if $min-width == 0 or $min-width == false
 		{
 			@content;
 		}
