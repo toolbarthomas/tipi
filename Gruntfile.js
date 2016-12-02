@@ -406,6 +406,7 @@ module.exports = function(grunt) {
 			scss: {
 				files: [
 					'<%= sourcePath %>/assets/sass/**/*.scss',
+					'git_submodules/**/*.scss',
 
 					'!<%= sourcePath %>/assets/**/_tipi.import.*',
 					'!**/node_modules/**',
@@ -452,11 +453,12 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'<%= packagePath %>/**/tipi.*.js',
-					'<%= sourcePath %>/assets/js/*.js'
+					'<%= sourcePath %>/assets/js/*.js',
+					'git_submodules/**/*.scss',
 				],
 				tasks: [
 					'concat:modules',
+					'concat:packages',
 					'newer:copy:precompiled_to_distribution',
 					'newer:copy:source_to_distribution'
 				]
