@@ -454,7 +454,7 @@ module.exports = function(grunt) {
 			js: {
 				files: [
 					'<%= sourcePath %>/assets/js/*.js',
-					'git_submodules/**/*.scss',
+					'git_submodules/**/*.js',
 				],
 				tasks: [
 					'concat:modules',
