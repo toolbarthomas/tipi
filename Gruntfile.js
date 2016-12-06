@@ -179,7 +179,7 @@ module.exports = function(grunt) {
 			modules: {
 				files: [{
 					expand: true,
-					cwd: '<%= packagePath %>/',
+					cwd: 'git_submodules/',
 					src: [
 						'tipi.*/*.html',
 						'!**/inc/**'
@@ -291,6 +291,7 @@ module.exports = function(grunt) {
 			production: {
 				files: {
 					'<%= buildPath %>/assets/js/lib/tipi/tipi.min.js': '<%= distributionPath %>/assets/js/lib/tipi/tipi.js',
+					'<%= buildPath %>/assets/js/modules.min.js': '<%= distributionPath %>/assets/js/modules.js',
 					'<%= buildPath %>/assets/js/main.min.js': '<%= distributionPath %>/assets/js/main.js'
 				}
 			}
@@ -345,6 +346,7 @@ module.exports = function(grunt) {
 						'cached',
 						'css/*/tipi.min.css',
 						'js/*/tipi.min.js'
+						'js/*/modules.min.js'
 					]
 				},
 				files: {
@@ -421,17 +423,6 @@ module.exports = function(grunt) {
 					spawn : true
 				}
 			},
-			images: {
-				files: [
-					'<%= sourcePath %>/assets/img/**/*',
-
-					'!<%= sourcePath %>/assets/img/**/sprite/**',
-					'!<%= sourcePath %>/assets/img/**/svg-sprite/**'
-				],
-				tasks: [
-					'newer:copy:source_to_distribution',
-				]
-			},
 			sprite: {
 				files: [
 					'<%= sourcePath %>/assets/img/**/sprite/**/*.png'
@@ -453,20 +444,19 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: [
-					'<%= sourcePath %>/assets/js/*.js',
+					'<%= sourcePath %>/assets/js/**/*.js',
 					'git_submodules/**/*.js',
 				],
 				tasks: [
 					'concat:modules',
-					'concat:packages',
 					'newer:copy:precompiled_to_distribution',
 					'newer:copy:source_to_distribution'
 				]
 			},
 			html: {
 				files: [
-					'<%= sourcePath %>/**/**.html',
-					'<%= packagePath %>/**/**.html'
+					'<%= sourcePath %>/**/*.html',
+					'git_submodules/**/*.html'
 				],
 				tasks: [
 					'zetzer:source',
