@@ -1,20 +1,3 @@
 @include breakpoint(0) {
 
-	#top {
-		background-color: $primary-color;
-	}
-
-	#big-banner {
-		background-color: $body-color-alt;
-	}
-
-	#big-banner-alt {
-		background-color: $primary-color;
-	}
-
-	#red {
-		display: block;
-		width: 100%;
-		heith: 400px;
-	}
 }
