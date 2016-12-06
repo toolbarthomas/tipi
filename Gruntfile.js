@@ -345,7 +345,7 @@ module.exports = function(grunt) {
 					match: [
 						'cached',
 						'css/*/tipi.min.css',
-						'js/*/tipi.min.js'
+						'js/*/tipi.min.js',
 						'js/*/modules.min.js'
 					]
 				},
