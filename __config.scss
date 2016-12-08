@@ -55,6 +55,7 @@ $headings: (
 	$headings6
 ) !default;
 
+
 $leads: (
 	'.lead'
 ) !default;
@@ -119,7 +120,8 @@ $lead-margin-bottom:			0.57em !default;
 $lead-text-transform:			false !default;
 $lead-font-smoothing:			true !default;
 
-$format-baseline:				1.31em !default;
+$format-margin-top:				1.31em !default;
+$format-margin-bottom:			1.31em !default;
 $format-gutter: 				1.1em !default;
 $format-shrink-value:			80% !default;
 
