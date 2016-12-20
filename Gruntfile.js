@@ -100,6 +100,7 @@ module.exports = function(grunt) {
 		svgstore: {
 			options: {
 				cleanup: [
+					'style',
 					'fill',
 					'stroke',
 					'fill-rule',
