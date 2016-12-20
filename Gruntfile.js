@@ -101,6 +101,7 @@ module.exports = function(grunt) {
 			options: {
 				cleanup: [
 					'style',
+					'class',
 					'fill',
 					'stroke',
 					'fill-rule',
