@@ -15,6 +15,12 @@
 				}
 			}
 
+			.#{$column-class}#{$column-count} {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
 			//Reset the margin to prevent the responsive column from shifting with the previous push classes
 			> [class*='#{$column-class}'] {
 				margin-left: 0;
