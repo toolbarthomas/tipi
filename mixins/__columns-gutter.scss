@@ -6,20 +6,19 @@
 		.row {
 			&#{$selector} {
 				margin-left: -$gutter;
-
-				@if $gutter != 0 or $gutter == false {
+				@if $gutter != 0 {
 					width: calc(100% + #{$gutter});
 				} @else {
 					width: 100%;
 				}
 
+				&:last-of-type {
+					margin-bottom: -$gutter;
+				}
+
 				> [class*="col"] {
 					padding-left: $gutter;
 					margin-bottom: $gutter;
-				}
-
-				&:last-of-type {
-					margin-bottom: -$gutter;
 				}
 			}
 		}
