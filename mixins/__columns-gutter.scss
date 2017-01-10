@@ -5,10 +5,9 @@
 	@if $gutter != false {
 		.row {
 			&#{$selector} {
-				margin-bottom: -$gutter;
 				margin-left: -$gutter;
 
-				@if $gutter != 0 {
+				@if $gutter != 0 or $gutter == false {
 					width: calc(100% + #{$gutter});
 				} @else {
 					width: 100%;
@@ -18,10 +17,10 @@
 					padding-left: $gutter;
 					margin-bottom: $gutter;
 				}
+			}
 
-				+ .row {
-					margin-top: $gutter;
-				}
+			&:last-of-type {
+				margin-bottom: -$gutter;
 			}
 		}
 	}
