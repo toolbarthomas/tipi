@@ -17,10 +17,10 @@
 					padding-left: $gutter;
 					margin-bottom: $gutter;
 				}
-			}
 
-			&:last-of-type {
-				margin-bottom: -$gutter;
+				&:last-of-type {
+					margin-bottom: -$gutter;
+				}
 			}
 		}
 	}
