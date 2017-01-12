@@ -15,7 +15,7 @@
 				}
 			}
 
-			.#{$column-class}#{$column-count} {
+			&:not(:last-of-type) .#{$column-class}#{$column-count} {
 				&:last-child {
 					margin-bottom: 0;
 				}
