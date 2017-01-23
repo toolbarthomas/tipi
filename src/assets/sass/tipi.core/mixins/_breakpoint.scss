@@ -2,34 +2,40 @@
 
 @mixin breakpoint(
 	$min-width: 0,
-	$max-width: false
+	$max-width: false,
+	$viewport: screen
 ) {
-	//Output content with media query and given min width and max width
-	@if $min-width != false and $max-width != false
-	{
-		@media only screen and (min-width: $min-width) and (max-width: $max-width) {
-			@content;
+	$output: "";
+	$arguments: 0;
+
+	@if $min-width != false {
+		@if $min-width > 0 {
+			$output: $output + "(min-width:" + $min-width + ")";
+
+			$arguments: $arguments + 1;
 		}
 	}
-	//Output content with media query and given max width
-	@elseif $min-width == false and $max-width != false
-	{
-		@media only screen and (max-width: $max-width) {
-			@content;
+
+	@if $max-width != false {
+		@if $arguments > 0 {
+			$output: $output + " and ";
 		}
+
+		$output: $output + "(max-width:" + $max-width + ")";
+
+		$arguments: $arguments + 1;
+	}
+
+	@if $arguments > 0 and $viewport != false {
+		$output: unquote($viewport) + " and " + $output;
+	}
+
+	@if $output == "" {
+		@content;
 	}
 	@else {
-		//Output content without the media query since our mediaquery has a value of 0
-		@if $min-width == 0 or $min-width == false
-		{
+		@media #{$output} {
 			@content;
-		}
-		//Output content with media query and given min width
-		@else
-		{
-			@media only screen and (min-width: $min-width) {
-				@content;
-			}
 		}
 	}
 }
