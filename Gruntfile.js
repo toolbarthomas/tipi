@@ -227,6 +227,7 @@ module.exports = function(grunt) {
 				src: [
 					'assets/js/**',
 					'assets/img/**',
+					'assets/webfonts/**',
 					'!assets/img/layout/sprite/**',
 					'!assets/img/layout/svg-sprite/**',
 				],
