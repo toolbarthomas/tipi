@@ -7,6 +7,10 @@
 			&#{$selector} {
 				margin-left: -$gutter;
 
+				&:last-child {
+					margin-bottom: -$gutter;
+				}
+
 				@if $gutter != 0 {
 					width: calc(100% + #{$gutter});
 				} @else {
