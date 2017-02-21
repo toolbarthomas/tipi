@@ -263,22 +263,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		imagemin: {
-			production: {
-				options: {
-					optimizationLevel: 3
-				},
-				files: [{
-					expand: true,
-					cwd: '<%= sourcePath %>/assets/img/',
-					src: [
-						'**/*.{png,jpg,jpeg,gif}',
-					],
-					dest: '<%= buildPath %>/assets/img/'
-				}]
-			}
-		},
-
 		uglify: {
 			options: {
 				compress : {
