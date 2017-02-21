@@ -19,8 +19,8 @@
   "dependencies": {
     "tipi.base.defaults": "^1.1.0",
     "tipi.base.typography": "^0.3.0",
-    "tipi.base.sticky-end": "^1.0.0",
-    "tipi.base.columns": "^1.4.0",
+    "tipi.base.sticky-end": "^2.0.0",
+    "tipi.base.columns": "^2.0.0",
     "tipi.base.fluid": "^2.0.0",
     "tipi.base.spaces": "^2.0.0",
     "tipi.base.combined": "^1.1.0",
