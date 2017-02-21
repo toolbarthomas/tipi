@@ -9,20 +9,27 @@
 		$max-width: $max-width
 	) {
 		.row {
-			@for $i from 1 through $column-count {
-				.#{$column-class}#{$i} {
-					width: 100% / $column-count * $i;
+			@if $column-class != false {
+				//Setup the columns based on our column count
+				@for $i from 1 through $column-count {
+					.#{$column-class}#{$i} {
+						width: 100% / $column-count * $i;
+					}
+				}
+
+				//Reset the margin to prevent the responsive column from shifting with the previous push classes
+				> [class*='#{$column-class}'] {
+					margin-left: 0;
 				}
 			}
-			//Reset the margin to prevent the responsive column from shifting with the previous push classes
-			> [class*='#{$column-class}'] {
-				margin-left: 0;
-			}
 
-			@for $i from 1 through $column-count - 1 {
-				$class: #{$margin-class}#{$i};
-				> [class~='#{$class}'] {
-					margin-left: 100% / $column-count * $i;
+			@if $margin-class != false {
+				@for $i from 1 through $column-count - 1 {
+					$class: #{$margin-class}#{$i};
+
+					> [class~='#{$class}'] {
+						margin-left: 100% / $column-count * $i;
+					}
 				}
 			}
 		}
