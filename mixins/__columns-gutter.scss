@@ -21,6 +21,17 @@
 					padding-left: $gutter;
 					margin-bottom: $gutter;
 				}
+
+				&.row--end {
+					&,
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					> [class*="col"] {
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
 	}
