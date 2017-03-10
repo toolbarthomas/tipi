@@ -3,11 +3,13 @@
 @mixin breakpoint(
 	$min-width: 0,
 	$max-width: false,
-	$viewport: screen
+	$viewport: screen,
+	$custom_arguments...
 ) {
 	$output: "";
 	$queries: ();
 
+	//Append the min-width query to the set of media queries;
 	@if $min-width != false
 	{
 		@if $min-width > 0
@@ -16,12 +18,36 @@
 		}
 	}
 
+
+	//Append the max-width query to the set of media queries;
 	@if $max-width != false
 	{
 		$queries: append($queries, '(max-width: #{$max-width})', comma);
 	}
 
+	//Append any custom query defined in the custom_arguments parameter;
+	@if type-of($custom_arguments) == 'arglist'
+	{
+		@each $custom_argument in $custom_arguments
+		{
 
+			//Check if the custom_argument starts with '('
+			@if str-slice($custom_argument, 0, 1) != '('
+			{
+				$custom_argument: "(" + $custom_argument;
+			}
+
+			@if str-slice($custom_argument, -2, -1) != ')'
+			{
+				@warn 'ja';
+				$custom_argument: $custom_argument + ')';
+			}
+
+			$queries: append($queries, $custom_argument, comma);
+		}
+	}
+
+	//Define the actual media query
 	$i: 0;
 	@if length($queries) >  0
 	{
@@ -37,16 +63,22 @@
 		}
 	}
 
+	//Prepend the viewport to the defined media query
 	@if $output != ''
 	{
 		$output: unquote($viewport) + ' and ' + $output;
 	}
 
-	@if $output == "" {
+	//Output the content without the media query function if we have no defined query
+	@if $output == ""
+	{
 		@content;
 	}
-	@else {
-		@media #{$output} {
+	//Output the content with the defined media query
+	@else
+	{
+		@media #{$output}
+		{
 			@content;
 		}
 	}
