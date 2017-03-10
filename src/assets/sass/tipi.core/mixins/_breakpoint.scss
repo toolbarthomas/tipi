@@ -6,28 +6,40 @@
 	$viewport: screen
 ) {
 	$output: "";
-	$arguments: 0;
+	$queries: ();
 
-	@if $min-width != false {
-		@if $min-width > 0 {
-			$output: $output + "(min-width:" + $min-width + ")";
-
-			$arguments: $arguments + 1;
+	@if $min-width != false
+	{
+		@if $min-width > 0
+		{
+			$queries: append($queries, '(min-width: #{$min-width})', comma);
 		}
 	}
 
-	@if $max-width != false {
-		@if $arguments > 0 {
-			$output: $output + " and ";
-		}
-
-		$output: $output + "(max-width:" + $max-width + ")";
-
-		$arguments: $arguments + 1;
+	@if $max-width != false
+	{
+		$queries: append($queries, '(max-width: #{$max-width})', comma);
 	}
 
-	@if $arguments > 0 and $viewport != false {
-		$output: unquote($viewport) + " and " + $output;
+
+	$i: 0;
+	@if length($queries) >  0
+	{
+		@each $query in $queries
+		{
+			$and: "";
+			@if $output != ''
+			{
+				$and: ' and ';
+			}
+
+			$output: $output + $and + $query;
+		}
+	}
+
+	@if $output != ''
+	{
+		$output: unquote($viewport) + ' and ' + $output;
 	}
 
 	@if $output == "" {
