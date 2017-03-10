@@ -4,8 +4,8 @@ module.exports = function(grunt) {
 		sprite: 'grunt-spritesmith',
 		cachebreaker: 'grunt-cache-breaker',
 		replace: 'grunt-text-replace',
-		cmq: 'grunt-combine-media-queries',
-		bower: 'grunt-bower-task'
+		bower: 'grunt-bower-task',
+		merge_media: 'grunt-merge-media'
 	});
 
 	require('time-grunt')(grunt);
@@ -243,6 +243,16 @@ module.exports = function(grunt) {
 			}
 		},
 
+		merge_media: {
+			production: {
+				files: {
+						'<%= base_path %>/assets/css': [
+							'<%= base_path %>/assets/css/tipi.css'
+						]
+				}
+			}
+		},
+
 		cssmin: {
 			production: {
 				files: [{
@@ -252,14 +262,6 @@ module.exports = function(grunt) {
 					dest: '<%= buildPath %>/assets/css',
 					ext: '.min.css'
 				}]
-			}
-		},
-
-		cmq: {
-			production: {
-				files: {
-					'<%= buildPath %>/assets/css/': ['<%= buildPath %>/assets/css/*.css']
-				}
 			}
 		},
 
@@ -516,7 +518,7 @@ module.exports = function(grunt) {
 				],
 				[
 					'uglify:production',
-					'cmq:production',
+					'merge_media:production',
 					'cssmin:production'
 				],
 				[
