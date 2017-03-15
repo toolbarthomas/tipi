@@ -1,0 +1,3 @@
+[submodule "modules/tipi.base.wrapper"]
+	path = modules/tipi.base.wrapper
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.base.wrapper.git
