@@ -1,26 +1,14 @@
-{
-  "template": "default",
-  "title": "Getting started"
-}
+{% set page = {
+    title : 'Titel enzo'
+} %}
 
-<section id="getting-started" class="fluid">
-	<div class="wrapper">
-		<h1>Greetings stranger</h1>
-		<p class="lead">Let's get started building this awesome project!</p>
+{% extends "base.html" %}
 
-		<hr>
-
-		<h2>Getting started with Tipi</h2>
-		<ul>
-			<li><a href="pages/tipi.base.typography/">Sticky end</a></li>
-			<li><a href="pages/tipi.base.fluid/">Fluid</a></li>
-			<li><a href="pages/tipi.base.wrapper/">Wrapper</a></li>
-			<li><a href="pages/tipi.base.columns/">Columns</a></li>
-			<li><a href="pages/tipi.base.typography/">Typography</a></li>
-			<li><a href="pages/tipi.base.valign/">V-align</a></li>
-			<li><a href="pages/tipi.base.combined/">Combined</a></li>
-			<li><a href="pages/tipi.base.spaces/">Spaces</a></li>
-			<li><a href="pages/tipi.base.element-group/">Element group</a></li>
-		</ul>
-	</div>
-</section>
+{% block content %}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{% endblock %}

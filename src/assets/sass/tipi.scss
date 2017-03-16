@@ -1,8 +1,18 @@
-@import "tipi.import.frameworks";
+//Dependencies
+@import '../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+$output-bourbon-deprecation-warnings: true;
 
-@import "tipi.import.core";
-@import "tipi.import.packages";
-@import "tipi.import.custom-components";
+//Core
+@import 'tipi.core/variables/*.scss';
+@import 'tipi.core/mixins/*.scss';
+
+//Modules Modules
+@import '../../../modules/**/*tipi.base.*.scss';
+@import '../../../modules/**/*tipi.tool.*.scss';
+@import '../../../modules/**/*tipi.component.*.scss';
+
+//Project Modules
+@import 'tipi.custom-components/**/*.scss';
 
 @import "tipi.responsive/smartphone/smartphone";
 @import "tipi.responsive/smartphone/smartphone--max";
