@@ -182,7 +182,7 @@ function twig()
 
     var packages = gulp.src(
     [
-        PACKAGES + '/*tipi*/*.twig'
+        PACKAGES + '/*tipi*/**/*.twig'
     ])
     .pipe(plugins.plumber())
     .pipe(plugins.twig(options))
