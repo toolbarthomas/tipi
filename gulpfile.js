@@ -109,8 +109,11 @@ function svgstore()
     var svgstore = gulp.src(
     [
         ASSETS + '/img/layout/svg-sprite/**.svg'
-    ], { read : false })
+    ])
     .pipe(plugins.plumber())
+    .pipe(plugins.filter(function(file) {
+        return file.stat && file.contents.length;
+    }))
     .pipe(plugins.rename({prefix: 'glyph-'}))
     .pipe(plugins.svgmin(function (file) {
         var prefix = path.basename(file.relative, path.extname(file.relative));
