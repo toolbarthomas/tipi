@@ -165,6 +165,11 @@ function concat()
 
 function twig()
 {
+    var options = {
+        base : SRC,
+        errorLogToConsole : true
+    }
+
     var src = gulp.src(
     [
         SRC + '/**/*.twig',
@@ -172,7 +177,7 @@ function twig()
         '!' + SRC + '/**/partials/*.twig',
     ])
     .pipe(plugins.plumber())
-    .pipe(plugins.twig({base : './src'}))
+    .pipe(plugins.twig(options))
     .pipe(plugins.faker())
     .pipe(gulp.dest(DEST));
 
@@ -181,7 +186,7 @@ function twig()
         PACKAGES + '/*tipi*/*.twig'
     ])
     .pipe(plugins.plumber())
-    .pipe(plugins.twig({base : './src'}))
+    .pipe(plugins.twig(options))
     .pipe(plugins.faker())
     .pipe(gulp.dest(DEST + '/packages'));
 
