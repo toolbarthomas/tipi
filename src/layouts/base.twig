@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>Tipi - {{ page.title }}</title>
+        <title>Tipi{{ page.title ? ' - ' ~ page.title : '' }}</title>
 
         <meta name="description" content="" />
         <meta name="robots" content="index, follow" />
@@ -45,11 +45,18 @@
     <body>
         <div class="sticky-end">
             <div class="sticky-end-body">
-                {% block header %}{% endblock %}
-                {% block content %}{% endblock %}
+                {% block header %}
+                    {% include 'templates/partials/header.twig' %}
+                {% endblock %}
+
+                {% block content %}
+
+                {% endblock %}
             </div>
             <div class="sticky-end-footer">
-                {% block footer %}{% endblock %}
+                {% block footer %}
+                    {% include 'templates/partials/footer.twig' %}
+                {% endblock %}
             </div>
         </div>
 
