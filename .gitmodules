@@ -31,3 +31,6 @@
 [submodule "modules/tipi.base.helpers"]
 	path = modules/tipi.base.helpers
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.base.helpers.git
+[submodule "modules/tipi.component.touch-menu"]
+	path = modules/tipi.component.touch-menu
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.touch-menu.git
