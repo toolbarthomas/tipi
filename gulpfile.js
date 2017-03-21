@@ -106,7 +106,10 @@ function spritesmith()
 
 function svgstore()
 {
-    var svgstore = gulp.src(ASSETS + '/img/layout/svg-sprite/**.svg')
+    var svgstore = gulp.src(
+    [
+        ASSETS + '/img/layout/svg-sprite/**.svg'
+    ], { read : false })
     .pipe(plugins.plumber())
     .pipe(plugins.rename({prefix: 'glyph-'}))
     .pipe(plugins.svgmin(function (file) {
