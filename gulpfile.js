@@ -61,7 +61,7 @@ function clean()
 
 function sass()
 {
-    var sass = gulp.src(ASSETS + '/sass/tipi.scss')
+    var sass = gulp.src(SRC + '/assets/sass/tipi.scss')
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sassGlob({
         ignorePaths: [
