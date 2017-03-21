@@ -9,7 +9,6 @@ var plugins = require('gulp-load-plugins')();
 
 var SRC = './src';
 var DEST = './dist';
-var ASSETS = './src/assets';
 var PACKAGES = './modules'
 
 function copy()
@@ -78,14 +77,14 @@ function sass()
 
 function spritesmith()
 {
-    var spritesmith = gulp.src(ASSETS + '/img/layout/sprite/**.png')
+    var spritesmith = gulp.src(SRC + '/assets/img/layout/sprite/**.png')
     .pipe(plugins.plumber())
     .pipe(plugins.spritesmith({
         padding: 4,
         imgName: 'sprite.png',
         imgPath: '/assets/img/layout/',
         cssName: 'tipi.sprite.css',
-        cssTemplate: ASSETS + '/img/layout/sprite/config.handlebars',
+        cssTemplate: SRC + '/assets/img/layout/sprite/config.handlebars',
         cssHandlebarsHelpers : {
             divideRetina : function(value) {
                 return parseInt(value) / 2;
@@ -108,7 +107,7 @@ function svgstore()
 {
     var svgstore = gulp.src(
     [
-        ASSETS + '/img/layout/svg-sprite/**.svg'
+        SRC + '/assets/img/layout/svg-sprite/**.svg'
     ])
     .pipe(plugins.plumber())
     .pipe(plugins.filter(function(file) {
@@ -236,14 +235,14 @@ gulp.task('connect', function() {
 
 gulp.task('watch', function() {
     plugins.watch([
-            ASSETS + '/**/*',
+            SRC + '/assets/**/*',
         ], function() {
             gulp.start('copy');
         }
     );
 
     plugins.watch([
-            ASSETS + '/**/*.scss',
+            SRC + '/assets/**/*.scss',
             PACKAGES + '/**/*.scss',
         ], function() {
             gulp.start('styles');
@@ -251,32 +250,32 @@ gulp.task('watch', function() {
     );
 
     plugins.watch([
-            ASSETS + '/assets/img/layout/svg-sprite/**/*.svg',
+            SRC + '/assets/img/layout/svg-sprite/**/*.svg',
         ], function() {
             gulp.start('svgstore');
         }
     );
 
     plugins.watch([
-            ASSETS + '/assets/img/layout/sprite/**/*.png',
+            SRC + '/assets/img/layout/sprite/**/*.png',
         ], function() {
             gulp.start('spritesmith');
         }
     );
 
     plugins.watch([
-            ASSETS + '/**/*.twig',
-            PACKAGES + '/*tipi*/*.twig'
+            SRC + '/assets/**/*.js',
+            PACKAGES + '/**/tipi.*.js'
         ], function() {
-            gulp.start('pages');
+            gulp.start('javascripts');
         }
     );
 
     plugins.watch([
-            ASSETS + '/**/*.js',
-            PACKAGES + '/**/tipi.*.js'
+            SRC + '/**/*.twig',
+            PACKAGES + '/*tipi*/*.twig',
         ], function() {
-            gulp.start('javascripts');
+            gulp.start('pages');
         }
     );
 });
