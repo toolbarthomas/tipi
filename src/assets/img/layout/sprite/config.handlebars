@@ -6,10 +6,9 @@
 	overflow: hidden;
 	text-indent: 100%;
 }
-
 {{#sprites}}
 .sprite--{{name}} {
-  background-image: url({{{escaped_image}}});
+  background-image: url({{{image}}});
   background-position: {{divideRetina offset_x}}px {{divideRetina offset_y}}px;
   background-size: {{divideRetina total_width}}px {{divideRetina total_height}}px;
   width: {{divideRetina width}}px;
