@@ -7,21 +7,52 @@ var del = require('del');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
+var SRC = './src';
 var DEST = './dist';
+var ASSETS = './src/assets';
+var PACKAGES = './modules'
 
 function copy()
 {
-    return gulp.src([
-            'src/**/*',
-            '!src/**/*{.html, .scss}',
-            '!src/**/assets/sass/**/*',
-            '!src/**/assets/img/layout/**/*',
-            '!src/**/assets/js/modules/**/*',
-            '!src/**/layouts/**/*',
-            '!src/**/templates/**/*',
-        ], { nodir: true })
-        .pipe(plugins.changed(DEST))
-        .pipe(gulp.dest(DEST));
+    var src = gulp.src(
+    [
+        'src/**/*',
+        '!src/*.twig',
+        '!src/*.html',
+        '!src/*.scss',
+        '!src/**/assets/sass/**/*',
+        '!src/**/assets/img/layout/**/*',
+        '!src/**/assets/js/modules/**/*',
+        '!src/**/layouts/**/*',
+        '!src/**/templates/**/*',
+    ], { nodir: true })
+    .pipe(plugins.changed(DEST))
+    .pipe(gulp.dest(DEST));
+
+    var packages = gulp.src(
+    [
+        './src/**/*',
+        '!**/*.html',
+        '!**/*.twig',
+        '!**/*.sass',
+        '!**/sprite/**/*',
+        '!**/svg-sprite/**/*',
+        '!**/sass/**/*',
+        '!**/js/**/*',
+        '!**/layouts/**/*',
+        '!**/templates/**/*',
+    ], { nodir: true })
+    .pipe(gulp.dest(DEST));
+
+    var bower_components = gulp.src(
+    [
+        './bower_components/**',
+        '!./bower_components/*tipi*/**',
+        '!./bower_components/*bourbon*/**',
+    ], { nodir: true })
+    .pipe(gulp.dest(DEST + '/assets/js/lib/'));
+
+    return merge(src, packages, bower_components);
 }
 
 function clean()
@@ -31,27 +62,30 @@ function clean()
 
 function sass()
 {
-    return gulp
-        .src('src/assets/sass/tipi.scss')
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.sassGlob({
-            ignorePaths: [
-                '**/__*.scss'
-            ]
-        }))
-        .pipe(plugins.sass().on('error', plugins.sass.logError))
-        .pipe(plugins.sourcemaps.write('./'))
-        .pipe(gulp.dest(DEST + '/assets/css'));
+    var sass = gulp.src(ASSETS + '/sass/tipi.scss')
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.sassGlob({
+        ignorePaths: [
+            '**/__*.scss'
+        ]
+    }))
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(plugins.sourcemaps.write('./'))
+    .pipe(gulp.dest(DEST + '/assets/css'));
+
+    return sass.pipe(plugins.connect.reload());
 }
 
 function spritesmith()
 {
-    var sprite = gulp.src('src/assets/img/layout/sprite/**.png').pipe(plugins.spritesmith({
+    var spritesmith = gulp.src(ASSETS + '/img/layout/sprite/**.png')
+    .pipe(plugins.plumber())
+    .pipe(plugins.spritesmith({
         padding: 4,
         imgName: 'sprite.png',
         imgPath: '/assets/img/layout/',
         cssName: 'tipi.sprite.css',
-        cssTemplate: 'src/assets/img/layout/sprite/config.handlebars',
+        cssTemplate: ASSETS + '/img/layout/sprite/config.handlebars',
         cssHandlebarsHelpers : {
             divideRetina : function(value) {
                 return parseInt(value) / 2;
@@ -59,74 +93,93 @@ function spritesmith()
         }
     }));
 
-    var streams = {
-        img : sprite.img
-                .pipe(buffer())
-                .pipe(gulp.dest(DEST + '/assets/img/layout/')),
-        css : sprite.css
-                .pipe(plugins.cssnano())
-                .pipe(gulp.dest(DEST + '/assets/css/'))
-    };
+    var img = spritesmith.img
+    .pipe(buffer())
+    .pipe(gulp.dest(DEST + '/assets/img/layout/'));
 
-    return merge(streams.img, streams.css);
+    var css = spritesmith.css
+    .pipe(plugins.cssnano())
+    .pipe(gulp.dest(DEST + '/assets/css/'));
+
+    return merge(img, css).pipe(plugins.connect.reload())
 }
 
 function svgstore()
 {
-    return gulp
-        .src('src/assets/img/layout/svg-sprite/**.svg')
-        .pipe(plugins.rename({prefix: 'glyph-'}))
-        .pipe(plugins.svgmin(function (file) {
-            var prefix = path.basename(file.relative, path.extname(file.relative));
-            return {
-                plugins: [{
-                    removeViewBox: false,
-                    removeAttrs: {
-                        attrs : [
-                            'style',
-                            'class',
-                            'fill',
-                            'stroke',
-                            'fill-rule',
-                            'stroke-width'
-                        ]
-                    },
-                    cleanupIDs: {
-                        prefix: prefix + '-',
-                        minify: true
-                    }
-                }]
-            }
-        }))
-        .pipe(plugins.svgstore({
-            inlineSvg: true
-        }))
-        .pipe(gulp.dest(DEST + '/assets/img/layout/'));
+    var svgstore = gulp.src(ASSETS + '/img/layout/svg-sprite/**.svg')
+    .pipe(plugins.plumber())
+    .pipe(plugins.rename({prefix: 'glyph-'}))
+    .pipe(plugins.svgmin(function (file) {
+        var prefix = path.basename(file.relative, path.extname(file.relative));
+
+        return {
+            plugins: [
+                {
+                   cleanupIDs: {
+                       prefix: prefix + '-',
+                       minify: true
+                   },
+               },
+               {
+                   removeAttrs: {
+                       attrs: [
+                           '(fill|stroke|class|style)',
+                           'svg:(width|height)'
+                       ]
+                   }
+               }
+           ]
+        }
+    }))
+    .pipe(plugins.svgstore({
+        inlineSvg: true
+    }))
+    .pipe(gulp.dest(DEST + '/assets/img/layout/'))
+
+    return svgstore.pipe(plugins.connect.reload());;
 }
 
 function concat()
 {
-    return gulp.src('src/assets/js/modules/**.js')
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.concat('modules.js'))
-        .pipe(plugins.sourcemaps.write('./'))
-        .pipe(gulp.dest(DEST + '/assets/js/'))
+
+    var src = gulp.src('src/assets/js/modules/**.js')
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.concat('modules.js'))
+    .pipe(plugins.sourcemaps.write('./'))
+    .pipe(gulp.dest(DEST + '/assets/js/'));
+
+    var packages = gulp.src(PACKAGES + '/**/tipi.*.js')
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.concat('tipi.js'))
+    .pipe(plugins.sourcemaps.write('./'))
+    .pipe(gulp.dest(DEST + '/assets/js/lib/tipi'));
+
+    return merge(src, packages).pipe(plugins.connect.reload());
 }
 
-function nunjucks()
+function twig()
 {
-    return gulp.src([
-            'src/**/*.html',
-            '!src/layouts/**/*.html',
-            '!src/templates/partials/**/*.html'
-        ])
-        .pipe(plugins.nunjucksRender({
-            path: [
-                'src/layouts',
-                'src/templates'
-            ]
-        }))
-        .pipe(gulp.dest(DEST));
+    var src = gulp.src(
+    [
+        SRC + '/**/*.twig',
+        '!' + SRC + '/**/layouts/**/*.twig',
+        '!' + SRC + '/**/partials/*.twig',
+    ])
+    .pipe(plugins.plumber())
+    .pipe(plugins.twig({base : './src'}))
+    .pipe(plugins.faker())
+    .pipe(gulp.dest(DEST));
+
+    var packages = gulp.src(
+    [
+        PACKAGES + '/*tipi*/*.twig'
+    ])
+    .pipe(plugins.plumber())
+    .pipe(plugins.twig({base : './src'}))
+    .pipe(plugins.faker())
+    .pipe(gulp.dest(DEST + '/packages'));
+
+    return merge(src, packages).pipe(plugins.connect.reload());
 }
 
 function connect()
@@ -135,21 +188,6 @@ function connect()
         root: DEST,
         livereload: true
     });
-}
-
-function minifyStyles()
-{
-    return;
-}
-
-function minifyJavascripts()
-{
-    return;
-}
-
-function minifyImages()
-{
-    return;
 }
 
 gulp.task('clean', function() {
@@ -177,25 +215,59 @@ gulp.task('javascripts', function() {
 });
 
 gulp.task('pages', function() {
-   return nunjucks();
+   return twig();
 });
 
 gulp.task('connect', function() {
    return connect();
 });
 
-gulp.task('watch', function() {
-    gulp.watch('{./src, ./modules}/**/*.scss', ['styles']);
-    gulp.watch('./src/assets/img/layout/svg-sprite/**/*.svg', ['svgstore']);
-    gulp.watch('./src/assets/img/layout/sprite/**/*.png', ['spritesmith']);
-    gulp.watch('{./src, ./modules}/**/*.js', ['javascripts', 'copy']);
-    gulp.watch('{./src, ./modules}/**/*.html', ['pages']);
-});
 
-gulp.task('build', function() {
-    minifyCss();
-    minifyJs();
-    minifyImg();
+gulp.task('watch', function() {
+    plugins.watch([
+            ASSETS + '/**/*',
+        ], function() {
+            gulp.start('copy');
+        }
+    );
+
+    plugins.watch([
+            ASSETS + '/**/*.scss',
+            PACKAGES + '/**/*.scss',
+        ], function() {
+            gulp.start('styles');
+        }
+    );
+
+    plugins.watch([
+            ASSETS + '/assets/img/layout/svg-sprite/**/*.svg',
+        ], function() {
+            gulp.start('svgstore');
+        }
+    );
+
+    plugins.watch([
+            ASSETS + '/assets/img/layout/sprite/**/*.png',
+        ], function() {
+            gulp.start('spritesmith');
+        }
+    );
+
+    plugins.watch([
+            ASSETS + '/**/*.twig',
+            PACKAGES + '/*tipi*/*.twig'
+        ], function() {
+            gulp.start('pages');
+        }
+    );
+
+    plugins.watch([
+            ASSETS + '/**/*.js',
+            PACKAGES + '/**/tipi.*.js'
+        ], function() {
+            gulp.start('javascripts');
+        }
+    );
 });
 
 gulp.task('default', function(callback) {
