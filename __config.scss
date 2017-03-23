@@ -5,7 +5,10 @@ $column-default-horizontal-gutter: 20px !default;
 $column-default-vertical-gutter: 20px !default;
 $column-default-count: 12 !default;
 
+$push-by-default: true !default;
 $push-default-classname: 'left' !default;
+
+$pull-by-default: true !default;
 $pull-default-classname: 'right' !default;
 
 $specific-columns-for-smartphone: true !default;

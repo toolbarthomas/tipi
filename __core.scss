@@ -52,7 +52,9 @@
 		$selector: null,
 		$horizontal-gutter: $column-default-horizontal-gutter,
 		$vertical-gutter: $column-default-vertical-gutter,
-		$column-count: $column-default-count
+		$column-count: $column-default-count,
+		$push: $push-by-default,
+		$pull: $pull-by-default
 	);
 
 	@if $specific-columns-for-smartphone != false
@@ -64,9 +66,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 's',
-				$push-prefix: 's',
-				$pull-prefix: 's'
+				$prefix: 's',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}
@@ -80,9 +82,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 'p',
-				$push-prefix: 'p',
-				$pull-prefix: 'p'
+				$prefix: 'p',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}
@@ -96,9 +98,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 't',
-				$push-prefix: 't',
-				$pull-prefix: 't'
+				$prefix: 't',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}
@@ -112,9 +114,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 'tl',
-				$push-prefix: 'tl',
-				$pull-prefix: 'tl'
+				$prefix: 'tl',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}
@@ -128,9 +130,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 'd',
-				$push-prefix: 'd',
-				$pull-prefix: 'd'
+				$prefix: 'd',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}
@@ -144,9 +146,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 'w',
-				$push-prefix: 'w',
-				$pull-prefix: 'w'
+				$prefix: 'w',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}
@@ -160,9 +162,9 @@
 		{
 			@include columns(
 				$selector: null,
-				$column-prefix: 'h',
-				$push-prefix: 'h',
-				$pull-prefix: 'h'
+				$prefix: 'h',
+				$push: $push-by-default,
+				$pull: $pull-by-default
 			);
 		}
 	}

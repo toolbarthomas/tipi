@@ -5,9 +5,9 @@ $columns-previous-column-count: false !default;
     $horizontal-gutter: false,
     $vertical-gutter: false,
     $column-count: false,
-    $column-prefix: null,
-    $push-prefix: null,
-    $pull-prefix: null
+    $prefix: null,
+    $push: false,
+    $pull: false
 ) {
     .#{$row-default-classname} {
         &#{$selector} {
@@ -56,33 +56,37 @@ $columns-previous-column-count: false !default;
                 $columns-previous-column-count: $column-count !global;
 
                 //Reset our global pulls and pushes so we can override it
-                @if $push-prefix != null
+                @if $prefix != null
                 {
-                    > [class*="#{$column-prefix}#{$column-default-classname}"] {
+                    > [class*="#{$prefix}#{$column-default-classname}"] {
                         margin-left: 0;
                     }
-                }
-                @if $pull-prefix != null
-                {
-                    > [class*="#{$column-prefix}#{$column-default-classname}"] {
+
+                    > [class*="#{$prefix}#{$column-default-classname}"] {
                         margin-right: 0;
                     }
                 }
 
                 @for $i from 1 through $column-count {
-                    > .#{$column-prefix}#{$column-default-classname}#{$i} {
+                    > .#{$prefix}#{$column-default-classname}#{$i} {
                         width: 100% / $column-count * $i;
                     }
 
                     //Don't include 100% pulls & pushes
                     @if $i < $column-count
                     {
-                        > [class~="#{$push-prefix}#{$push-default-classname}#{$i}"] {
-                            margin-left: 100% / $column-count * $i;
+                        @if $push != false
+                        {
+                            > [class~="#{$prefix}#{$push-default-classname}#{$i}"] {
+                                margin-left: 100% / $column-count * $i;
+                            }
                         }
 
-                        > [class~="#{$pull-prefix}#{$pull-default-classname}#{$i}"] {
-                            margin-right: 100% / $column-count * $i;
+                        @if $pull != false
+                        {
+                            > [class~="#{$prefix}#{$pull-default-classname}#{$i}"] {
+                                margin-right: 100% / $column-count * $i;
+                            }
                         }
                     }
                 }
