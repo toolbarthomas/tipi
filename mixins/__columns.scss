@@ -38,7 +38,7 @@ $columns-previous-column-count: false !default;
                 > [class*="#{$column-default-classname}"] {
                     margin-bottom: $vertical-gutter;
 
-                    @at-root .#{$row-default-classname}--end & {
+                    @at-root .#{$row-default-classname}--end > & {
                         margin-bottom: 0;
                     }
                 }
