@@ -31,16 +31,12 @@ $columns-previous-column-count: false !default;
 
             @if $vertical-gutter != false
             {
-                &.#{$row-default-classname}--last {
+                &.#{$row-default-classname}--end {
                     margin-bottom: -$vertical-gutter;
                 }
 
                 > [class*="#{$column-default-classname}"] {
                     margin-bottom: $vertical-gutter;
-
-                    @at-root .#{$row-default-classname}--end > & {
-                        margin-bottom: 0;
-                    }
                 }
             }
 
