@@ -31,7 +31,7 @@ $columns-previous-column-count: false !default;
 
             @if $vertical-gutter != false
             {
-                &.#{$row-default-classname}--end {
+                &.#{$row-default-classname}:last-child {
                     margin-bottom: -$vertical-gutter;
                 }
 
