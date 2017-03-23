@@ -1,7 +1,6 @@
 @import "__config";
 @import "__core";
 
-@import "mixins/__columns-gutter";
-@import "mixins/__responsive-columns";
+@import "mixins/__columns";
 
 @include core_columns;

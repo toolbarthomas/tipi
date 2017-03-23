@@ -8,11 +8,34 @@
 		<h2>Basic row with 12 columns</h2>
 		<div class="row">
 			{% for i in 1..12 %}
-				<div class="col{{i}}">
-					Column {{i}}
+				<div class="col1">
+					<strong>{{i}}</strong>
+				</div>
+			{% endfor %}
+		</div>
+
+		<h2>12 columns with half the size on smartphones</h2>
+		<div class="row">
+			{% for i in 1..4 %}
+				<div class="col6 scol3">
+					<strong>{{ i }}</strong>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
 </section>
+{% endblock %}
+
+{% block footer %}
+	<footer class="fluid" style="background: red;">
+		<div class="wrapper">
+			<div class="row row--last">
+				{% for i in 1..2 %}
+				<div class="scol12 col6">
+					<strong>{{ i }}</strong>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</footer>
 {% endblock %}

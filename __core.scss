@@ -1,5 +1,5 @@
 @mixin core_columns {
-	.row {
+	.#{$row-default-classname} {
 		display: table; /* Remove the white space between each column on the Stock Android Jellybean Browser */
 		display: block\9; /* Internet Explorer 9 fix for calc function on element with table display property */
 		font-size: 0; /* Remove the white space between columns */
@@ -20,106 +20,150 @@
 		}
 	}
 
-	.row--reverse {
+	.#{$row-default-classname}--reverse {
 		direction: rtl;
 
-		> [class*="col"] {
+		> [class*="#{$column-default-classname}"] {
 			direction: ltr;
 		}
 	}
 
-	.row--right {
+	.#{$row-default-classname}--right {
 		text-align: right;
 	}
 
-	.row--center {
+	.#{$row-default-classname}--center {
 		text-align: center;
 	}
 
-	.row--middle {
-		> [class*="col"] {
+	.#{$row-default-classname}--middle {
+		> [class*="#{$column-default-classname}"] {
 			vertical-align: middle;
 		}
 	}
 
-	.row--bottom {
-		> [class*="col"] {
+	.#{$row-default-classname}--bottom {
+		> [class*="#{$column-default-classname}"] {
 			vertical-align: bottom;
 		}
 	}
 
-	@include columns-gutter(
+	@include columns(
 		$selector: null,
-		$gutter: $column-gutter
+		$horizontal-gutter: $column-default-horizontal-gutter,
+		$vertical-gutter: $column-default-vertical-gutter,
+		$column-count: $column-default-count
 	);
 
-	@include responsive-columns(
-		$column-class: 'col',
-		$margin-class: 'left',
-		$min-width: false,
-		$max-width: false
-	);
-
-	@if $enable-specific-columns-for-smartphone != false {
-		@include responsive-columns(
-			$column-class: 'scol',
-			$margin-class: 'sleft',
+	@if $specific-columns-for-smartphone != false
+	{
+		@include breakpoint(
 			$min-width: false,
 			$max-width: $smartphone-max-width
-		);
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 's',
+				$push-prefix: 's',
+				$pull-prefix: 's'
+			);
+		}
 	}
 
-	@if $enable-specific-columns-for-phablet != false {
-		@include responsive-columns(
-			$column-class: 'pcol',
-			$margin-class: 'pleft',
+	@if $specific-columns-for-phablet != false
+	{
+		@include breakpoint(
 			$min-width: $phablet-min-width,
 			$max-width: $phablet-max-width
-		);
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 'p',
+				$push-prefix: 'p',
+				$pull-prefix: 'p'
+			);
+		}
 	}
 
-	@if $enable-specific-columns-for-tablet != false {
-		@include responsive-columns(
-			$column-class: 'tcol',
-			$margin-class: 'tleft',
+	@if $specific-columns-for-tablet != false
+	{
+		@include breakpoint(
 			$min-width: $tablet-min-width,
 			$max-width: $tablet-max-width
-		);
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 't',
+				$push-prefix: 't',
+				$pull-prefix: 't'
+			);
+		}
 	}
 
-	@if $enable-specific-columns-for-tablet-landscape != false {
-		@include responsive-columns(
-			$column-class: 'tlcol',
-			$margin-class: 'tlleft',
+	@if $specific-columns-for-tablet-landscape != false
+	{
+		@include breakpoint(
 			$min-width: $tablet-landscape-min-width,
 			$max-width: $tablet-landscape-max-width
-		);
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 'tl',
+				$push-prefix: 'tl',
+				$pull-prefix: 'tl'
+			);
+		}
 	}
 
-	@if $enable-specific-columns-for-desktop != false {
-		@include responsive-columns(
-			$column-class: 'dcol',
-			$margin-class: 'dleft',
+	@if $specific-columns-for-desktop != false
+	{
+		@include breakpoint(
 			$min-width: $desktop-min-width,
 			$max-width: $desktop-max-width
-		);
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 'd',
+				$push-prefix: 'd',
+				$pull-prefix: 'd'
+			);
+		}
 	}
 
-	@if $enable-specific-columns-for-widescreen != false {
-		@include responsive-columns(
-			$column-class: 'wcol',
-			$margin-class: 'wleft',
+	@if $specific-columns-for-widescreen != false
+	{
+		@include breakpoint(
 			$min-width: $widescreen-min-width,
 			$max-width: $widescreen-max-width
-		);
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 'w',
+				$push-prefix: 'w',
+				$pull-prefix: 'w'
+			);
+		}
 	}
 
-	@if $enable-specific-columns-for-highroller != false {
-		@include responsive-columns(
-			$column-class: 'hcol',
-			$margin-class: 'hleft',
+	@if $specific-columns-for-highroller != false
+	{
+		@include breakpoint(
 			$min-width: $highroller-min-width,
-			$max-width: false
-		);
+			$max-width: $highroller-max-width
+		)
+		{
+			@include columns(
+				$selector: null,
+				$column-prefix: 'h',
+				$push-prefix: 'h',
+				$pull-prefix: 'h'
+			);
+		}
 	}
 }

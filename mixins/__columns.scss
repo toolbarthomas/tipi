@@ -1,0 +1,77 @@
+$columns-previous-column-count: false !default;
+
+@mixin columns(
+    $selector: null,
+    $horizontal-gutter: false,
+    $vertical-gutter: false,
+    $column-count: false,
+    $column-prefix: null,
+    $push-prefix: null,
+    $pull-prefix: null
+) {
+    .#{$row-default-classname} {
+        &#{$selector} {
+            @if $horizontal-gutter != false
+            {
+                margin-left: -$horizontal-gutter;
+
+                @if $horizontal-gutter > 0
+                {
+                    width: calc(100% + #{$horizontal-gutter});
+                }
+                @else
+                {
+                    width: 100%;
+                }
+
+                > [class*="#{$column-default-classname}"] {
+                    padding-left: $horizontal-gutter;
+                }
+            }
+
+            @if $vertical-gutter != false
+            {
+                &.#{$row-default-classname}--last {
+                    margin-bottom: -$vertical-gutter;
+                }
+
+                > [class*="#{$column-default-classname}"] {
+                    margin-bottom: $vertical-gutter;
+
+                    @at-root .#{$row-default-classname}--end & {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            //Get the column count from our previous mixin so we can define multiple rows with a different column count
+            @if $columns-previous-column-count != false
+            {
+                $column-count: $columns-previous-column-count;
+            }
+
+            @if $column-count != false
+            {
+                $columns-previous-column-count: $column-count !global;
+
+                @for $i from 1 through $column-count {
+                    > .#{$column-prefix}#{$column-default-classname}#{$i} {
+                        width: 100% / $column-count * $i;
+                    }
+
+                    //Don't include 100% pulls & pushes
+                    @if $i < $column-count
+                    {
+                        > .#{$push-prefix}#{$push-default-classname}#{$i} {
+                            margin-left: 100% / $column-count * $i;
+                        }
+
+                        > .#{$pull-prefix}#{$pull-default-classname}#{$i} {
+                            margin-right: 100% / $column-count * $i;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
