@@ -8,7 +8,7 @@ $columns-previous-column-count: false !default;
     $column-count: false,
     $prefix: null,
     $push: false,
-    $pull: false,
+    $pull: false
 ) {
     .#{$row-default-classname} {
         &#{$selector} {
