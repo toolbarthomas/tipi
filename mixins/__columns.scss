@@ -52,7 +52,22 @@ $columns-previous-column-count: false !default;
 
             @if $column-count != false
             {
+                //Cache our column count so we can use the same value for the responsive variants
                 $columns-previous-column-count: $column-count !global;
+
+                //Reset our global pulls and pushes so we can override it
+                @if $push-prefix != null
+                {
+                    > [class*="#{$column-prefix}#{$column-default-classname}"] {
+                        margin-left: 0;
+                    }
+                }
+                @if $pull-prefix != null
+                {
+                    > [class*="#{$column-prefix}#{$column-default-classname}"] {
+                        margin-right: 0;
+                    }
+                }
 
                 @for $i from 1 through $column-count {
                     > .#{$column-prefix}#{$column-default-classname}#{$i} {
@@ -62,11 +77,11 @@ $columns-previous-column-count: false !default;
                     //Don't include 100% pulls & pushes
                     @if $i < $column-count
                     {
-                        > .#{$push-prefix}#{$push-default-classname}#{$i} {
+                        > [class~="#{$push-prefix}#{$push-default-classname}#{$i}"] {
                             margin-left: 100% / $column-count * $i;
                         }
 
-                        > .#{$pull-prefix}#{$pull-default-classname}#{$i} {
+                        > [class~="#{$pull-prefix}#{$pull-default-classname}#{$i}"] {
                             margin-right: 100% / $column-count * $i;
                         }
                     }
