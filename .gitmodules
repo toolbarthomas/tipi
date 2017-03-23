@@ -45,3 +45,6 @@
 [submodule "modules/tipi.component.touch-menu"]
 	path = modules/tipi.component.touch-menu
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.touch-menu
+[submodule "modules/tipi.component.button"]
+	path = modules/tipi.component.button
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.button.git
