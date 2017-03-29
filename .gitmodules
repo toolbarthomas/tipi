@@ -48,3 +48,6 @@
 [submodule "modules/tipi.component.button"]
 	path = modules/tipi.component.button
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.button.git
+[submodule "modules/tipi.component.top-bar"]
+	path = modules/tipi.component.top-bar
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.top-bar.git
