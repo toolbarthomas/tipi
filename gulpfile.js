@@ -147,7 +147,7 @@ function svgstore()
 function concat()
 {
 
-    var src = gulp.src('src/assets/js/modules/**.js')
+    var src = gulp.src(SRC + '/assets/js/modules/**.js')
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.concat('modules.js'))
     .pipe(plugins.sourcemaps.write('./'))
