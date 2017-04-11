@@ -57,6 +57,3 @@
 [submodule "modules/tipi.component.form"]
 	path = modules/tipi.component.form
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form.git
-[submodule "modules/tipi.base.email-templates"]
-	path = modules/tipi.base.email-templates
-	url = https://toolbarthomas@github.com/toolbarthomas/tipi.base.email-templates.git
