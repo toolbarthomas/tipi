@@ -1,11 +1,8 @@
-npm-debug.log
+/dist
+
 node_modules/
 bower_components/
 .sass-cache/
-/dist/
-/build/
-/.tmp/
-*.css.map
-*.js.map
+
+*.map
 *.log
-_tipi.import.*.scss
