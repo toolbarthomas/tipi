@@ -20,7 +20,7 @@
     $media-type: screen,
     $custom-arguments...
 ) {
-    $output: "";
+    $output: '';
     $queries: ();
 
     //Append the min-width query to the set of media queries;
@@ -31,7 +31,6 @@
             $queries: append($queries, '(min-width: #{$min-width})', comma);
         }
     }
-
 
     //Append the max-width query to the set of media queries;
     @if $max-width != false
@@ -48,7 +47,7 @@
             //Check if the custom-argument starts with '('
             @if str-slice($custom-argument, 0, 1) != '('
             {
-                $custom-argument: "(" + $custom-argument;
+                $custom-argument: '(' + $custom-argument;
             }
 
             @if str-slice($custom-argument, -2, -1) != ')'
@@ -61,12 +60,11 @@
     }
 
     //Define the actual media query
-    $i: 0;
-    @if length($queries) >  0
+    @if length($queries) > 0
     {
         @each $query in $queries
         {
-            $and: "";
+            $and: '';
             @if $output != ''
             {
                 $and: ' and ';
@@ -83,7 +81,7 @@
     }
 
     //Output the content without the media query function if we have no defined query
-    @if $output == ""
+    @if $output == ''
     {
         @content;
     }

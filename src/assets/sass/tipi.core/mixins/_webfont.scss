@@ -54,17 +54,17 @@
 
         @if $woff2 == true
         {
-            $src_output: append($src_output, url(quote($src + ".woff2")) format("woff2"), comma);
+            $src_output: append($src_output, url(quote($src + '.woff2')) format('woff2'), comma);
         }
 
         @if $woff == true
         {
-            $src_output: append($src_output, url(quote($src + ".woff")) format("woff"), comma);
+            $src_output: append($src_output, url(quote($src + '.woff')) format('woff'), comma);
         }
 
         @if $ttf == true
         {
-            $src_output: append($src_output, url(quote($src + ".ttf")) format("truetype"), comma);
+            $src_output: append($src_output, url(quote($src + '.ttf')) format('truetype'), comma);
         }
 
         @if $src_output != null
