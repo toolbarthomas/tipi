@@ -2,7 +2,7 @@
 	body {
 		font-family: $default-font-family;
 		font-weight: $default-font-weight;
-		color: $base-color;
+		color: color('font');
 
 		@if $default-font-ligatures == false {
 			-moz-font-feature-settings: "liga" 0;
