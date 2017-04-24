@@ -1,45 +1,74 @@
-$primary-color:	 				#4694ff !default;
-$primary-color--hover:			shade($primary-color, 20%) !default;
+@charset "UTF-8";
 
-$support-color:					#f45d3a !default;
-$support-color--hover:			shade($support-color, 20%) !default;
+$colors: (
+    primary: (
+        base : #4694ff,
+        light : light(#4694ff, 20%),
+        dark : shade(#4694ff, 20%)
+    ),
+    support: (
+        base : #f45d3a,
+        light : light(#f45d3a, 20%),
+        dark : shade(#f45d3a, 20%)
+    ),
+    action: (
+        base : #43c85c,
+        light : light(#43c85c, 20%),
+        dark : shade(#43c85c, 20%)
+    ),
+    error : (
+        base : #DC3939,
+        light : light(#DC3939, 20%),
+        dark : shade(#DC3939, 20%)
+    ),
+    warning : (
+        base : #ff9e13,
+        light : light(#ff9e13, 20%),
+        dark : shade(#ff9e13, 20%)
+    ),
+    success : (
+        base : #92C865,
+        light : light(#92C865, 20%),
+        dark : shade(#92C865, 20%)
+    ),
+    notice : (
+        base : #79A9FF,
+        light : light(#79A9FF, 20%),
+        dark : shade(#79A9FF, 20%)
+    ),
+    body: (
+        base : #ffffff,
+        light : null,
+        dark : #e9e9e9
+    ),
+    border: (
+        base : #bbbbbb,
+        light : #ededed,
+        dark : #959292
+    ),
+    font : (
+        base : #555555,
+        light : #737373,
+        dark : #161616
+    )
+) !default;
 
-$action-color:					#43c85c !default;
-$action-color--hover:			shade($action-color, 20%) !default;
+/// Return the specified color if present within settings/_color.scss
+///
+/// @param { String } $color
+///     The category/color of our project e.g. "primary", "support", "action" etc.
+///
+/// @param { String } $tone
+///     The tone of the category, defaults to "base".
+///
+/// @example css - CSS Output
+///   color: color('primary', 'light');
+///
+/// @return { Color }
 
-$error-color: 					#f4dada !default;
-$error-color-alt: 				shade($error-color, 35%) !default;
-
-$warning-color: 				#ff9e13 !default;
-$warning-color-alt:				shade($warning-color, 35%) !default;
-
-$success-color: 				#DEF4DA !default;
-$success-color-alt:				shade($success-color, 35%) !default;
-
-$notice-color: 					#feffd9 !default;
-$notice-color-alt: 				shade($notice-color, 35%) !default;
-
-$base-color: 					#555555 !default;
-$alt-color:						#BBBBBB !default;
-$placeholder-color: 			#737373 !default;
-$link-color: 					$action-color !default;
-
-$body-color:					#fff !default;
-$body-color-alt:				#e9e9e9 !default;
-
-$border-color:		 			#bbbbbb !default;
-
-$googleplus-color: 				#dd4b39 !default;
-$googleplus-color-alt: 			#b91d24 !default;
-
-$facebook-color: 				#3b5998 !default;
-$facebook-color-alt: 			#36518b !default;
-
-$twitter-color: 				#55acee !default;
-$twitter-color-alt: 			#4e9dd9 !default;
-
-$linkedin-color: 				#0e76a8 !default;
-$linkedin-color-alt: 			#0d6b98 !default;
-
-$pinterest-color: 				#c8232c !default;
-$pinterest-color-alt: 			#CB2027 !default;
+@function color(
+    $color,
+    $tone: 'base'
+) {
+    @return map-get(map-get($colors, $color), $tone);
+}
