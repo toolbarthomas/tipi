@@ -1,3 +1,6 @@
-@include breakpoint($tablet-landscape-min-width) {
+@include breakpoint(
+    $min-width: viewport(tablet-landscape, min-width)
+)
+{
 
 }

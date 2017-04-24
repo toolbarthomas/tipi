@@ -36,7 +36,7 @@
 
     $responsive_font_sizes : (
         0 : (
-            breakpoint: 0,
+            breakpoint: viewport(smartphone),
             sizes: (
                 'display1-font-size':           3.6rem,
                 'display2-font-size':           3.2rem,
@@ -55,7 +55,7 @@
             )
         ),
         1 : (
-            breakpoint: $tablet-min-width,
+            breakpoint: viewport(tablet),
             sizes: (
                 'display1-font-size':           4.1rem,
                 'display2-font-size':           3.4rem,
@@ -74,7 +74,7 @@
             )
         ),
         2 : (
-            breakpoint: $desktop-min-width,
+            breakpoint: viewport(desktop),
             sizes: (
                 'display1-font-size':           4.8rem,
                 'display2-font-size':           3.9rem,

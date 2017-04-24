@@ -1,3 +1,6 @@
-@include breakpoint(false, $smartphone-max-width) {
+@include breakpoint(
+    $max-width: viewport(smartphone, max-width)
+)
+{
 
 }
