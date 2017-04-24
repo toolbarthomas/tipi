@@ -1,29 +1,35 @@
-//Mixin for adding the clearfix properties to the nested element.
+@charset "UTF-8";
+
+/// Add clearfix hack on the element with the ::before & ::after pseudo elements
+///
+/// @param { Boolean } $before
+///     Set the clearfix hack on the ::before pseudo
+///
+/// @param { Boolean } $after
+///     Set the clearfix hack on the ::before pseudo
 
 @mixin clear(
-	$before: false,
-	$after: true
+    $before: false,
+    $after: true
 ) {
-	$selector: ();
+    $selector: ();
 
-	//Add ::before pseudo selector to the output
-	@if $before == true
-	{
-		$selector: append($selector, '&:before', 'comma');
-	}
+    @if $before == true
+    {
+        $selector: append($selector, '&::before', 'comma');
+    }
 
-	//Add ::after pseudo selector to the output
-	@if $after == true
-	{
-		$selector: append($selector, '&:after', 'comma');
-	}
+    @if $after == true
+    {
+        $selector: append($selector, '&::after', 'comma');
+    }
 
-	@if length($selector) > 0
-	{
-		#{$selector} {
-			content: " ";
-			display: table;
-			clear: both;
-		}
-	}
+    @if length($selector) > 0
+    {
+        #{$selector} {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+    }
 }

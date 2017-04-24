@@ -11,29 +11,8 @@
 /// @param { Property (String || Unitless)} $media-type
 ///     Define for what media type the media-query is written for
 ///
-/// @param { Property (String || Unitless)} $media-type
-
-
-/// @param {List (String)} $local
-///     Use a local copy of the font family.
-///
-/// @param {String} $src
-///     Combination of its path & filename without extension
-///
-/// @param {String} $font-weight
-///     The font weight value we want to define our webfont
-///
-/// @param {String} $font-style
-///     The font style value we want to define our webfont
-///
-/// @param {Boolean} $woff2
-///     Define the source with the woff2 extension
-///
-/// @param {Boolean} $woff
-///     Define the source with the woff extension
-///
-/// @param {Boolean} $ttf
-///     Define the source with the ttf extension
+/// @param { Properties (Arglist)} $custom-arguments
+///     Include extra arguments for the current query; i.e:
 
 @mixin breakpoint(
     $min-width: 0,
