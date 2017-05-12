@@ -1,3 +1,7 @@
-@include breakpoint($highroller-min-width, $highroller-max-width) {
+@include breakpoint(
+    $min-width: viewport(highroller, min-width),
+    $max-width: viewport(highroller, max-width)
+)
+{
 
 }

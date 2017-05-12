@@ -1,3 +1,6 @@
-@include breakpoint($phablet-min-width) {
+@include breakpoint(
+    $min-width: viewport(phablet, min-width)
+)
+{
 
 }

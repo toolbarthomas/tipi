@@ -1,3 +1,6 @@
-@include breakpoint($widescreen-min-width) {
+@include breakpoint(
+    $min-width: viewport(widescreen, min-width)
+)
+{
 
 }

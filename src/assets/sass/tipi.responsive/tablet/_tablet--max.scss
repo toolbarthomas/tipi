@@ -1,3 +1,6 @@
-@include breakpoint(false, $tablet-max-width) {
+@include breakpoint(
+    $max-width: viewport(tablet, max-width)
+)
+{
 
 }

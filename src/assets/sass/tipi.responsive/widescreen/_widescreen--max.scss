@@ -1,3 +1,6 @@
-@include breakpoint(false, $widescreen-max-width) {
+@include breakpoint(
+    $max-width: viewport(widescreen, max-width)
+)
+{
 
 }
