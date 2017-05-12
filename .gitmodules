@@ -57,3 +57,6 @@
 [submodule "modules/tipi.component.form"]
 	path = modules/tipi.component.form
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form.git
+[submodule "modules/tipi.component.viewport-toggler"]
+	path = modules/tipi.component.viewport-toggler
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.viewport-toggler.git
