@@ -86,6 +86,10 @@ function spritesmith()
         cssName: 'tipi.sprite.css',
         cssTemplate: SRC + '/assets/img/layout/sprite/config.handlebars',
         cssHandlebarsHelpers : {
+            outputSprite : function(image)
+            {
+                return '/assets/img/layout/sprite.png';
+            },
             divideRetina : function(value) {
                 return parseInt(value) / 2;
             }
