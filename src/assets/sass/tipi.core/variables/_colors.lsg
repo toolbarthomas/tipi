@@ -1,0 +1,46 @@
+## Colors
+
+It is important to use variables to define colors in your scss files. This ensures consistent styling and it makes updating/editting the website easy, because you only have to edit a few
+variables to change the entire look and feel.
+
+To overwrite variables for colors, you can put them in a _shared.scss or _colors.scss Sass file in your project and call them whenever you need them.
+
+It is good practice to use lighten and darken to get different color variants from one color. Check out the colors.scss file to understand more about colors.
+
+
+You use a variable like this:
+
+
+ ```
+p {
+	color: $base-color;
+}
+ ```
+```
+div {
+	background-color: $base-color-alt;
+}
+ ```
+
+<div class="lsg-quote"><p>Watch it: When making new variables for colors, please don't use describtive names for your colors, like "$white" etc.
+This ruins the purpose of variables, because when the hexcolor changes to green in the future, you need to update your entire project (change $white to $green etc).</p></div>
+
+
+### Available colors
+
+<div style="background-color:rgba(41, 48, 87, 1); text-align:center; vertical-align: middle; padding:40px 0; color: #fff; font-size: 16px;">
+$base-color<br />
+#293057
+</div>
+
+<div style="background-color:rgba(128, 142, 151, 1); text-align:center; vertical-align: middle; padding:40px 0; color: #fff; font-size: 16px;">
+$base-color-alt<br />
+#808E97
+</div>
+
+<div style="background-color:rgba(178, 186, 191, 1); text-align:center; vertical-align: middle; padding:40px 0; color: #fff; font-size: 16px;">
+$base-color-alt--light<br />
+#b2babf
+</div>
+
+@scss _colors.scss;

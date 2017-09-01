@@ -1,0 +1,23 @@
+<div class="lsg-cover--container">
+<div class="lsg--cover--container-text">
+<h1 class="lsg--page-title">Styleguide for Tipi</h1>
+<p class="lsg--page-subtitle">your best start to modulair awesomeness</p>
+</div>
+</div>
+
+<div class="lsg--intro">
+<p>Welcome to the Tipi front-end style guide. This is the central place where all CSS and assets for tipi are defined and maintained.
+The source of tipi is available at https://github.com/toolbarthomas/tipi.
+</p>
+</div>
+
+<nav class="lsg--nav">
+  <a class="lsg--nav-item" href="#colors-fonts">Colors & fonts</a>
+  <a class="lsg--nav-item" href="#grid-viewports">Grid & viewports</a>
+  <a class="lsg--nav-item" href="#snippets">HTML snippets</a>
+</nav>
+
+# Why tipi?
+<div class="lsg--why">
+<p>Tipi is called tipi because a tipi is easy to set up &amp; so is tipi. That's it!</p>
+</div>

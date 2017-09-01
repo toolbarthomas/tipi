@@ -1,0 +1,53 @@
+@scss ../../bower_components/bourbon/app/assets/stylesheets/bourbon;
+
+@scss ../assets/sass/tipi.core/variables/_breakpoints.scss;
+@scss ../assets/sass/tipi.core/variables/_shared.scss;
+
+@scss ../assets/sass/tipi.core/mixins/_breakpoint.scss;
+@scss ../assets/sass/tipi.core/mixins/_clear.scss;
+@scss ../assets/sass/tipi.core/mixins/_responsive-font-size.scss;
+@scss ../assets/sass/tipi.core/mixins/_webfont.scss;
+
+@scss ../../bower_components/tipi.base.defaults/_tipi.base.defaults.scss;
+
+@title Styleguide Tipi
+
+@scss style.scss;
+@import header.lsg;
+
+# Starting with tipi
+
+First things first: installing tipi. Make sure you have installed <a href="https://bower.io/" target="_blank">Bower</a>.
+After that, Tipi is easy to set up, just run in your terminal:
+
+ ```
+bower install tipi
+ ```
+
+
+As you can see, this created the tipi files that you need to get started.
+
+
+# Colors &amp; fonts
+<div id="colors-fonts"></div>
+@import ../assets/sass/tipi.core/variables/_colors.lsg;
+@import ../../bower_components/tipi.base.typography/_tipi.base.typography.lsg;
+
+<hr />
+
+# Grid &amp; viewports
+<div id="grid-viewports"></div>
+@import ../assets/sass/tipi.core/variables/_responsive.lsg;
+@import ../../bower_components/tipi.base.columns/_tipi.base.columns.lsg;
+@import ../../bower_components/tipi.base.fluid/_tipi.base.fluid.lsg;
+@import ../../bower_components/tipi.base.wrapper/_tipi.base.wrapper.lsg;
+@import ../../bower_components/tipi.base.element-group/_tipi.base.element-group.lsg;
+@import ../../bower_components/tipi.base.valign/_tipi.base.valign.lsg;
+@import ../../bower_components/tipi.base.sticky-end/_tipi.base.sticky-end.lsg;
+@import ../../bower_components/tipi.base.spaces/_tipi.base.spaces.lsg;
+
+<hr />
+
+# HTML snippets
+<div id="snippets"></div>
+@import ../../bower_components/tipi.base.combined/_tipi.base.combined.lsg;
