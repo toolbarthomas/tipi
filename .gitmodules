@@ -54,3 +54,6 @@
 [submodule "modules/tipi.component.form"]
 	path = modules/tipi.component.form
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form.git
+[submodule "modules/tipi.component.form.unified-select"]
+	path = modules/tipi.component.form.unified-select
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form.unified-select.git
