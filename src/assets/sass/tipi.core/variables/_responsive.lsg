@@ -1,0 +1,55 @@
+## Viewports
+
+Responsive.scss is the place where all the viewports are defined. As you can see, tipi covers almost every viewport there is.
+
+<div class="lsg-quote"><p>Watch it: do you need a new, specific viewport? Please add it in a local _shared.scss file in your project.</p></div>
+
+You use a viewport like this:
+
+
+ ```
+media screen and (min-device-width: $tablet-min-width) and (max-device-width: $tablet-max-width) {
+    .intro-box {
+		padding: 40px;
+	}
+}
+ ```
+### or
+
+```
+.intro-box {
+	padding: 40px;
+	media screen and (min-device-width: $tablet-min-width) and (max-device-width: $tablet-max-width) {
+		padding: 20px;
+	}
+}
+ ```
+
+
+
+### Available viewports
+```
+$smartphone-min-width: 			320px !default;
+$smartphone-max-width: 			399px !default;
+
+$phablet-min-width: 			400px !default;
+$phablet-max-width: 			639px !default;
+
+$tablet-min-width: 				640px !default;
+$tablet-max-width: 				959px !default;
+
+$tablet-landscape-min-width: 	960px !default;
+$tablet-landscape-max-width: 	1024px !default;
+
+$desktop-min-width: 			1025px !default;
+$desktop-max-width: 			1199px !default;
+
+$widescreen-min-width: 			1200px !default;
+$widescreen-max-width: 			1367px !default;
+
+$highroller-min-width: 			1368px !default;
+$highroller-max-width: 			1560px !default;
+ ```
+
+
+@scss _responsive.scss;

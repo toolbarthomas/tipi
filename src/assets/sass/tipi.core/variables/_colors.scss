@@ -72,3 +72,7 @@ $colors: (
 ) {
     @return map-get(map-get($colors, $color), $tone);
 }
+
+$base-color: 					#293057;
+$base-color-alt:				#808E97;
+$base-color-alt--light:			#B2BABF;
