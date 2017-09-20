@@ -37,3 +37,6 @@
 [submodule "modules/tipi.component.form.uploader"]
 	path = modules/tipi.component.form.uploader
 	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form.uploader.git
+[submodule "modules/tipi.base.styleguide"]
+	path = modules/tipi.base.styleguide
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.base.styleguide.git
