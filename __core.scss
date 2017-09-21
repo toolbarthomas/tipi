@@ -67,7 +67,7 @@
 			a {
 				color: inherit;
 
-				@if $anchor-text-decoration--hover == true {
+				@if $anchor-text-decoration--hover != false {
 					&,
 					&:hover {
 						text-decoration: none;
@@ -140,7 +140,7 @@
 			a {
 				color: inherit;
 
-				@if $anchor-text-decoration--hover == true {
+				@if $anchor-text-decoration--hover != false {
 					&,
 					&:hover {
 						text-decoration: none;
