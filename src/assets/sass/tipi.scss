@@ -6,9 +6,12 @@
 @import 'tipi.core/mixins/*.scss';
 
 //Modules Modules
-@import '../../../modules/**/*tipi.base.*.scss';
-@import '../../../modules/**/*tipi.tool.*.scss';
-@import '../../../modules/**/*tipi.component.*.scss';
+@import '../../../bower_components/**/*tipi.base.*.scss';
+@import '../../../git_submodules/**/*tipi.base.*.scss';
+@import '../../../bower_components/**/*tipi.tool.*.scss';
+@import '../../../git_submodules/**/*tipi.tool.*.scss';
+@import '../../../bower_components/**/*tipi.component.*.scss';
+@import '../../../git_submodules/**/*tipi.component.*.scss';
 
 //Project Modules
 @import 'tipi.custom-components/**/*.scss';
