@@ -1,0 +1,16 @@
+{
+  "name": "tipi.base.columns",
+  "homepage": "https://github.com/toolbarthomas/tipi.base.columns",
+  "authors": [
+    "Thomas van der Velde <contact@toolbarthomas.net>"
+  ],
+  "description": "Columns system for Tipi",
+  "keywords": [
+    "toolbarthomas",
+    "modular",
+    "tipi",
+    "columns"
+  ],
+  "license": "MIT",
+  "main": "_tipi.base.columns.scss"
+}

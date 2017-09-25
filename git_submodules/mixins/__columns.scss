@@ -1,0 +1,96 @@
+$columns-previous-column-count: false !default;
+
+@mixin columns(
+    $selector: null,
+    $horizontal-gutter: false,
+    $vertical-gutter: false,
+    $columns: true,
+    $column-count: false,
+    $prefix: null,
+    $push: false,
+    $pull: false
+) {
+    .#{$row-default-classname} {
+        &#{$selector} {
+            @if $horizontal-gutter != false
+            {
+                margin-left: -$horizontal-gutter;
+
+                @if $horizontal-gutter > 0
+                {
+                    width: calc(100% + #{$horizontal-gutter});
+                }
+                @else
+                {
+                    width: 100%;
+                }
+
+                > [class*="#{$column-default-classname}"] {
+                    padding-left: $horizontal-gutter;
+                }
+            }
+
+            @if $vertical-gutter != false
+            {
+                &.#{$row-default-classname}:last-child {
+                    margin-bottom: -$vertical-gutter;
+                }
+
+                > [class*="#{$column-default-classname}"] {
+                    margin-bottom: $vertical-gutter;
+                }
+            }
+
+            //Get the column count from our previous mixin so we can define multiple rows with a different column count
+            @if $columns-previous-column-count != false
+            {
+                $column-count: $columns-previous-column-count;
+            }
+
+            @if $columns == true
+            {
+                @if $column-count != false
+                {
+                    //Cache our column count so we can use the same value for the responsive variants
+                    $columns-previous-column-count: $column-count !global;
+
+                    //Reset our global pulls and pushes so we can override it
+                    @if $prefix != null
+                    {
+                        > [class*="#{$prefix}#{$column-default-classname}"] {
+                            margin-left: 0;
+                        }
+
+                        > [class*="#{$prefix}#{$column-default-classname}"] {
+                            margin-right: 0;
+                        }
+                    }
+
+                    @for $i from 1 through $column-count {
+                        > .#{$prefix}#{$column-default-classname}#{$i} {
+                            width: 100% / $column-count * $i;
+                        }
+
+                        //Don't include 100% pulls & pushes
+                        @if $i < $column-count
+                        {
+                            @if $push != false
+                            {
+                                > [class~="#{$prefix}#{$push-default-classname}#{$i}"] {
+                                    margin-left: 100% / $column-count * $i;
+                                }
+                            }
+
+                            @if $pull != false
+                            {
+                                > [class~="#{$prefix}#{$pull-default-classname}#{$i}"] {
+                                    margin-right: 100% / $column-count * $i;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
