@@ -1,0 +1,42 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+<section id="columns" class="fluid">
+	<div class="wrapper">
+		<h1>Columns</h1>
+
+		<h2>Basic row with 12 columns</h2>
+		<div class="row">
+			{% for i in 1..12 %}
+				<div class="col1">
+					<strong>{{i}}</strong>
+				</div>
+			{% endfor %}
+		</div>
+
+		<h2>12 columns with half the size on smartphones</h2>
+		<div class="row">
+			{% for i in 1..4 %}
+				<div class="col6 scol3">
+					<strong>{{ i }}</strong>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+	<footer class="fluid" style="background: red;">
+		<div class="wrapper">
+			<div class="row row--end">
+				<div class="scol12 pleft3 pcol3 left4 col4">
+					<strong>1</strong>
+				</div>
+				<div class="scol12 pcol6 col4">
+					<strong>1</strong>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
