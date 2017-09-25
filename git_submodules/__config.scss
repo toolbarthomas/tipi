@@ -1,0 +1,138 @@
+$displays1: (
+	'.display1'
+) !default;
+
+$displays2: (
+	'.display2'
+) !default;
+
+$displays3: (
+	'.display3'
+) !default;
+
+$displays: (
+	$displays1,
+	$displays2,
+	$displays3,
+) !default;
+
+$headings1: (
+	'h1',
+	'.h1'
+) !default;
+
+$headings2: (
+	'h2',
+	'.h2',
+) !default;
+
+$headings3: (
+	'h3',
+	'.h3',
+) !default;
+
+$headings4: (
+	'h4',
+	'.h4',
+) !default;
+
+$headings5: (
+	'h5',
+	'.h5',
+) !default;
+
+$headings6: (
+	'h6',
+	'.h6'
+) !default;
+
+$headings: (
+	$headings1,
+	$headings2,
+	$headings3,
+	$headings4,
+	$headings5,
+	$headings6
+) !default;
+
+
+$leads: (
+	'.lead'
+) !default;
+
+$formats: (
+	'p',
+	'address',
+	'ul',
+	'dl',
+	'ol',
+	'blockquote',
+	'q',
+	'small'
+) !default;
+
+$italics: (
+	'em',
+	'i',
+	'.italic'
+) !default;
+
+$bolds: (
+	'strong',
+	'b',
+	'.bold'
+) !default;
+
+$default-font-family: 			'Helvetica Neue', 'Segoe UI', 'arial', 'sans-serif' !default;
+$default-font-ligatures: 		false !default;
+$default-font-weight:			400 !default;
+$default-font-style:			normal !default;
+$default-line-height:			1.6em !default;
+$default-bold-font-weight:		700 !default;
+
+$display-font-family:			false !default;
+$display-font-weight:			700 !default;
+$display-font-style:			false !default;
+$display-line-height:			1.32em !default;
+$display-letter-spacing:		false !default;
+$display-margin-top:			0.4em !default;
+$display-margin-bottom: 		0.23em !default;
+$display-text-transform:		false !default;
+$display-font-smoothing:		true !default;
+
+$head-font-family:				false !default;
+$head-font-weight:				700 !default;
+$head-font-style:				false !default;
+$head-line-height:				1.3em !default;
+$head-letter-spacing:			false !default;
+$head-margin-top:				0.82em !default;
+$head-margin-bottom:			0.69em !default;
+$head-text-transform:			false !default;
+$head-font-smoothing:			true !default;
+
+$lead-font-family:				false !default;
+$lead-font-weight:				400 !default;
+$lead-font-style:				false !default;
+$lead-line-height:				1.6em !default;
+$lead-letter-spacing:			false !default;
+$lead-margin-top:				0.44em !default;
+$lead-margin-bottom:			0.57em !default;
+$lead-text-transform:			false !default;
+$lead-font-smoothing:			true !default;
+
+$format-margin-top:				1.31em !default;
+$format-margin-bottom:			1.31em !default;
+$format-gutter: 				1.1em !default;
+$format-shrink-value:			80% !default;
+
+$anchor-text-decoration: 		underline !default;
+$anchor-text-decoration--hover: underline !default;
+
+$quote-font-style:				italic !default;
+$quote-font-weight:				normal !default;
+
+$hr-color:						false !default;
+$hr-style:						solid !default;
+$hr-width:						2px !default;
+$hr-border-radius:				false !default;
+$hr-baseline:					2em !default;

@@ -1,0 +1,16 @@
+{
+  "name": "tipi.base.typography",
+  "homepage": "https://github.com/toolbarthomas/tipi.base.typography",
+  "authors": [
+    "Thomas van der Velde <contact@toolbarthomas.net>"
+  ],
+  "description": "Typography for Tipi",
+  "keywords": [
+    "toolbarthomas",
+    "modular",
+    "tipi",
+    "typography"
+  ],
+  "license": "MIT",
+  "main": "_tipi.base.typography.scss"
+}
