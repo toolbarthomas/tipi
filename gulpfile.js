@@ -76,8 +76,10 @@ GULP.task('serve', function (callback) {
             'javascripts',
             'pages'
         ],
-        'connect',
-        'watch',
+        [
+            'connect',
+            'watch',
+        ],
         callback
     );
 });

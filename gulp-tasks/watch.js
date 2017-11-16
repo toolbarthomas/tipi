@@ -9,7 +9,7 @@ module.exports = (GULP, PLUGINS, NODE_MODULES, REVISION) => {
 
         PLUGINS.watch([
             process.env.SRC + '/assets/**/*.scss',
-            PACKAGES + '/**/*.scss',
+            process.env.VENDOR_PATH + '/**/*.scss',
         ], function () {
             GULP.start('stylesheets');
         }
@@ -31,7 +31,7 @@ module.exports = (GULP, PLUGINS, NODE_MODULES, REVISION) => {
 
         PLUGINS.watch([
             process.env.SRC + '/assets/**/*.js',
-            PACKAGES + '/**/tipi.*.js'
+            process.env.VENDOR_PATH + '/**/tipi.*.js'
         ], function () {
             GULP.start('javascripts');
         }
@@ -39,7 +39,7 @@ module.exports = (GULP, PLUGINS, NODE_MODULES, REVISION) => {
 
         PLUGINS.watch([
             process.env.SRC + '/**/*.twig',
-            PACKAGES + '/*tipi*/*.twig',
+            process.env.VENDOR_PATH + '/*tipi*/*.twig',
         ], function () {
             GULP.start('pages');
         }
