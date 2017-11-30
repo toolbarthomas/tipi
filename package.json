@@ -6,6 +6,7 @@
   "devDependencies": {
     "del": "^3.0.0",
     "dotenv": "^4.0.0",
+    "fse": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.1.1",
     "gulp-concat": "^2.6.1",

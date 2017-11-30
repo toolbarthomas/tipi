@@ -15,7 +15,8 @@ const NODE_MODULES = {
     merge: require('merge-stream'),
     runSequence: require('run-sequence'),
     path: require('path'),
-    del: require('del')
+    del: require('del'),
+    fse: require('fse')
 };
 
 // Revision timestamp of the current date in seconds
