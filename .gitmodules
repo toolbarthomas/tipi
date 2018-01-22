@@ -1,0 +1,6 @@
+[submodule "git_submodules/tipi.component.form"]
+	path = git_submodules/tipi.component.form
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form
+[submodule "git_submodules/tipi.component.form.unified-select"]
+	path = git_submodules/tipi.component.form.unified-select
+	url = https://toolbarthomas@github.com/toolbarthomas/tipi.component.form.unified-select
