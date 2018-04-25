@@ -27,7 +27,7 @@ module.exports = (GULP, PLUGINS, NODE_MODULES, REVISION) => {
                 var path = NODE_MODULES.path.relative(file.cwd, file.path);
                 var extension = NODE_MODULES.path.basename(path);
 
-                var data = path.replace(extension, 'data.json');
+                data = path.replace(extension, 'data.json');
 
                 // Check if data.json exists
                 if (!NODE_MODULES.fse.existsSync(data)) {
